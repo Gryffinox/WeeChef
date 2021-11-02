@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cf14594abba4b41429cb4253291d7ad0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Apple: {fileID: 2054383144504998996, guid: 14311bd24749cee4abba0a89eeb2a7bb, type: 3}
+  - Bacon: {fileID: 366462111978016074, guid: 8ca31a57fc810784095e401dc24ce40d, type: 3}
+  - Cheese: {fileID: 271654529408488740, guid: d193d354703b06b4bbb0d385ed21c79b, type: 3}
+  - Eggplant: {fileID: 1565854530937673694, guid: 95b42d5eaa735e14fbd3e55eefe5175e, type: 3}
+  - Eggs: {fileID: 4440191472127560759, guid: 46f386e08269a754693d14b386414a67, type: 3}
+  - Honey: {fileID: 5905787079689547644, guid: 8f68be934f161c847960990971e0cf8d, type: 3}
+  - Lemon: {fileID: 3869103736376375937, guid: 25d41e33818166e4daf4f865c283c866, type: 3}
+  - Onion: {fileID: 2443011406661634894, guid: 7f4de631bace3584c8d99284e76b6b6e, type: 3}
+  - Shrimp: {fileID: 2386148423404545598, guid: 2af750eb11b0b654d9be1433b9b862f3, type: 3}
+  - Wine: {fileID: 556358936056849239, guid: 8c5fa0c151e2bb34aa8d9e15cd3ecbc9, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
