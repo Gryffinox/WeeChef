@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 346038204}
   - component: {fileID: 346038203}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,7 +338,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 5b58f2d6194e5b348863dcc1c99a4556, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -358,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 346038202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 2, z: 0}
-  m_LocalScale: {x: 45, y: 45, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -670,6 +670,14 @@ PrefabInstance:
     - target: {fileID: 7381488612145366086, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381488612145366086, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381488612145366086, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7381488612145366086, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1001,7 +1009,7 @@ GameObject:
   - component: {fileID: 1885139529}
   - component: {fileID: 1885139528}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI Player Numbers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
