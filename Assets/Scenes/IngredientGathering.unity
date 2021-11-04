@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -608,6 +609,18 @@ MonoBehaviour:
   Onion: {fileID: 2443011406661634894, guid: 7f4de631bace3584c8d99284e76b6b6e, type: 3}
   Shrimp: {fileID: 2386148423404545598, guid: 2af750eb11b0b654d9be1433b9b862f3, type: 3}
   Wine: {fileID: 556358936056849239, guid: 8c5fa0c151e2bb34aa8d9e15cd3ecbc9, type: 3}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e112154b179f14dcbab424d394fa3ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &643685527
 PrefabInstance:
   m_ObjectHideFlags: 0

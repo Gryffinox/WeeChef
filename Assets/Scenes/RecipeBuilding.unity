@@ -1068,7 +1068,6 @@ GameObject:
   m_Component:
   - component: {fileID: 493271506}
   - component: {fileID: 493271505}
-  - component: {fileID: 493271504}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1076,14 +1075,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &493271504
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493271503}
-  m_Enabled: 1
 --- !u!20 &493271505
 Camera:
   m_ObjectHideFlags: 0
@@ -1093,8 +1084,8 @@ Camera:
   m_GameObject: {fileID: 493271503}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 0.9843137, b: 0.7607843, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1135,7 +1126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493271503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 2, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1850,7 +1841,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ingredient Hand
+  m_Text: Show Ingredient Hand
 --- !u!222 &1128688561
 CanvasRenderer:
   m_ObjectHideFlags: 0
