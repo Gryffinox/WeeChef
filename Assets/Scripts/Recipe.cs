@@ -7,9 +7,10 @@ public class Recipe : MonoBehaviour
 {
     private List<string> ingredientsOfRecipe;
     private string recipeName;
-    private string recipeType;
+    public enum CuisineTypes { French, Italian, Japanese, Indian, Mediterranean, SouthEastAsian, Caribbean }
+    private CuisineTypes recipeType; // french, italian, mediterranean, etc.
 
-    public Recipe(string name, string type, List<string> ingredients)
+    public Recipe(string name, CuisineTypes type, List<string> ingredients)
     {
         recipeName = name;
         recipeType = type;
@@ -26,8 +27,8 @@ public class Recipe : MonoBehaviour
     {
         string ingredients = "";
         for (int i = 0; i < ingredientsOfRecipe.Count - 1; i++)
-            ingredients += ingredientsOfRecipe[i] + ", ";
-        ingredients += ingredientsOfRecipe[ingredientsOfRecipe.Count - 1];
+            ingredients += "\n- " + ingredientsOfRecipe[i];
+        ingredients += "\n- " + ingredientsOfRecipe[ingredientsOfRecipe.Count - 1];
         return ingredients;
     }
 
@@ -35,6 +36,11 @@ public class Recipe : MonoBehaviour
     public List<string> getIngredientsOfRecipeList()
     {
         return ingredientsOfRecipe;
+    }
+
+    public override string ToString()
+    {
+        return getRecipeName() + ":" + getIngredientsOfRecipeString();
     }
 
 }
