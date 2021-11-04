@@ -12,7 +12,7 @@ public class IngredientSpawn : MonoBehaviour {
     void Start() {
         Tiles = new GameObject[MapSize, MapSize];
         //Get ingredientlist from ingredient list script (both scripts attached to main camera)
-        List<GameObject> ingredientList = GetComponent<IngredientList>().getIngredientList(); ;
+        List<GameObject> ingredientList = GetComponent<IngredientList>().getIngredientList();
         //fill out the tiles
         for (int column = 0; column < MapSize; column++) {
             for (int row = 0; row < MapSize; row++) {
