@@ -48,11 +48,11 @@ public class RecipeList : MonoBehaviour
     // Will use a text reading code later, for now it's all hardcoded
     public void CreateRecipes()
     {
-        croissantIngredients = new List<string>() { "dry goods", "dairy" };
-        souffleIngredients = new List<string>() { "dry goods", "dairy x2" };
-        cassouletIngredients = new List<string>() { "dry goods", "pork/charcuterie", "poultry" };
-        ratatouilleIngredients = new List<string>() { "allium", "garden vegetables x3" };
-        coqauvinIngredients = new List<string>() { "poultry", "pork / charcuterie", "liquid goods", "root vegetables" };
+        croissantIngredients = new List<string>() { "flour (dry goods)", "butter (dairy)" };
+        souffleIngredients = new List<string>() { "flour (dry goods)", "butter (dairy)", "eggs (dairy)" };
+        cassouletIngredients = new List<string>() { "beans (dry goods)", "sausages (pork)", "duck (poultry)" };
+        ratatouilleIngredients = new List<string>() { "garlic (allium)", "tomatoes (garden veg)", "zucchini (garden veg)", "eggplants (garden veg)" };
+        coqauvinIngredients = new List<string>() { "hicken (poultry)", "bacon (pork)", "wine (liquid goods)", "mushrooms (root veg)" };
 
         Croissant = new Recipe("Croissant", Recipe.CuisineTypes.French, croissantIngredients);
         Souffle = new Recipe("Soufflé", Recipe.CuisineTypes.French, souffleIngredients);
@@ -67,7 +67,7 @@ public class RecipeList : MonoBehaviour
         for (int i = 0; i < recipeList.Count; i++)
         {
             // get the recipe name + ingredients
-            recipeText.text += "\n" + recipeList[i].getRecipeName() + ": "
+            recipeText.text += "\n  " + recipeList[i].getRecipeName() + ": "
                 + recipeList[i].getIngredientsOfRecipeString();
         }
     }

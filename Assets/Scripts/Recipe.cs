@@ -27,8 +27,8 @@ public class Recipe : MonoBehaviour
     {
         string ingredients = "";
         for (int i = 0; i < ingredientsOfRecipe.Count - 1; i++)
-            ingredients += "\n- " + ingredientsOfRecipe[i];
-        ingredients += "\n- " + ingredientsOfRecipe[ingredientsOfRecipe.Count - 1];
+            ingredients += "\n - " + ingredientsOfRecipe[i];
+        ingredients += "\n - " + ingredientsOfRecipe[ingredientsOfRecipe.Count - 1];
         return ingredients;
     }
 
