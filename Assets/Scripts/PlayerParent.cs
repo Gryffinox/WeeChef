@@ -15,6 +15,9 @@ public class PlayerParent : MonoBehaviour
     private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4}
     private enum TurnStates { SelectMovement = 0, SelectAction = 1};
 
+    private Animator[] mAnimator;
+    private bool isMoving;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class PlayerParent : MonoBehaviour
         TurnState = (int)TurnStates.SelectMovement;
         UI = GameObject.Find("PlayerUI").GetComponent<UIElements>();
         Cursor.transform.position = Players[ActivePlayerIndex].transform.position;
+        mAnimator = GetComponentsInChildren<Animator>();
+        isMoving = false;
     }
 
     // Update is called once per frame
@@ -42,6 +47,8 @@ public class PlayerParent : MonoBehaviour
                 break;
             default: break;
         }
+
+        Animate();
     }
 
     private int GetDirectionInput() {
@@ -107,5 +114,44 @@ public class PlayerParent : MonoBehaviour
         }
         TurnState = (int)TurnStates.SelectMovement;
         Cursor.transform.position = Players[ActivePlayerIndex].transform.position;
+    }
+
+    private void Animate()
+    {
+        if (ActivePlayerIndex == 0)
+        {
+            mAnimator[0].SetBool("isMoving", true);
+        }
+        else
+        {
+            mAnimator[0].SetBool("isMoving", false);
+        }
+
+        if (ActivePlayerIndex == 1)
+        {
+            mAnimator[1].SetBool("isMoving", true);
+        }
+        else
+        {
+            mAnimator[1].SetBool("isMoving", false);
+        }
+
+        if (ActivePlayerIndex == 2)
+        {
+            mAnimator[2].SetBool("isMoving", true);
+        }
+        else
+        {
+            mAnimator[2].SetBool("isMoving", false);
+        }
+
+        if (ActivePlayerIndex == 3)
+        {
+            mAnimator[3].SetBool("isMoving", true);
+        }
+        else
+        {
+            mAnimator[3].SetBool("isMoving", false);
+        }
     }
 }
