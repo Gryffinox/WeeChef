@@ -6,9 +6,13 @@ public class MainGame : MonoBehaviour
 {
     public const int MapSize = 5;
     public static GameObject[,] Tiles;
+    private int GamePhase;
+
+    private enum GamePhases { IngredientGathering = 0, RecipeBuilding = 1};
     // Start is called before the first frame update
     void Start()
     {
+        GamePhase = 0;      //0 tile ingredient gathering, 1 recipe building phase
         //Initialize tiles
         Tiles = new GameObject[MapSize, MapSize];
         //Get ingredientlist from ingredient list script (both scripts attached to main camera)
@@ -26,6 +30,13 @@ public class MainGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        switch (GamePhase) {
+            case (int)GamePhases.IngredientGathering:
+                //Do ingredient gathering here
+                break;
+            case (int)GamePhases.RecipeBuilding:
+                //Do recipe building here
+                break;
+        }
     }
 }
