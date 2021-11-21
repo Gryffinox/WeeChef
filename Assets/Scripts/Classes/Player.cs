@@ -9,11 +9,11 @@ public class Player : MonoBehaviour
     private List<Recipe> recipeHand;
     private int funds;
 
-    private void Awake()
-    {
-        // Hopefully will allow us to access the player information across scenes
-        DontDestroyOnLoad(transform.gameObject);
-    }
+    //private void Awake()
+    //{
+    //    // Hopefully will allow us to access the player information across scenes
+    //    DontDestroyOnLoad(transform.gameObject);
+    //}
 
     private void Start()
     {

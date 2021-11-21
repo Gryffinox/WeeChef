@@ -24,7 +24,7 @@ public class IngredientInfo : MonoBehaviour
     public void DisplayIngredientInfo()
     {
         ingredientInfo.text += "Name: " + "Cheese"
-            + "\nType: " + Ingredient.IngredientTypeEnum.Dairy
+            + "\nType: " + "Dairy"
             + "\nCost: " + GenerateRandomCost().ToString("F2") + "$";
     }
 

@@ -28,7 +28,8 @@ public class IngredientList : MonoBehaviour{
         ingredientList.Add(Shrimp);
         ingredientList.Add(Wine);
 
-        for(int i = 0; i < ingredientList.Count; i++) {
+        for (int i = 0; i < ingredientList.Count; i++)
+        {
             ingredientList[i].GetComponent<Ingredient>().setId(i);
         }
     }
