@@ -7,6 +7,7 @@ public class MainGame : MonoBehaviour
     public const int MapSize = 5;
     public static GameObject[,] Tiles;
     private int GamePhase;
+    List<GameObject> ingredientList;
 
     private enum GamePhases { IngredientGathering = 0, RecipeBuilding = 1};
     // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class MainGame : MonoBehaviour
         //Initialize tiles
         Tiles = new GameObject[MapSize, MapSize];
         //Get ingredientlist from ingredient list script (both scripts attached to main camera)
-        List<GameObject> ingredientList = GetComponent<IngredientList>().getIngredientList();
+        ingredientList = GetComponent<IngredientList>().getIngredientList();
         //fill out the tiles
         for (int column = 0; column < MapSize; column++) {
             for (int row = 0; row < MapSize; row++) {

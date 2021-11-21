@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerParent : MonoBehaviour
 {
-    private Player[] Players;
-
-    public int ActivePlayerIndex;
+    public static Player[] Players;
+    public static int ActivePlayerIndex;
     private int TurnState;
     public GameObject Cursor;
 
@@ -17,7 +16,11 @@ public class PlayerParent : MonoBehaviour
 
     private Animator[] mAnimator;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     void Start()
     {
         Players = GetComponentsInChildren<Player>();
@@ -30,7 +33,6 @@ public class PlayerParent : MonoBehaviour
         Animate();
     }
 
-    // Update is called once per frame
     void Update()
     {
         switch (TurnState) {
@@ -48,6 +50,11 @@ public class PlayerParent : MonoBehaviour
             default: break;
         }
         Animate();
+    }
+
+    public static Player GetActivePlayer()
+    {
+        return Players[ActivePlayerIndex];
     }
 
     private int GetDirectionInput() {
@@ -98,6 +105,12 @@ public class PlayerParent : MonoBehaviour
     }
 
     public void AcceptCard() {
+        // Adding Ingredient Card to the active player
+        // IS A GAMEOBJECT FOR NOW, NEEDS TO BE TRANSFORMED TO AN INGREDIENT ********
+        GameObject ingredientToAdd = MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y];
+        Players[ActivePlayerIndex].AddCardToIngredientHand(ingredientToAdd);
+        Players[ActivePlayerIndex].GetIngredientHand(); // will print to make sure
+
         MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y].SetActive(false);
         EndTurn();
     }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Ingredient : MonoBehaviour {
+public class Ingredient : MonoBehaviour
+{
     //Fudge c#, we write it like Java
     private int Id; // { get; private set; }
     private string IngredientName; // { get; set; }
@@ -11,6 +12,14 @@ public class Ingredient : MonoBehaviour {
     private float IngredientCost;
     //Text ingredientInfo;
     public enum IngredientTypeEnum { Dry_Goods, Dairy, Pork, Poultry, Allium, Garden_Vegetables, Liquid_Goods, Root_Vegetables }
+
+    // Parameter Constructor
+    public Ingredient(string name, IngredientTypeEnum type, float cost)
+    {
+        IngredientName = name;
+        IngredientType = type;
+        IngredientCost = cost;
+    }
 
     public void Start() {
         Id = 0;
