@@ -806,16 +806,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf14594abba4b41429cb4253291d7ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Apple: {fileID: 2054383144504998996, guid: 14311bd24749cee4abba0a89eeb2a7bb, type: 3}
-  Bacon: {fileID: 366462111978016074, guid: 8ca31a57fc810784095e401dc24ce40d, type: 3}
-  Cheese: {fileID: 271654529408488740, guid: d193d354703b06b4bbb0d385ed21c79b, type: 3}
-  Eggplant: {fileID: 1565854530937673694, guid: 95b42d5eaa735e14fbd3e55eefe5175e, type: 3}
-  Eggs: {fileID: 4440191472127560759, guid: 46f386e08269a754693d14b386414a67, type: 3}
-  Honey: {fileID: 5905787079689547644, guid: 8f68be934f161c847960990971e0cf8d, type: 3}
-  Lemon: {fileID: 3869103736376375937, guid: 25d41e33818166e4daf4f865c283c866, type: 3}
-  Onion: {fileID: 2443011406661634894, guid: 7f4de631bace3584c8d99284e76b6b6e, type: 3}
-  Shrimp: {fileID: 2386148423404545598, guid: 2af750eb11b0b654d9be1433b9b862f3, type: 3}
-  Wine: {fileID: 556358936056849239, guid: 8c5fa0c151e2bb34aa8d9e15cd3ecbc9, type: 3}
+  ingredientPrefab: {fileID: 6777712036712240414, guid: c293df38fc1c240b8a4123bf86797474, type: 3}
+  onionSprite: {fileID: 21300000, guid: 8fdcf9a56ea7d8a4fb2f76292efe48bf, type: 3}
+  cheeseSprite: {fileID: 21300000, guid: 31ce55c2474361d4fab07984f18f9145, type: 3}
+  ribsSprite: {fileID: 21300000, guid: a480ec4b99902534c8e7b392d640d20a, type: 3}
+  chickenSprite: {fileID: 21300000, guid: 87b0be14180e9be4681e14b64915d462, type: 3}
+  porkSprite: {fileID: 21300000, guid: d139b48a372802a42b221ad4a1f80911, type: 3}
+  potatoSprite: {fileID: 21300000, guid: 7dd21f826a119274bb085376073e5cbd, type: 3}
+  breadSprite: {fileID: 21300000, guid: c728868677dfad541b6543a1f2aec055, type: 3}
+  tomatoSprite: {fileID: 21300000, guid: bd166eb19a3cbf24194aec06da39cf2e, type: 3}
+  appleSprite: {fileID: 21300000, guid: 61d01e8616313344b978a6518fd86ed6, type: 3}
+  oliveSprite: {fileID: 21300000, guid: 8201bc85b4ce96745b431622ca8e7eb2, type: 3}
+  fishSprite: {fileID: 21300000, guid: 9008780582d3efe4fb4acfc2a510a77d, type: 3}
+  wineSprite: {fileID: 21300000, guid: ac99105dfc2ca304fbc9c37d3dff35e1, type: 3}
+  brownieSprite: {fileID: 21300000, guid: d183b5f1a5cddc445a9e4277eec9b936, type: 3}
+  pepperRedSprite: {fileID: 21300000, guid: 0699585d82b9b5f49bee6abb309077c4, type: 3}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,8 +1356,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1396640218}
   - component: {fileID: 1396640217}
+  - component: {fileID: 1396640219}
   m_Layer: 0
-  m_Name: LoadRecipes
+  m_Name: LoadResources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1384,6 +1390,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1396640219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396640216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4e69fd2041643c8858a32e31bd8b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1433209056
 GameObject:
   m_ObjectHideFlags: 0

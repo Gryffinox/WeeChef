@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RecipeList : MonoBehaviour
 {
     private static List<Recipe> recipes;
-    System.Random rand = new System.Random();
+    static System.Random rand = new System.Random();
 
     void Start()
     {
@@ -14,7 +14,8 @@ public class RecipeList : MonoBehaviour
         DisplayRecipe();
     }
 
-    // Displays a random recipe in the Recipe Bank from the Recipe List 
+    // Displays a random recipe in the Recipe Bank from the Recipe List
+    // The same recipe can appear more than once
     public void DisplayRecipe()
     {
         Text textObject = gameObject.GetComponentInChildren<Text>();

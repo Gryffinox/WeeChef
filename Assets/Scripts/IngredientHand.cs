@@ -7,23 +7,23 @@ public class IngredientHand : MonoBehaviour
 {
     Player player;
     Text ingredientHandText;
-    List<GameObject> ingredientHand; // needs to become a list of Ingredient, not gameobject
+    List<Ingredient> ingredientHand; // needs to become a list of Ingredient, not gameobject
     string strToDisplay = "";
 
     void Start()
     {
         player = PlayerParent.GetActivePlayer();
         ingredientHandText = gameObject.GetComponentInChildren<Text>();
-        ingredientHand = new List<GameObject>();
+        ingredientHand = new List<Ingredient>();
         DisplayIngredientHand();
     }
 
     private void DisplayIngredientHand()
     {
         strToDisplay = "";
-        strToDisplay += player.name + ": ";
+        strToDisplay += player.name + ":\n";
         for (int i = 0; i < player.GetIngredientCount(); i++)
-            strToDisplay += player.GetIngredientHand()[i].name + "\n";
+            strToDisplay += player.GetIngredientHand()[i].ToString() + "\n";
         ingredientHandText.text = strToDisplay;
     }
 
