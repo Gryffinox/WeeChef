@@ -106,7 +106,7 @@ public class PlayerParent : MonoBehaviour
 
     public void AcceptCard() {
         // Adding Ingredient Card to the active player's Ingredient Hand
-        Ingredient ingredientToAdd = MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y];
+        IngredientCard ingredientToAdd = MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y];
         Players[ActivePlayerIndex].AddCardToIngredientHand(ingredientToAdd);
         MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y].gameObject.SetActive(false);
         EndTurn();
@@ -128,8 +128,8 @@ public class PlayerParent : MonoBehaviour
     private void Animate()
     {
         for(int i = 0; i < Players.Length; i++) {
-            mAnimator[i].SetBool("isMoving", false);
+            mAnimator[i].ResetTrigger("isMoving");
         }
-        mAnimator[ActivePlayerIndex].SetBool("isMoving", false);
+        mAnimator[ActivePlayerIndex].SetTrigger("isMoving");
     }
 }

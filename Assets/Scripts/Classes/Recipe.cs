@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Recipe
 {
-    private List<Ingredient> ingredients;
+    private List<IngredientCard> ingredients;
     private string recipeName;
     private string recipeType;
 
-    public Recipe(string name, string type, List<Ingredient> ingredients)
+    public Recipe(string name, string type, List<IngredientCard> ingredients)
     {
         recipeName = name;
         recipeType = type;
@@ -32,7 +32,7 @@ public class Recipe
     }
 
     // Returns as a list of strings UNUSED
-    public List<Ingredient> getIngredientsOfRecipeList()
+    public List<IngredientCard> getIngredientsOfRecipeList()
     {
         return ingredients;
     }

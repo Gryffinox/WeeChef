@@ -7,14 +7,14 @@ public class IngredientHand : MonoBehaviour
 {
     Player player;
     Text ingredientHandText;
-    List<Ingredient> ingredientHand; // needs to become a list of Ingredient, not gameobject
+    List<IngredientCard> ingredientHand; // needs to become a list of Ingredient, not gameobject
     string strToDisplay = "";
 
     void Start()
     {
         player = PlayerParent.GetActivePlayer();
         ingredientHandText = gameObject.GetComponentInChildren<Text>();
-        ingredientHand = new List<Ingredient>();
+        ingredientHand = new List<IngredientCard>();
         DisplayIngredientHand();
     }
 

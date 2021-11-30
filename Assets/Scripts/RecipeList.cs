@@ -10,7 +10,7 @@ public class RecipeList : MonoBehaviour
 
     void Start()
     {
-        recipes = LoadRecipes.getAllRecipes();
+        //recipes = LoadRecipes.getAllRecipes();
         DisplayRecipe();
     }
 
@@ -18,8 +18,8 @@ public class RecipeList : MonoBehaviour
     // The same recipe can appear more than once
     public void DisplayRecipe()
     {
-        Text textObject = gameObject.GetComponentInChildren<Text>();
-        textObject.text = recipes[rand.Next(0, recipes.Count)].ToString();
+        //Text textObject = gameObject.GetComponentInChildren<Text>();
+        //textObject.text = recipes[rand.Next(0, recipes.Count)].ToString();
 
     }
 

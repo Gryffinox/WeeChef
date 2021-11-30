@@ -5,19 +5,19 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private int playerID;
-    private List<Ingredient> ingredientHand; // changed it from GameObject to list of Ingredient
+    private List<IngredientCard> ingredientHand; // changed it from GameObject to list of Ingredient
     private List<Recipe> recipeHand;
     private int funds;
 
     private void Start()
     {
-        ingredientHand = new List<Ingredient>(); // changed it from GameObject to list of Ingredient
+        ingredientHand = new List<IngredientCard>(); // changed it from GameObject to list of Ingredient
         recipeHand = new List<Recipe>();
         funds = 0;
     }
 
     // parameter changed from GameObject to Ingredient
-    public void AddCardToIngredientHand(Ingredient ingredient)
+    public void AddCardToIngredientHand(IngredientCard ingredient)
     {
         ingredientHand.Add(ingredient);
     }
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     }
 
     // changed from GameObject to list of Ingredient
-    public List<Ingredient> GetIngredientHand()
+    public List<IngredientCard> GetIngredientHand()
     {
         // TEST to make sure it returns the right stuff.
         if (ingredientHand.Count == 0)

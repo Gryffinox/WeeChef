@@ -1,147 +1,19 @@
-+Allium
-Chives
-Garlic
-Onions
-Pearl Onions
-Spring onions
-
-+Beef/Veal
-Beef bones
-Beef sirloin
-Goat cubes
-Lamb cubes
-Minced meat
-Minced lamb
-Veal scallops
-Wagyu sirloin
-
-+Confectionery
-Brown sugar
-Chocolate
-Honey
-Sugar
-
-+Dairy
-Butter
-Cream
-Coconut Milk
-Eggs
-Ghee
-Gruyere
-Paneer
-Mozzarella
-Mascarpone
-Milk
-Tofu
-Yogurt
-
-+Dry Goods
-Arborio rice
-Beans
-Chickpeas
-Couscous
-Flour
-Hazelnuts
-Miso paste
-Pistachios
-Peanuts
-Rice
-Rice flour
-Rice paper
-Wheat flour
-Sesame seeds
-
-+Fish/Shellfish
-Bonito
-Cod
-Monkfish
-Mussels
-Salmon
-Shrimp
-
-+Fruits
-Banana
-Jackfruit
-Kiwi
-Lemon
-Plantains
-Strawberries
-
-+Garden Vegetables
-Chili peppers
-Cucumber
-Eggplants
-Fennel
-Green Bell Pepper
-Okra
-Peas
-Tomatoes
-Zucchini
-
-+Herbs/Leafy Greens
-Amaranth
-Basil
-Cabbage
-Cilantro
-Grape leaves
-Herbs
-Lettuce
-Parsley
-Sage
-Spinach
-Thai basil
-
-+Liquid Goods
-Olive oil
-Rice vinegar
-Sake
-Sesame oil
-Soy sauce
-Tahini
-Vegetable Oil
-Vinegar
-Wine
-
-+Pork/Charcuterie
-Andouille
-Bacon
-Minced pork
-Pork belly
-Pork bones
-Pork cubes
-Pork shoulder
-Proscuitto
-Sausages
-
-+Poultry
-Chicken
-Chicken breast
-Chicken cubes
-Chicken Legs
-Duck
-Whole chicken
-
-+Root Vegetables/Mushrooms
-Carrots
-Enoki
-Ginger
-Mushrooms
-Porcini
-Potatoes
-Shiitake
-Turnips
-
-+Spices
-Allspice
-Baharat
-Cardamom
-Cinnamon
-Cloves
-Cumin
-Curry
-Five-spice
-Garam Masala
-Masala
-Pepper
-Saffron
-Star Anise
+{
+"ingredients":
+[
+{"Id": 1, "Name": "Allium", "Count": 7, "Cost": 2},
+{"Id": 2, "Name": "Dairy", "Count": 7, "Cost": 3},
+{"Id": 3, "Name": "Beef / Red Meat", "Count": 2, "Cost": 4},
+{"Id": 4, "Name": "Poultry", "Count": 2, "Cost": 3},
+{"Id": 5, "Name": "Pork / Charcuterie", "Count": 3, "Cost": 3},
+{"Id": 6, "Name": "Root Vegetables / Mushrooms", "Count": 4, "Cost": 2},
+{"Id": 7, "Name": "Dry Goods", "Count": 4, "Cost": 2},
+{"Id": 8, "Name": "Garden Vegetables", "Count": 4, "Cost": 3},
+{"Id": 9, "Name": "Fruits", "Count": 2, "Cost": 3},
+{"Id": 10,"Name": " Herbs / Leafy Greens", "Count": 4, "Cost": 3},
+{"Id": 11,"Name": " Fish / Shellfish", "Count": 3, "Cost": 4},
+{"Id": 12,"Name": " Liquid Goods", "Count": 4, "Cost": 3},
+{"Id": 13,"Name": " Confectionery", "Count": 2, "Cost": 3},
+{"Id": 14,"Name": " Spices", "Count" : 2, "Cost" : 4}
+]
+}
