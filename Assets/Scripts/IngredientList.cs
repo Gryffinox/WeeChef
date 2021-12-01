@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class IngredientList : MonoBehaviour {
 
-    private const int DeckSize = 50;
+    private int DeckSize = 50;
 
     //The 14 different ingredient types aka cards possible
-    private List<IngredientCard> IngredientTypes;
+    private List<Ingredient> IngredientTypes;
+
+    //Decks
+    private List<Ingredient> IngredientDeck;
+    private List<Ingredient> DiscardPile;
 
     //text file with the ingredient list
     [SerializeField] TextAsset IngredientsFile;
@@ -29,29 +33,36 @@ public class IngredientList : MonoBehaviour {
     [SerializeField] Sprite brownieSprite;
     [SerializeField] Sprite pepperRedSprite;
 
-    List<Sprite> spriteList;
+    Dictionary<int, Sprite> spriteList;
 
     public void Start() {
+
+        //Ingredient Loading
+        IngredientTypes = new List<Ingredient>();
         LoadIngredients();
 
-        //ingredientCards = LoadIngredients.getAllIngredientCards();
-        spriteList = new List<Sprite>();
+        //Deck building
+        IngredientDeck = new List<Ingredient>();
+        DiscardPile = new List<Ingredient>();
+        PopulateDeck();
 
+        //Sprites
+        spriteList = new Dictionary<int, Sprite>();
         //Manually added. Order matters so that the right sprite is assigned to each ingredient
-        spriteList.Add(onionSprite);
-        spriteList.Add(cheeseSprite);
-        spriteList.Add(ribsSprite);
-        spriteList.Add(chickenSprite);
-        spriteList.Add(porkSprite);
-        spriteList.Add(potatoSprite);
-        spriteList.Add(breadSprite);
-        spriteList.Add(tomatoSprite);
-        spriteList.Add(appleSprite);
-        spriteList.Add(oliveSprite);
-        spriteList.Add(fishSprite);
-        spriteList.Add(wineSprite);
-        spriteList.Add(brownieSprite);
-        spriteList.Add(pepperRedSprite);
+        spriteList.Add(IngredientTypes[0].Id, onionSprite);
+        spriteList.Add(IngredientTypes[1].Id, cheeseSprite);
+        spriteList.Add(IngredientTypes[2].Id, ribsSprite);
+        spriteList.Add(IngredientTypes[3].Id, chickenSprite);
+        spriteList.Add(IngredientTypes[4].Id, porkSprite);
+        spriteList.Add(IngredientTypes[5].Id, potatoSprite);
+        spriteList.Add(IngredientTypes[6].Id, breadSprite);
+        spriteList.Add(IngredientTypes[7].Id, tomatoSprite);
+        spriteList.Add(IngredientTypes[8].Id, appleSprite);
+        spriteList.Add(IngredientTypes[9].Id, oliveSprite);
+        spriteList.Add(IngredientTypes[10].Id, fishSprite);
+        spriteList.Add(IngredientTypes[11].Id, wineSprite);
+        spriteList.Add(IngredientTypes[12].Id, brownieSprite);
+        spriteList.Add(IngredientTypes[13].Id, pepperRedSprite);
 
     }
 
@@ -64,72 +75,51 @@ public class IngredientList : MonoBehaviour {
     // Will receive the type of ingredient
     // and assign the right sprite to the Ingredient prefab
     public void assignSprite(int id) {
-        //switch (type) {
-        //    case "Allium":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[0];
-        //        break;
-        //    case "Dairy":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[1];
-        //        break;
-        //    case "Beef/Veal":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[2];
-        //        break;
-        //    case "Poultry":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[3];
-        //        break;
-        //    case "Pork/Charcuterie":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[4];
-        //        break;
-        //    case "Root Vegetables/Mushrooms":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[5];
-        //        break;
-        //    case "Dry Goods":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[6];
-        //        break;
-        //    case "Garden Vegetables":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[7];
-        //        break;
-        //    case "Fruits":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[8];
-        //        break;
-        //    case "Herbs/Leafy Greens":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[9];
-        //        break;
-        //    case "Fish/Shellfish":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[10];
-        //        break;
-        //    case "Liquid Goods":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[11];
-        //        break;
-        //    case "Confectionery":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[12];
-        //        break;
-        //    case "Spices":
-        //        ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[13];
-        //        break;
-        //    default:
-        //        Debug.LogError("Unknown ingredient type passed. Could not assign sprite");
-        //        Debug.Log(type + ": " + ingredientPrefab.ToString());
-        //        break;
-        //}
         ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[id];
-    }
-
-    // Returns the list of Ingredient Cards
-    public List<IngredientCard> getIngredientCards() {
-        return IngredientTypes;
     }
 
     private void LoadIngredients() {
         Ingredients ingredients = JsonUtility.FromJson<Ingredients>(IngredientsFile.text);
         foreach (Ingredient ingredient in ingredients.ingredients) {
-            //Debug.Log(ingredient);
-            IngredientCard aCard = new IngredientCard(
-                ingredient.Id,
-                ingredient.Name,
-                ingredient.Count,
-                ingredient.Cost);
-            IngredientTypes.Add(aCard);
+            IngredientTypes.Add(ingredient);
         }
     }
+
+    private void PopulateDeck() {
+        DeckSize = 0;
+        foreach(Ingredient ingredient in IngredientTypes) {
+            DeckSize += ingredient.Count;
+            for(int i = 0; i < ingredient.Count; i++) {
+                IngredientDeck.Add(ingredient);
+            }
+        }
+        Shuffle(ref IngredientDeck);
+    }
+    private void Shuffle(ref List<Ingredient> deck) {
+        //fisher yates shuffle algorithm
+        //in place swap O(n)
+        int i = deck.Count;
+        while (i > 1) {
+            i--;
+            int s = Random.Range(0, i + 1);
+            Ingredient swap = deck[s];
+            deck[s] = deck[i];
+            deck[i] = swap;
+        }
+    }
+
+    public Ingredient DrawCard() {
+        if(IngredientDeck.Count == 0) {
+            Shuffle(ref DiscardPile);
+            IngredientDeck.AddRange(DiscardPile);
+        }
+        Ingredient drawn = IngredientDeck[0];
+        IngredientDeck.RemoveAt(0);
+        return drawn;
+    }
+
+    public void DiscardCard(Ingredient card) {
+        DiscardPile.Add(card);
+    }
+
 }

@@ -106,9 +106,9 @@ public class PlayerParent : MonoBehaviour
 
     public void AcceptCard() {
         // Adding Ingredient Card to the active player's Ingredient Hand
-        IngredientCard ingredientToAdd = MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y];
-        Players[ActivePlayerIndex].AddCardToIngredientHand(ingredientToAdd);
-        MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y].gameObject.SetActive(false);
+        //Ingredient ingredientToAdd = MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y];
+        //Players[ActivePlayerIndex].AddCardToIngredientHand(ingredientToAdd);
+        //MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y].gameObject.SetActive(false);
         EndTurn();
     }
 
