@@ -980,6 +980,7 @@ GameObject:
   - component: {fileID: 437152717}
   - component: {fileID: 437152716}
   - component: {fileID: 437152718}
+  - component: {fileID: 437152719}
   m_Layer: 5
   m_Name: Recipe5
   m_TagString: Untagged
@@ -1055,6 +1056,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecipesFile: {fileID: 4900000, guid: 55d85804c18404e21a18ebd72038adff, type: 3}
+  IngredientsFile: {fileID: 4900000, guid: a6b8cf3ac3138471a8c82591eeaa8a4f, type: 3}
+--- !u!114 &437152719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437152714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &493271503
@@ -1861,6 +1876,7 @@ GameObject:
   - component: {fileID: 1152501340}
   - component: {fileID: 1152501339}
   - component: {fileID: 1152501341}
+  - component: {fileID: 1152501342}
   m_Layer: 5
   m_Name: Recipe4
   m_TagString: Untagged
@@ -1938,6 +1954,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RecipesFile: {fileID: 4900000, guid: 55d85804c18404e21a18ebd72038adff, type: 3}
+  IngredientsFile: {fileID: 4900000, guid: a6b8cf3ac3138471a8c82591eeaa8a4f, type: 3}
+--- !u!114 &1152501342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152501337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1206509461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,6 +1980,7 @@ GameObject:
   - component: {fileID: 1206509464}
   - component: {fileID: 1206509463}
   - component: {fileID: 1206509465}
+  - component: {fileID: 1206509466}
   m_Layer: 5
   m_Name: Recipe2
   m_TagString: Untagged
@@ -2025,6 +2056,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecipesFile: {fileID: 4900000, guid: 55d85804c18404e21a18ebd72038adff, type: 3}
+  IngredientsFile: {fileID: 4900000, guid: a6b8cf3ac3138471a8c82591eeaa8a4f, type: 3}
+--- !u!114 &1206509466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206509461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1301969782
@@ -2365,6 +2410,7 @@ GameObject:
   - component: {fileID: 1706256238}
   - component: {fileID: 1706256237}
   - component: {fileID: 1706256239}
+  - component: {fileID: 1706256240}
   m_Layer: 5
   m_Name: Recipe1
   m_TagString: Untagged
@@ -2440,6 +2486,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecipesFile: {fileID: 4900000, guid: 55d85804c18404e21a18ebd72038adff, type: 3}
+  IngredientsFile: {fileID: 4900000, guid: a6b8cf3ac3138471a8c82591eeaa8a4f, type: 3}
+--- !u!114 &1706256240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706256235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1762092710
@@ -2846,6 +2906,7 @@ GameObject:
   - component: {fileID: 2005055462}
   - component: {fileID: 2005055461}
   - component: {fileID: 2005055463}
+  - component: {fileID: 2005055464}
   m_Layer: 5
   m_Name: Recipe3
   m_TagString: Untagged
@@ -2921,5 +2982,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecipesFile: {fileID: 4900000, guid: 55d85804c18404e21a18ebd72038adff, type: 3}
+  IngredientsFile: {fileID: 4900000, guid: a6b8cf3ac3138471a8c82591eeaa8a4f, type: 3}
+--- !u!114 &2005055464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005055459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
