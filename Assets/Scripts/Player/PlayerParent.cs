@@ -56,19 +56,23 @@ public class PlayerParent : MonoBehaviour {
         mAnimator = GetComponentsInChildren<Animator>();
     }
 
-    void Update() {
-        Animate();
+    private void Update() {
+        //Set animator for the current player
+        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
     }
 
+    //for recipe building and anytime any player needs things
     public static Player GetActivePlayer() {
         return Players[PlayerTurnOrder[ActivePlayerIndex]];
     }
 
+    //move player ez pz
     public void MoveAction() {
         Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position = Cursor.transform.position;
         EndTurn();
     }
 
+    //buy ingredient at player coordinate
     public void BuyAction() {
         //Get coords of where the player is (coord of ingredient to be bought)
         int x = (int)Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position.x;
@@ -77,15 +81,19 @@ public class PlayerParent : MonoBehaviour {
         Ingredient ingredientToAdd = MainGameHandler.GetTileIngredient(x, y);
         //add it to player hand
         Players[PlayerTurnOrder[ActivePlayerIndex]].AddCardToIngredientHand(ingredientToAdd);
-        MainGameHandler.RemoveIngredient(x, y);
+        MainGameHandler.RemoveIngredient(x, y); //remove ingredient from map
         EndTurn();
     }
 
     public void EndTurn() {
-        ActivePlayerIndex++;
+        ActivePlayerIndex++;    //next player
         //if index exceeds our number of players, loop back to player 1 (index 0)
         if (ActivePlayerIndex >= Players.Length) {
             ActivePlayerIndex = 0;
+        }
+        //reset animators
+        for (int i = 0; i < Players.Length; i++) {
+            mAnimator[i].ResetTrigger("isMoving");
         }
         //move container to the next player
         CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
@@ -93,13 +101,6 @@ public class PlayerParent : MonoBehaviour {
         Cursor.transform.localPosition = new Vector3(0, 0, 0);
         //reset ui
         UIHandler.HideAllButtons();
-    }
-
-    private void Animate() {
-        for (int i = 0; i < Players.Length; i++) {
-            mAnimator[i].ResetTrigger("isMoving");
-        }
-        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
     }
 
 

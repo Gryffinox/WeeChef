@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    private int playerID;
+    private int playerID;   //TODO: Could be removed? PlayerParent handles ids
     private List<Ingredient> ingredientHand; // changed it from GameObject to list of Ingredient
     private List<Recipe> recipeHand;
     private int funds;
 
     private void Start() {
-        ingredientHand = new List<Ingredient>(); // changed it from GameObject to list of Ingredient
+        ingredientHand = new List<Ingredient>();    //changed it from GameObject to list of Ingredient
         recipeHand = new List<Recipe>();
-        funds = 10; //player starts with 10
+        funds = 10;                                 //player starts with 10
     }
 
     // parameter changed from GameObject to Ingredient

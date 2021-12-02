@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class IngredientGatheringUI : MonoBehaviour {
 
+    //UI elements
     [SerializeField] private Text TxtBox;
     [SerializeField] private GameObject ConfirmButton;
     [SerializeField] private GameObject BuyButton;
+    //Needed for the buttons. Buttons are used by players
     [SerializeField] private GameObject PlayerParentHandler;
 
     void Start() {
@@ -17,7 +19,6 @@ public class IngredientGatheringUI : MonoBehaviour {
         BuyButton.GetComponent<Button>().onClick.AddListener(pp.BuyAction);
     }
 
-    //functions that hide and show elements and info
     public void ShowConfirmButton() {
         HideAllButtons();
         ConfirmButton.SetActive(true);

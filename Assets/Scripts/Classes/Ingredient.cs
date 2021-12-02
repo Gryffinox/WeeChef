@@ -9,6 +9,7 @@ public class Ingredient {
     public int Count;
     public int Cost;
 
+    //constructor when passing ingredient back from map
     public Ingredient(int id, string name, int cost) {
         Id = id;
         Name = name;
@@ -17,11 +18,12 @@ public class Ingredient {
     }
 
     public override string ToString() {
-        return Name + " (id: " + Id + ", count: " + Count + ", cost: " + Cost + ")";
+        return Name + " (id: " + Id + ", cost: " + Cost + ")";
     }
 }
 
 [Serializable]
+//helper class for JSON parsing
 public class Ingredients {
     public Ingredient[] ingredients;
 }

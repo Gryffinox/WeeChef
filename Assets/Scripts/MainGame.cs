@@ -2,21 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainGame : MonoBehaviour
-{
+public class MainGame : MonoBehaviour {
     //Overall game variables
+    private enum GamePhases { IngredientGathering = 0, RecipeBuilding = 1 };
     private int GamePhase;
-    private enum GamePhases { IngredientGathering = 0, RecipeBuilding = 1};
 
-    private IngredientList IngredientHandler;
     //Ingredient Gathering
     public const int MapSize = 5;
     private GameObject[,] Tiles;
+    private IngredientList IngredientHandler;
 
-    void Start()
-    {
+    void Start() {
         GamePhase = 0;      //0 tile ingredient gathering, 1 recipe building phase
-
         // Initialize tiles with Ingredient objects
         Tiles = new GameObject[MapSize, MapSize];
 
@@ -41,9 +38,7 @@ public class MainGame : MonoBehaviour
         }
     }
 
-    //
-    void Update()
-    {
+    void Update() {
         switch (GamePhase) {
             case (int)GamePhases.IngredientGathering:
                 // Do ingredient gathering here
@@ -58,28 +53,34 @@ public class MainGame : MonoBehaviour
     //Getting and removing ingredients
     public Ingredient GetTileIngredient(int x, int y) {
         if (ValidCoords(x, y)) {
+            //returns the ingredient at coords if it exists
             return Tiles[x, y].GetComponent<IngredientCard>().GetIngredient();
         }
         else {
+            //game ded if game no give ingredient when asked
             throw new System.Exception("Empty tile at requested address: " + x + ", " + y);
         }
     }
 
     public void RemoveIngredient(int x, int y) {
-        if(ValidCoords(x, y)) {
+        if (ValidCoords(x, y)) {
+            //UNALIVE INGREDIENT
             Destroy(Tiles[x, y]);
         }
         else {
+            //game ded if game no remove ingredient when asked
             throw new System.Exception("Trying to remove ingredient at: " + x + ", " + y);
         }
     }
 
     //validate coords
     public bool ValidCoords(int x, int y) {
+        //if outside bounds of map
         if (x < 0 || x >= MapSize || y < 0 || y > MapSize) {
             //Debug.Log("Address (" + x + ", " + y + ") out of bounds");
             return false;
         }
+        //if no ingredient at coords
         if (Tiles[x, y] == null) {
             //Debug.Log("No ingredient at (" + x + ", " + y + ")");
             return false;
