@@ -14,7 +14,8 @@ public class Recipe
 
     public override string ToString()
     {
-        return RecipeName;
+        return RecipeName + " (Type: " + RecipeType + ")";
+
     }
 }
 
