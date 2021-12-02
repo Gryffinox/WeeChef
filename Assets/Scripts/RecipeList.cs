@@ -10,6 +10,9 @@ public class RecipeList : MonoBehaviour
     [SerializeField] TextAsset RecipesFile;
     [SerializeField] TextAsset IngredientsFile;
 
+    private Text[] RecipeText;
+    private RecipeCard DrawnCard;
+
 
     private static List<RecipeCard> RecipesDeck;
     static System.Random rand = new System.Random();
@@ -19,6 +22,14 @@ public class RecipeList : MonoBehaviour
         // Recipe Loading straight to deck
         RecipesDeck = new List<RecipeCard>();
         LoadRecipesToDeck();
+
+        RecipeText = GetComponentsInChildren<Text>();
+
+        for (int i = 0; i < RecipeText.Length; i++)
+        {
+            DrawnCard = DrawRecipeCard();
+            RecipeText[i].text = DrawnCard.ToString();
+        }
     }
 
     // Displays a random recipe in the Recipe Bank from the Recipe List

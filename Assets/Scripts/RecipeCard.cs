@@ -58,8 +58,19 @@ public class RecipeCard : MonoBehaviour
         return ingredients;
     }
 
+    public string getIngredientsOfRecipe()
+    {
+        string allIngredients = "";
+        foreach(Ingredient ingredient in ingredients)
+        {
+            allIngredients += ingredient.Name + ", ";
+        }
+
+        return allIngredients;
+    }
+
     public override string ToString()
     {
-        return getRecipeName() + " (" + recipeType + ")" + ":" + getIngredientsOfRecipeString();
+        return getRecipeName() + " (" + recipeType + ")" + ":" + getIngredientsOfRecipe();
     }
 }
