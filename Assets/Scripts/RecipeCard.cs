@@ -15,13 +15,6 @@ public class RecipeCard : MonoBehaviour
 
     }
 
-    public RecipeCard(string name, string type, List<Ingredient> ingredients)
-    {
-        recipeName = name;
-        recipeType = type;
-        this.ingredients = ingredients;
-    }
-
     public RecipeCard(string name, string type, List<int> ingredientIdsList, TextAsset IngredientsTxtFile)
     {
         recipeName = name;
@@ -42,11 +35,6 @@ public class RecipeCard : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void Start()
-    {
-        
     }
 
     public string getRecipeName()
