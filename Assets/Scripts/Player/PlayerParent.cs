@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerParent : MonoBehaviour {
+    
     //Players
-    public static Player[] Players;
-    public static int ActivePlayerIndex;
+    private static Player[] Players;            //list of players by their player script component
+    private static int ActivePlayerIndex;       //Current player
+    private static List<int> PlayerTurnOrder;   //the order in which the players play which goes back and forth
 
-    //
-    private int TurnState;
-
-    //Indicator
-    public GameObject Cursor;
+    //Gameobject
+    [SerializeField] private GameObject CursorContainer;    //moves the whole cursor container which includes the click actions
+    [SerializeField] private GameObject Cursor;             //just the visual cursor object
+    [SerializeField] private GameObject IngredientGatheringUI;
     
     //Enums
     private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4 }
-    private enum TurnStates { SelectMovement = 0, SelectAction = 1 };
 
+    //Handler
+    private MainGame MainGameHandler;
+    private IngredientGatheringUI UIHandler;
+    //Player parent handles all animators since only one hat can be moving at a time
     private Animator[] mAnimator;
 
     private void Awake() {
@@ -26,34 +30,83 @@ public class PlayerParent : MonoBehaviour {
 
     void Start() {
         Players = GetComponentsInChildren<Player>();
-        ActivePlayerIndex = 0;
-        TurnState = (int)TurnStates.SelectMovement;
-        Cursor.transform.position = Players[ActivePlayerIndex].transform.position;
+        PlayerTurnOrder = new List<int>();
+        //determine random play order
+        int i = 0;  //index counter
+        for (i = 0; i < Players.Length; i++) {
+            PlayerTurnOrder.Add(i);
+        }
+        //fisher yates shuffle
+        i = PlayerTurnOrder.Count;
+        while(i > 1) {
+            i--;
+            int k = Random.Range(0, i + 1);
+            int swap = PlayerTurnOrder[k];
+            PlayerTurnOrder[k] = PlayerTurnOrder[i];
+            PlayerTurnOrder[i] = swap;
+        }
+        ActivePlayerIndex = 0;  //first player
+        //cursor to first player
+        CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
 
+        //handlers
+        MainGameHandler = Camera.main.GetComponent<MainGame>();
+        UIHandler = IngredientGatheringUI.GetComponent<IngredientGatheringUI>();
+        //setup animators
         mAnimator = GetComponentsInChildren<Animator>();
-        Animate();
     }
 
     void Update() {
-        switch (TurnState) {
-            case (int)TurnStates.SelectMovement:
-                MoveCursor();
-                if (Input.GetButtonDown("Submit") && Players[ActivePlayerIndex].transform.position != Cursor.transform.position) {
-                    MovePlayer();
-                    TurnState = (int)TurnStates.SelectAction;
-                }
-                break;
-            case (int)TurnStates.SelectAction:
-                break;
-            default: break;
-        }
         Animate();
     }
 
     public static Player GetActivePlayer() {
-        return Players[ActivePlayerIndex];
+        return Players[PlayerTurnOrder[ActivePlayerIndex]];
     }
 
+    public void MoveAction() {
+        Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position = Cursor.transform.position;
+        EndTurn();
+    }
+
+    public void BuyAction() {
+        //Get coords of where the player is (coord of ingredient to be bought)
+        int x = (int)Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position.x;
+        int y = (int)Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position.y;
+        //Get the ingredient
+        Ingredient ingredientToAdd = MainGameHandler.GetTileIngredient(x, y);
+        //add it to player hand
+        Players[PlayerTurnOrder[ActivePlayerIndex]].AddCardToIngredientHand(ingredientToAdd);
+        MainGameHandler.RemoveIngredient(x, y);
+        EndTurn();
+    }
+
+    public void EndTurn() {
+        ActivePlayerIndex++;
+        //if index exceeds our number of players, loop back to player 1 (index 0)
+        if (ActivePlayerIndex >= Players.Length) {
+            ActivePlayerIndex = 0;
+        }
+        //move container to the next player
+        CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
+        //reset cursor position to center
+        Cursor.transform.localPosition = new Vector3(0, 0, 0);
+        //reset ui
+        UIHandler.HideAllButtons();
+    }
+
+    private void Animate() {
+        for (int i = 0; i < Players.Length; i++) {
+            mAnimator[i].ResetTrigger("isMoving");
+        }
+        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
+    }
+
+
+    //not used for now
+    //-----------------
+    //KEYBOARD CONTROLS
+    //-----------------
     private int GetDirectionInput() {
         if (Input.GetButtonDown("Up")) {
             return (int)Directions.Up;
@@ -98,33 +151,5 @@ public class PlayerParent : MonoBehaviour {
 
     private void MovePlayer() {
         Players[ActivePlayerIndex].transform.position = Cursor.transform.position;
-    }
-
-    public void AcceptCard() {
-        // Adding Ingredient Card to the active player's Ingredient Hand
-        //Ingredient ingredientToAdd = MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y];
-        //Players[ActivePlayerIndex].AddCardToIngredientHand(ingredientToAdd);
-        //MainGame.Tiles[(int)Players[ActivePlayerIndex].transform.position.x, (int)Players[ActivePlayerIndex].transform.position.y].gameObject.SetActive(false);
-        EndTurn();
-    }
-
-    public void DeclineCard() {
-        EndTurn();
-    }
-
-    private void EndTurn() {
-        ActivePlayerIndex++;
-        if (ActivePlayerIndex >= Players.Length) {
-            ActivePlayerIndex = 0;
-        }
-        TurnState = (int)TurnStates.SelectMovement;
-        Cursor.transform.position = Players[ActivePlayerIndex].transform.position;
-    }
-
-    private void Animate() {
-        for (int i = 0; i < Players.Length; i++) {
-            mAnimator[i].ResetTrigger("isMoving");
-        }
-        mAnimator[ActivePlayerIndex].SetTrigger("isMoving");
     }
 }

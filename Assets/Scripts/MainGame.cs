@@ -11,7 +11,7 @@ public class MainGame : MonoBehaviour
     private IngredientList IngredientHandler;
     //Ingredient Gathering
     public const int MapSize = 5;
-    public GameObject[,] Tiles;
+    private GameObject[,] Tiles;
 
     void Start()
     {
@@ -30,14 +30,13 @@ public class MainGame : MonoBehaviour
                 Ingredient newIng = IngredientHandler.DrawCard();
                 //Set sprite for gameobject
                 IngredientHandler.assignSprite(newIng.Id);
-                //get the prefab
-                GameObject newCard = IngredientHandler.getIngredientPrefab();
-                newCard.GetComponent<IngredientCard>().SetIngredient(newIng.Id, newIng.Name, newIng.Cost);
                 //Create it's instance and spawn it
-                Tiles[column, row] = Instantiate(newCard, new Vector3(column, row, -1), Quaternion.identity);
+                Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -1), Quaternion.identity);
+                //scale it down
+                Tiles[column, row].GetComponent<IngredientCard>().SetIngredient(newIng.Id, newIng.Name, newIng.Cost);
                 Tiles[column, row].transform.localScale = new Vector3(0.8f, 0.8f, 1);
-
-                //print("Tiles[x,y] = " + Tiles[column, row].ToString());
+                //name it
+                Tiles[column, row].name = newIng.Name;
             }
         }
     }
@@ -56,6 +55,37 @@ public class MainGame : MonoBehaviour
         }
     }
 
+    //Getting and removing ingredients
+    public Ingredient GetTileIngredient(int x, int y) {
+        if (ValidCoords(x, y)) {
+            return Tiles[x, y].GetComponent<IngredientCard>().GetIngredient();
+        }
+        else {
+            throw new System.Exception("Empty tile at requested address: " + x + ", " + y);
+        }
+    }
+
+    public void RemoveIngredient(int x, int y) {
+        if(ValidCoords(x, y)) {
+            Destroy(Tiles[x, y]);
+        }
+        else {
+            throw new System.Exception("Trying to remove ingredient at: " + x + ", " + y);
+        }
+    }
+
+    //validate coords
+    public bool ValidCoords(int x, int y) {
+        if (x < 0 || x >= MapSize || y < 0 || y > MapSize) {
+            //Debug.Log("Address (" + x + ", " + y + ") out of bounds");
+            return false;
+        }
+        if (Tiles[x, y] == null) {
+            //Debug.Log("No ingredient at (" + x + ", " + y + ")");
+            return false;
+        }
+        return true;
+    }
     private void RefillMarket() {
 
     }

@@ -102,7 +102,7 @@ public class IngredientList : MonoBehaviour {
         int i = deck.Count;
         while (i > 1) {
             i--;
-            int s = Random.Range(0, i + 1);
+            int s = Random.Range(0, i + 1); //i+1 is greater than our index, however, Range(int, int) is (inclusive, exclusive)
             Ingredient swap = deck[s];
             deck[s] = deck[i];
             deck[i] = swap;

@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class PlayerMoveClick : MonoBehaviour {
 
+    [SerializeField] GameObject UIParent;
     [SerializeField] GameObject Cursor;
 
-    private bool Move = true;
+    private MainGame GameHandler;               //access the game
+    private IngredientGatheringUI UIHandler;    //access UI
+    private bool MovementTile = true;           //when you click the tile, if its not the center tile, its a movement tile
 
     void Start() {
-        if(transform.position.x == 0 && transform.position.y == 0) {
-            Move = false;
+        //link handlers
+        GameHandler = Camera.main.GetComponent<MainGame>();
+        UIHandler = UIParent.GetComponent<IngredientGatheringUI>();
+        //if within the parent cursor container, this click object is the center one
+        if(transform.localPosition.x == 0 && transform.localPosition.y == 0) {
+            MovementTile = false;
         }
-    }
-
-    
-    void Update() {
-
     }
 
     private void OnMouseDown() {
@@ -25,9 +27,23 @@ public class PlayerMoveClick : MonoBehaviour {
             transform.position.y < MainGame.MapSize && transform.position.y >= 0) {
             //move cursor to where the player clicked
             Cursor.transform.position = transform.position;
-            //if this is a movement tile and not the center buy tile
-            if (Move) {
-
+            //If clicked on an empty tile, just hide the buttons
+            if (!GameHandler.ValidCoords((int)transform.position.x, (int)transform.position.y)) {
+                UIHandler.HideAllButtons();
+            }
+            //if a valid tile clicked
+            else {
+                //if this is a movement tile and not the center buy tile
+                if (MovementTile) {
+                    //display the confirm movement button
+                    UIHandler.ShowConfirmButton();
+                }
+                else {
+                    //display the buy button
+                    UIHandler.ShowBuyButton();
+                }
+                //tell ui we'd like to display the ingredient clicked
+                UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient((int)transform.position.x, (int)transform.position.y));    //get the ingredient from the map
             }
         }
     }

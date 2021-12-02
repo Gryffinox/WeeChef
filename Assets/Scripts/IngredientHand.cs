@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IngredientHand : MonoBehaviour
-{
+public class IngredientHand : MonoBehaviour {
     Player player;
     Text ingredientHandText;
     List<IngredientCard> ingredientHand; // needs to become a list of Ingredient, not gameobject
     string strToDisplay = "";
 
-    void Start()
-    {
+    void Start() {
         player = PlayerParent.GetActivePlayer();
         ingredientHandText = gameObject.GetComponentInChildren<Text>();
         ingredientHand = new List<IngredientCard>();
         DisplayIngredientHand();
     }
 
-    private void DisplayIngredientHand()
-    {
+    private void Update() {
+        // The active player needs to change
+        player = PlayerParent.GetActivePlayer();
+
+        if (gameObject.activeInHierarchy) {
+            DisplayIngredientHand();
+        }
+
+    }
+    private void DisplayIngredientHand() {
         strToDisplay = "";
         strToDisplay += player.name + ":\n";
         for (int i = 0; i < player.GetIngredientCount(); i++)
@@ -27,16 +33,5 @@ public class IngredientHand : MonoBehaviour
         ingredientHandText.text = strToDisplay;
     }
 
-    private void Update()
-    {
-        // The active player needs to change
-        player = PlayerParent.GetActivePlayer();
-
-        if (gameObject.activeInHierarchy)
-        {
-            DisplayIngredientHand();
-        }
-            
-    }
 
 }

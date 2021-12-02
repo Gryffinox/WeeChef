@@ -22,6 +22,10 @@ public class IngredientCard : MonoBehaviour {
         return Cost;
     }
 
+    public Ingredient GetIngredient() {
+        return new Ingredient(Id, Name, Cost);
+    }
+
     //Sets the values from an Ingredient Object
     public void SetIngredient(int id, string name, int cost) {
         Id = id;

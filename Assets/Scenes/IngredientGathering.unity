@@ -355,7 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd65ece71cee460992ed84b887b29c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cursor: {fileID: 1485475938}
+  CursorContainer: {fileID: 1485475938}
+  Cursor: {fileID: 1565038565}
+  IngredientGatheringUI: {fileID: 1632482013}
 --- !u!4 &357869242
 Transform:
   m_ObjectHideFlags: 0
@@ -748,6 +750,10 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: UIParent
+      value: 
+      objectReference: {fileID: 1632482013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
 --- !u!4 &608754136 stripped
@@ -1162,6 +1168,10 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: UIParent
+      value: 
+      objectReference: {fileID: 1632482013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
 --- !u!4 &1480214437 stripped
@@ -1346,6 +1356,10 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: UIParent
+      value: 
+      objectReference: {fileID: 1632482013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
 --- !u!4 &1587145560 stripped
@@ -1367,7 +1381,7 @@ GameObject:
   - component: {fileID: 1632482014}
   - component: {fileID: 1632482018}
   m_Layer: 5
-  m_Name: PlayerUI
+  m_Name: IngredientGatheringUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1467,6 +1481,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895247f3bf128624aa3c09368e478406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TxtBox: {fileID: 2031034933}
+  ConfirmButton: {fileID: 2147236801}
+  BuyButton: {fileID: 109533402}
+  PlayerParentHandler: {fileID: 357869240}
 --- !u!1 &1645638041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1670,10 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: UIParent
+      value: 
+      objectReference: {fileID: 1632482013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
 --- !u!4 &1691424020 stripped
@@ -1750,7 +1772,7 @@ GameObject:
   - component: {fileID: 2031034934}
   - component: {fileID: 2031034933}
   m_Layer: 5
-  m_Name: GameInfo
+  m_Name: Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1796,7 +1818,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -2083,5 +2105,9 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: UIParent
+      value: 
+      objectReference: {fileID: 1632482013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
