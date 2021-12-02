@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
+//This class is purely an ingredient object. not attach to the game engine
 [Serializable]
 public class Ingredient {
     public int Id;

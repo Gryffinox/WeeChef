@@ -2,42 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerParent : MonoBehaviour
-{
+public class PlayerParent : MonoBehaviour {
+    //Players
     public static Player[] Players;
     public static int ActivePlayerIndex;
+
+    //
     private int TurnState;
+
+    //Indicator
     public GameObject Cursor;
-
-    private UIElements UI;
-
-    private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4}
-    private enum TurnStates { SelectMovement = 0, SelectAction = 1};
+    
+    //Enums
+    private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4 }
+    private enum TurnStates { SelectMovement = 0, SelectAction = 1 };
 
     private Animator[] mAnimator;
 
-    private void Awake()
-    {
+    private void Awake() {
+        //keep the player information when showing the ingredient hand
         DontDestroyOnLoad(transform.gameObject);
     }
 
-    void Start()
-    {
+    void Start() {
         Players = GetComponentsInChildren<Player>();
         ActivePlayerIndex = 0;
         TurnState = (int)TurnStates.SelectMovement;
-        UI = GameObject.Find("PlayerUI").GetComponent<UIElements>();
         Cursor.transform.position = Players[ActivePlayerIndex].transform.position;
-        
+
         mAnimator = GetComponentsInChildren<Animator>();
         Animate();
     }
 
-    void Update()
-    {
+    void Update() {
         switch (TurnState) {
             case (int)TurnStates.SelectMovement:
-                UI.ActivateMovementConfirmDialog();
                 MoveCursor();
                 if (Input.GetButtonDown("Submit") && Players[ActivePlayerIndex].transform.position != Cursor.transform.position) {
                     MovePlayer();
@@ -45,20 +44,18 @@ public class PlayerParent : MonoBehaviour
                 }
                 break;
             case (int)TurnStates.SelectAction:
-                UI.ActivateCardPickupDialog();
                 break;
             default: break;
         }
         Animate();
     }
 
-    public static Player GetActivePlayer()
-    {
+    public static Player GetActivePlayer() {
         return Players[ActivePlayerIndex];
     }
 
     private int GetDirectionInput() {
-        if (Input.GetButtonDown("Up")){
+        if (Input.GetButtonDown("Up")) {
             return (int)Directions.Up;
         }
         else if (Input.GetButtonDown("Right")) {
@@ -76,7 +73,7 @@ public class PlayerParent : MonoBehaviour
     private void MoveCursor() {
         switch (GetDirectionInput()) {
             case (int)Directions.Up:
-                if(Players[ActivePlayerIndex].transform.position.y < MainGame.MapSize - 1) {
+                if (Players[ActivePlayerIndex].transform.position.y < MainGame.MapSize - 1) {
                     Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x, Players[ActivePlayerIndex].transform.position.y + 1, Players[ActivePlayerIndex].transform.position.z);
                 }
                 break;
@@ -99,8 +96,7 @@ public class PlayerParent : MonoBehaviour
         }
     }
 
-    private void MovePlayer()
-    {
+    private void MovePlayer() {
         Players[ActivePlayerIndex].transform.position = Cursor.transform.position;
     }
 
@@ -125,9 +121,8 @@ public class PlayerParent : MonoBehaviour
         Cursor.transform.position = Players[ActivePlayerIndex].transform.position;
     }
 
-    private void Animate()
-    {
-        for(int i = 0; i < Players.Length; i++) {
+    private void Animate() {
+        for (int i = 0; i < Players.Length; i++) {
             mAnimator[i].ResetTrigger("isMoving");
         }
         mAnimator[ActivePlayerIndex].SetTrigger("isMoving");

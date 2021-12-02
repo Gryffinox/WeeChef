@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     {
         ingredientHand = new List<Ingredient>(); // changed it from GameObject to list of Ingredient
         recipeHand = new List<Recipe>();
-        funds = 0;
+        funds = 10; //player starts with 10
     }
 
     // parameter changed from GameObject to Ingredient

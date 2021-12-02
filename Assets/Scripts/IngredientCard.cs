@@ -2,41 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class IngredientCard : MonoBehaviour
-{
-    private int Id; // { get; private set; }
-    private string Name; // { get; set; }
-    private int Count;
+
+//This class is a component attached to the gameobject cards in the scene
+public class IngredientCard : MonoBehaviour {
+    private int Id;
+    private string Name;
     private int Cost;
 
-    // Parameter Constructor
-    public IngredientCard() {
-        Id = 0;
-        Name = "";
-        Count = 0;
-        Cost = 0;
-    }
-    public IngredientCard(int id, string name, int count,  int cost)
-    {
-        Id = id;
-        Name = name;
-        Count = count;
-        Cost = cost;
-    }
-
-    // Copy Constructor
-    public IngredientCard(IngredientCard ingredientToCopy)
-    {
-        //this.Id = SetIdConstructor(); // because every ingredient needs a unique ID
-        this.Id = ingredientToCopy.Id;
-        this.Name = ingredientToCopy.Name;
-        this.Count = ingredientToCopy.Count;
-        this.Cost = ingredientToCopy.Cost;
-    }
-
     // Getters
-    public int GetId()
-    {
+    public int GetId() {
         return Id;
     }
 
@@ -44,18 +18,19 @@ public class IngredientCard : MonoBehaviour
         return Name;
     }
 
-    public int GetCount() {
-        return Count;
-    }
-
-    public int GetCost()
-    {
+    public int GetCost() {
         return Cost;
     }
 
-    public override string ToString()
-    {
-        return Name + "(id: " + Id + ", count: " + Count + ", cost: " + Cost;
+    //Sets the values from an Ingredient Object
+    public void SetIngredient(int id, string name, int cost) {
+        Id = id;
+        Name = name;
+        Cost = cost;
+    }
+
+    public override string ToString() {
+        return Name + "(id: " + Id + ", cost: " + Cost;
     }
 
 }

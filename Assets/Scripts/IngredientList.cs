@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Handler that takes care of the ingredient deck, as well as creating it and loading the ingredients
 public class IngredientList : MonoBehaviour {
 
     private int DeckSize = 50;
@@ -48,7 +49,7 @@ public class IngredientList : MonoBehaviour {
 
         //Sprites
         spriteList = new Dictionary<int, Sprite>();
-        //Manually added. Order matters so that the right sprite is assigned to each ingredient
+        //Manually added. "Order" matters so that the right sprite is assigned to each ingredient
         spriteList.Add(IngredientTypes[0].Id, onionSprite);
         spriteList.Add(IngredientTypes[1].Id, cheeseSprite);
         spriteList.Add(IngredientTypes[2].Id, ribsSprite);
@@ -63,21 +64,19 @@ public class IngredientList : MonoBehaviour {
         spriteList.Add(IngredientTypes[11].Id, wineSprite);
         spriteList.Add(IngredientTypes[12].Id, brownieSprite);
         spriteList.Add(IngredientTypes[13].Id, pepperRedSprite);
-
     }
 
     // Returns the Ingredient prefab to spawn
-    // it should already have its sprite assigned
     public GameObject getIngredientPrefab() {
         return ingredientPrefab;
     }
 
-    // Will receive the type of ingredient
-    // and assign the right sprite to the Ingredient prefab
+    //assign the right sprite to the Ingredient prefab for instantiation
     public void assignSprite(int id) {
         ingredientPrefab.GetComponent<SpriteRenderer>().sprite = spriteList[id];
     }
 
+    //Load ingredients from file
     private void LoadIngredients() {
         Ingredients ingredients = JsonUtility.FromJson<Ingredients>(IngredientsFile.text);
         foreach (Ingredient ingredient in ingredients.ingredients) {
@@ -85,6 +84,7 @@ public class IngredientList : MonoBehaviour {
         }
     }
 
+    //Create the deck of ingredients
     private void PopulateDeck() {
         DeckSize = 0;
         foreach(Ingredient ingredient in IngredientTypes) {
@@ -95,9 +95,10 @@ public class IngredientList : MonoBehaviour {
         }
         Shuffle(ref IngredientDeck);
     }
+
+    //Shuffle whichever deck is passed (discard or deck)
     private void Shuffle(ref List<Ingredient> deck) {
-        //fisher yates shuffle algorithm
-        //in place swap O(n)
+        //fisher yates shuffle algorithm, in place swap O(n)
         int i = deck.Count;
         while (i > 1) {
             i--;
@@ -108,7 +109,9 @@ public class IngredientList : MonoBehaviour {
         }
     }
 
+    //Draws a card from the deck
     public Ingredient DrawCard() {
+        //if no cards left, shuffle the discard pile and add it back to the deck
         if(IngredientDeck.Count == 0) {
             Shuffle(ref DiscardPile);
             IngredientDeck.AddRange(DiscardPile);
@@ -118,6 +121,7 @@ public class IngredientList : MonoBehaviour {
         return drawn;
     }
 
+    //Drops a card into the discard once used
     public void DiscardCard(Ingredient card) {
         DiscardPile.Add(card);
     }
