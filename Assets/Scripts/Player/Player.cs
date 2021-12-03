@@ -24,6 +24,19 @@ public class Player : MonoBehaviour {
         return ingredientHand.Count;
     }
 
+    public int GetFunds() {
+        return funds;
+    }
+
+    public void DeductBalance(int i) {
+        if (i <= funds){
+            funds -= i;
+        }
+        else {
+            throw new System.Exception("Deducting non existent money");
+        }
+    }
+
     // changed from GameObject to list of Ingredient
     public List<Ingredient> GetIngredientHand() {
         // TEST to make sure it returns the right stuff.
