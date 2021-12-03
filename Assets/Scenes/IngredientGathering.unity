@@ -358,8 +358,6 @@ MonoBehaviour:
   CursorContainer: {fileID: 1485475938}
   Cursor: {fileID: 1565038565}
   IngredientGatheringUI: {fileID: 1632482013}
-  turncount: 10
-  turnText: {fileID: 999157894}
 --- !u!4 &357869242
 Transform:
   m_ObjectHideFlags: 0
@@ -827,6 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9546358c78931ce468f1848e5600935d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Players: {fileID: 357869240}
 --- !u!1001 &608754135
 PrefabInstance:
   m_ObjectHideFlags: 0

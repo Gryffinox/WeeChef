@@ -33,7 +33,7 @@ public class PlayerMoveClick : MonoBehaviour {
             //move cursor to where the player clicked
             Cursor.transform.position = transform.position;
             //If clicked on an empty tile or an already occupied tile, just hide the buttons
-            if (!GameHandler.ValidCoords(x, y) || PlayerHandler.Overlap(x, y)) {
+            if (!GameHandler.ValidIngredientInMap(x, y) || PlayerHandler.Overlap(x, y)) {
                 UIHandler.HideAllButtons();
                 UIHandler.DisplayText("");
             }
@@ -46,8 +46,6 @@ public class PlayerMoveClick : MonoBehaviour {
                 else {
                     UIHandler.ShowBuyButton();
                     //if the player has enough funds to buy the ingredient, enable button
-                    Debug.Log("Cost: " + GameHandler.GetTileIngredient(x, y).Cost);
-                    Debug.Log("Funds" + PlayerParent.GetActivePlayer().GetFunds());
                     UIHandler.SetBuyButtonInteractable(GameHandler.GetTileIngredient(x, y).Cost <= PlayerParent.GetActivePlayer().GetFunds());
                 }
                 //display the ingredient of the info clicked

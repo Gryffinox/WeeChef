@@ -23,6 +23,9 @@ public class PlayerParent : MonoBehaviour {
     //Player parent handles all animators since only one hat can be moving at a time
     private Animator[] mAnimator;
 
+    //To end Ingredient Gathering phase
+    private bool HasValidAction;
+
     private void Awake() {
         //keep the player information when showing the ingredient hand
         DontDestroyOnLoad(transform.gameObject);
@@ -48,6 +51,7 @@ public class PlayerParent : MonoBehaviour {
         ActivePlayerIndex = 0;  //first player
         //cursor to first player
         CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
+        HasValidAction = true;
 
         //handlers
         GameHandler = Camera.main.GetComponent<MainGame>();
@@ -97,20 +101,34 @@ public class PlayerParent : MonoBehaviour {
         for (int i = 0; i < Players.Length; i++) {
             mAnimator[i].ResetTrigger("isMoving");
         }
+        
         //move container to the next player
         CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
         //reset cursor position to center
         Cursor.transform.localPosition = new Vector3(0, 0, 0);
         //reset ui, default to available buy if possible. if no buy available, hide all buttons
-        int x = (int)Cursor.transform.position.x;
-        int y = (int)Cursor.transform.position.y;
-        if (GameHandler.ValidCoords(x, y)) {
+        int x = (int)CursorContainer.transform.position.x;
+        int y = (int)CursorContainer.transform.position.y;
+        if (GameHandler.ValidIngredientInMap(x, y)) {
             UIHandler.ShowBuyButton();
             UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient(x, y));    //get the ingredient from the map
         }
         else {
             UIHandler.HideAllButtons();
             UIHandler.DisplayText("");
+        }
+        //check if the new player has any valid moves. if not set a flag for NoMovesLeft
+        //validate in all 4 directions
+        HasValidAction = ValidateMove(x, y + 1) || ValidateMove(x, y -1) || ValidateMove(x + 1, y) || ValidateMove(x - 1 , y);
+        //validate if theres an ingredient under the player currently
+        if(GameHandler.ValidIngredientInMap(x, y)) {
+            //if there is, can the player afford it
+            if (GameHandler.GetTileIngredient(x, y).Cost > Players[PlayerTurnOrder[ActivePlayerIndex]].GetFunds()) {
+                HasValidAction = false;
+            }
+        }
+        else {
+            HasValidAction = false;
         }
     }
 
@@ -128,54 +146,70 @@ public class PlayerParent : MonoBehaviour {
         return false;
     }
 
+    public bool NoMovesLeft() {
+        //check each surrounding valid tile if theres at least an ingredient, no player, and within bounds
+        return !HasValidAction;
+    }
+
+    //wrapper class that validates whether theres an ingredient and/or player overlap on a given tile
+    //returns true if no player and theres and ingredient to be moved on to
+    public bool ValidateMove(int x, int y) {
+        if (GameHandler.ValidIngredientInMap(x, y) && !Overlap(x, y)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
     //not used for now
     //-----------------
     //KEYBOARD CONTROLS
     //-----------------
-    private int GetDirectionInput() {
-        if (Input.GetButtonDown("Up")) {
-            return (int)Directions.Up;
-        }
-        else if (Input.GetButtonDown("Right")) {
-            return (int)Directions.Right;
-        }
-        else if (Input.GetButtonDown("Down")) {
-            return (int)Directions.Down;
-        }
-        else if (Input.GetButtonDown("Left")) {
-            return (int)Directions.Left;
-        }
-        return (int)Directions.None;
-    }
+    //private int GetDirectionInput() {
+    //    if (Input.GetButtonDown("Up")) {
+    //        return (int)Directions.Up;
+    //    }
+    //    else if (Input.GetButtonDown("Right")) {
+    //        return (int)Directions.Right;
+    //    }
+    //    else if (Input.GetButtonDown("Down")) {
+    //        return (int)Directions.Down;
+    //    }
+    //    else if (Input.GetButtonDown("Left")) {
+    //        return (int)Directions.Left;
+    //    }
+    //    return (int)Directions.None;
+    //}
 
-    private void MoveCursor() {
-        switch (GetDirectionInput()) {
-            case (int)Directions.Up:
-                if (Players[ActivePlayerIndex].transform.position.y < MainGame.MapSize - 1) {
-                    Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x, Players[ActivePlayerIndex].transform.position.y + 1, Players[ActivePlayerIndex].transform.position.z);
-                }
-                break;
-            case (int)Directions.Right:
-                if (Players[ActivePlayerIndex].transform.position.x < MainGame.MapSize - 1) {
-                    Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x + 1, Players[ActivePlayerIndex].transform.position.y, Players[ActivePlayerIndex].transform.position.z);
-                }
-                break;
-            case (int)Directions.Down:
-                if (Players[ActivePlayerIndex].transform.position.y > 0) {
-                    Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x, Players[ActivePlayerIndex].transform.position.y - 1, Players[ActivePlayerIndex].transform.position.z);
-                }
-                break;
-            case (int)Directions.Left:
-                if (Players[ActivePlayerIndex].transform.position.x > 0) {
-                    Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x - 1, Players[ActivePlayerIndex].transform.position.y, Players[ActivePlayerIndex].transform.position.z);
-                }
-                break;
-            default: break;
-        }
-    }
+    //private void MoveCursor() {
+    //    switch (GetDirectionInput()) {
+    //        case (int)Directions.Up:
+    //            if (Players[ActivePlayerIndex].transform.position.y < MainGame.MapSize - 1) {
+    //                Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x, Players[ActivePlayerIndex].transform.position.y + 1, Players[ActivePlayerIndex].transform.position.z);
+    //            }
+    //            break;
+    //        case (int)Directions.Right:
+    //            if (Players[ActivePlayerIndex].transform.position.x < MainGame.MapSize - 1) {
+    //                Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x + 1, Players[ActivePlayerIndex].transform.position.y, Players[ActivePlayerIndex].transform.position.z);
+    //            }
+    //            break;
+    //        case (int)Directions.Down:
+    //            if (Players[ActivePlayerIndex].transform.position.y > 0) {
+    //                Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x, Players[ActivePlayerIndex].transform.position.y - 1, Players[ActivePlayerIndex].transform.position.z);
+    //            }
+    //            break;
+    //        case (int)Directions.Left:
+    //            if (Players[ActivePlayerIndex].transform.position.x > 0) {
+    //                Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x - 1, Players[ActivePlayerIndex].transform.position.y, Players[ActivePlayerIndex].transform.position.z);
+    //            }
+    //            break;
+    //        default: break;
+    //    }
+    //}
 
-    private void MovePlayer() {
-        Players[ActivePlayerIndex].transform.position = Cursor.transform.position;
-    }
+    //private void MovePlayer() {
+    //    Players[ActivePlayerIndex].transform.position = Cursor.transform.position;
+    //}
 }

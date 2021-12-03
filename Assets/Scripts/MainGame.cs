@@ -7,6 +7,10 @@ public class MainGame : MonoBehaviour {
     private enum GamePhases { IngredientGathering = 0, RecipeBuilding = 1 };
     private int GamePhase;
 
+    //Players
+    [SerializeField] private GameObject Players;
+    private PlayerParent PlayerHandler;
+
     //Ingredient Gathering
     public const int MapSize = 5;
     private GameObject[,] Tiles;
@@ -16,6 +20,8 @@ public class MainGame : MonoBehaviour {
         GamePhase = 0;      //0 tile ingredient gathering, 1 recipe building phase
         // Initialize tiles with Ingredient objects
         Tiles = new GameObject[MapSize, MapSize];
+
+        PlayerHandler = Players.GetComponent<PlayerParent>();
 
         // Get the IngredientList script from the PlayerCamera to access IngredientList methods
         IngredientHandler = GetComponent<IngredientList>();
@@ -42,17 +48,21 @@ public class MainGame : MonoBehaviour {
         switch (GamePhase) {
             case (int)GamePhases.IngredientGathering:
                 // Do ingredient gathering here
-                //RefillMarket();
+                if (PlayerHandler.NoMovesLeft()) {
+                    GamePhase = (int)GamePhases.RecipeBuilding;
+                    Debug.Log("No valid moves left. Recipe building time.");
+                }
                 break;
             case (int)GamePhases.RecipeBuilding:
                 // Do recipe building here
+                //TODO: if recipe building done. refill market
                 break;
         }
     }
 
     //Getting and removing ingredients
     public Ingredient GetTileIngredient(int x, int y) {
-        if (ValidCoords(x, y)) {
+        if (ValidIngredientInMap(x, y)) {
             //returns the ingredient at coords if it exists
             return Tiles[x, y].GetComponent<IngredientCard>().GetIngredient();
         }
@@ -63,7 +73,7 @@ public class MainGame : MonoBehaviour {
     }
 
     public void RemoveIngredient(int x, int y) {
-        if (ValidCoords(x, y)) {
+        if (ValidIngredientInMap(x, y)) {
             //UNALIVE INGREDIENT
             Destroy(Tiles[x, y]);
         }
@@ -74,9 +84,9 @@ public class MainGame : MonoBehaviour {
     }
 
     //validate coords
-    public bool ValidCoords(int x, int y) {
+    public bool ValidIngredientInMap(int x, int y) {
         //if outside bounds of map
-        if (x < 0 || x >= MapSize || y < 0 || y > MapSize) {
+        if (x < 0 || x >= MapSize || y < 0 || y >= MapSize) {
             //Debug.Log("Address (" + x + ", " + y + ") out of bounds");
             return false;
         }
