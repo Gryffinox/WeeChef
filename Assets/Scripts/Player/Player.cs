@@ -6,12 +6,12 @@ public class Player : MonoBehaviour {
 
     private int playerID;   //TODO: Could be removed? PlayerParent handles ids
     private List<Ingredient> ingredientHand; // changed it from GameObject to list of Ingredient
-    private List<Recipe> recipeHand;
+    private List<RecipeCard> recipeHand;
     private int funds;
 
     private void Start() {
         ingredientHand = new List<Ingredient>();    //changed it from GameObject to list of Ingredient
-        recipeHand = new List<Recipe>();
+        recipeHand = new List<RecipeCard>();
         funds = 10;                                 //player starts with 10
     }
 
@@ -37,5 +37,15 @@ public class Player : MonoBehaviour {
         // end test
 
         return ingredientHand;
+    }
+
+    public void AddCardToRecipeHand(RecipeCard recipeCard)
+    {
+        recipeHand.Add(recipeCard);
+    }
+
+    public List<RecipeCard> GetRecipeHand()
+    {
+        return recipeHand;
     }
 }

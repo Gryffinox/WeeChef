@@ -43,16 +43,16 @@ public class RecipeCard : MonoBehaviour
     }
 
     // Returns it as a string
-    public string getIngredientsOfRecipeString()
-    {
-        string ingredients_ = "";
-        for (int i = 0; i < ingredients.Count; i++)
-            ingredients_ += "\n - " + ingredients[i].ToString();
-        //ingredients_ += "\n - " + ingredients[ingredients.Count - 1].ToString();
-        return ingredients_;
-    }
+    //public string getIngredientsOfRecipeString()
+    //{
+    //    string ingredients_ = "";
+    //    for (int i = 0; i < ingredients.Count; i++)
+    //        ingredients_ += "\n - " + ingredients[i].ToString();
+    //    //ingredients_ += "\n - " + ingredients[ingredients.Count - 1].ToString();
+    //    return ingredients_;
+    //}
 
-    // Returns as a list of strings UNUSED
+    // Returns as a list of strings
     public List<Ingredient> getIngredientsOfRecipeList()
     {
         return ingredients;
@@ -67,6 +67,41 @@ public class RecipeCard : MonoBehaviour
         }
 
         return allIngredients;
+    }
+
+    public string getRecipeType()
+    {
+        return recipeType;
+    }
+
+    public List<int> getIngredientIds()
+    {
+        return ingredientIds;
+    }
+
+    public void SetRecipeName(string recipeName)
+    {
+        this.recipeName = recipeName;
+    }
+
+    public void SetRecipeType(string recipeType)
+    {
+        this.recipeType = recipeType;
+    }
+
+    public void SetIngredients(List<Ingredient> ingredients)
+    {
+        this.ingredients = ingredients;
+    }
+
+    public void SetIngredientIds(List<int> ingredientIds)
+    {
+        this.ingredientIds = ingredientIds;
+    }
+
+    public void MoveRecipeCardToHand()
+    {
+        PlayerParent.BuyRecipe(this);
     }
 
     public override string ToString()

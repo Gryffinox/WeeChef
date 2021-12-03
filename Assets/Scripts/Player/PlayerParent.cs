@@ -103,6 +103,11 @@ public class PlayerParent : MonoBehaviour {
         UIHandler.HideAllButtons();
     }
 
+    public static void BuyRecipe(RecipeCard recipeCard)
+    {
+        Players[ActivePlayerIndex].AddCardToRecipeHand(recipeCard);
+    }
+
 
     //not used for now
     //-----------------

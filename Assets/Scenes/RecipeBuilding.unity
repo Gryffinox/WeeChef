@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 301679837}
   - component: {fileID: 301679839}
   - component: {fileID: 301679838}
+  - component: {fileID: 301679840}
   m_Layer: 5
   m_Name: RecipeBankPanel
   m_TagString: Untagged
@@ -665,6 +666,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301679836}
   m_CullTransparentMesh: 1
+--- !u!114 &301679840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301679836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecipesFile: {fileID: 4900000, guid: 55d85804c18404e21a18ebd72038adff, type: 3}
+  IngredientsFile: {fileID: 4900000, guid: a6b8cf3ac3138471a8c82591eeaa8a4f, type: 3}
 --- !u!1 &399222761
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +917,7 @@ GameObject:
   - component: {fileID: 437152716}
   - component: {fileID: 437152718}
   - component: {fileID: 437152719}
+  - component: {fileID: 437152720}
   m_Layer: 5
   m_Name: Recipe5
   m_TagString: Untagged
@@ -974,7 +990,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437152714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
   m_Name: 
@@ -991,6 +1007,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &437152720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437152714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &493271503
@@ -1796,6 +1824,7 @@ GameObject:
   - component: {fileID: 1152501339}
   - component: {fileID: 1152501341}
   - component: {fileID: 1152501342}
+  - component: {fileID: 1152501343}
   m_Layer: 5
   m_Name: Recipe4
   m_TagString: Untagged
@@ -1868,7 +1897,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152501337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
   m_Name: 
@@ -1887,6 +1916,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1152501343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152501337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1206509461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,6 +1941,7 @@ GameObject:
   - component: {fileID: 1206509463}
   - component: {fileID: 1206509465}
   - component: {fileID: 1206509466}
+  - component: {fileID: 1206509467}
   m_Layer: 5
   m_Name: Recipe2
   m_TagString: Untagged
@@ -1972,7 +2014,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206509461}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
   m_Name: 
@@ -1989,6 +2031,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1206509467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206509461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1301969782
@@ -2328,7 +2382,7 @@ GameObject:
   - component: {fileID: 1706256236}
   - component: {fileID: 1706256238}
   - component: {fileID: 1706256237}
-  - component: {fileID: 1706256239}
+  - component: {fileID: 1706256241}
   - component: {fileID: 1706256240}
   m_Layer: 5
   m_Name: Recipe1
@@ -2395,20 +2449,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706256235}
   m_CullTransparentMesh: 1
---- !u!114 &1706256239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706256235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RecipesFile: {fileID: 4900000, guid: 55d85804c18404e21a18ebd72038adff, type: 3}
-  IngredientsFile: {fileID: 4900000, guid: a6b8cf3ac3138471a8c82591eeaa8a4f, type: 3}
 --- !u!114 &1706256240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2418,9 +2458,65 @@ MonoBehaviour:
   m_GameObject: {fileID: 1706256235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
+  m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1706256241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706256235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1706256237}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1706256240}
+        m_TargetAssemblyTypeName: RecipeCard, Assembly-CSharp
+        m_MethodName: MoveRecipeCardToHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1762092710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +2843,7 @@ GameObject:
   - component: {fileID: 2005055461}
   - component: {fileID: 2005055463}
   - component: {fileID: 2005055464}
+  - component: {fileID: 2005055465}
   m_Layer: 5
   m_Name: Recipe3
   m_TagString: Untagged
@@ -2819,7 +2916,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005055459}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 631cd137a8d6d4c07baff6022320b072, type: 3}
   m_Name: 
@@ -2836,5 +2933,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45dfc6ff0f5ca4fffbac602ddbfca4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2005055465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005055459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

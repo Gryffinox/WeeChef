@@ -11,10 +11,10 @@ public class RecipeList : MonoBehaviour
     [SerializeField] TextAsset IngredientsFile;
 
     private Text[] RecipeText;
-    private RecipeCard DrawnCard;
 
-
-    private static List<RecipeCard> RecipesDeck;
+    private List<RecipeCard> RecipesDeck;
+    private RecipeCard[] RecipesDisplayed;
+    private RecipeCard recipeCard;
     static System.Random rand = new System.Random();
 
     void Start()
@@ -23,12 +23,18 @@ public class RecipeList : MonoBehaviour
         RecipesDeck = new List<RecipeCard>();
         LoadRecipesToDeck();
 
+        RecipesDisplayed = GetComponentsInChildren<RecipeCard>();
         RecipeText = GetComponentsInChildren<Text>();
 
         for (int i = 0; i < RecipeText.Length; i++)
         {
-            DrawnCard = DrawRecipeCard();
-            RecipeText[i].text = DrawnCard.ToString();
+            recipeCard = DrawRecipeCard();
+            RecipesDisplayed[i].SetRecipeName(recipeCard.getRecipeName());
+            RecipesDisplayed[i].SetRecipeType(recipeCard.getRecipeType());
+            RecipesDisplayed[i].SetIngredients(recipeCard.getIngredientsOfRecipeList());
+            RecipesDisplayed[i].SetIngredientIds(recipeCard.getIngredientIds());
+
+            RecipeText[i].text = recipeCard.ToString();
         }
     }
 
