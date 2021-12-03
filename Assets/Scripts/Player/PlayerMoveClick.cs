@@ -32,26 +32,38 @@ public class PlayerMoveClick : MonoBehaviour {
             y < MainGame.MapSize && y >= 0) {
             //move cursor to where the player clicked
             Cursor.transform.position = transform.position;
-            //If clicked on an empty tile or an already occupied tile, just hide the buttons
-            if (!GameHandler.ValidCoords(x, y) || PlayerHandler.Overlap(x, y)) {
-                UIHandler.HideAllButtons();
+            //if clicked on an empty tile or an already occupied tile, just hide the buttons
+            //if (!GameHandler.ValidCoords(x, y) || PlayerHandler.Overlap(x, y)) {
+            if (!GameHandler.ValidCoords(x, y))
+            {
                 UIHandler.DisplayText("");
             }
-            //if a valid tile clicked with an ingredient
-            else {
-                //if this is a movement tile and not the center buy tile
-                if (MovementTile) {
-                    UIHandler.ShowConfirmButton();
+            else 
+            { 
+                if (PlayerHandler.Overlap(x, y))
+                {
+                    UIHandler.HideAllButtons();
+                    UIHandler.DisplayText("");
                 }
-                else {
-                    UIHandler.ShowBuyButton();
-                    //if the player has enough funds to buy the ingredient, enable button
-                    Debug.Log("Cost: " + GameHandler.GetTileIngredient(x, y).Cost);
-                    Debug.Log("Funds" + PlayerParent.GetActivePlayer().GetFunds());
-                    UIHandler.SetBuyButtonInteractable(GameHandler.GetTileIngredient(x, y).Cost <= PlayerParent.GetActivePlayer().GetFunds());
+                //if a valid tile clicked with an ingredient
+                else
+                {
+                    //if this is a movement tile and not the center buy tile
+                    if (MovementTile)
+                    {
+                        UIHandler.ShowConfirmButton();
+                    }
+                    else
+                    {
+                        UIHandler.ShowBuyButton();
+                        //if the player has enough funds to buy the ingredient, enable button
+                        Debug.Log("Cost: " + GameHandler.GetTileIngredient(x, y).Cost);
+                        Debug.Log("Funds" + PlayerParent.GetActivePlayer().GetFunds());
+                        UIHandler.SetBuyButtonInteractable(GameHandler.GetTileIngredient(x, y).Cost <= PlayerParent.GetActivePlayer().GetFunds());
+                    }
+                    //display the ingredient of the info clicked
+                    UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient((int)transform.position.x, (int)transform.position.y));    //get the ingredient from the map
                 }
-                //display the ingredient of the info clicked
-                UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient((int)transform.position.x, (int)transform.position.y));    //get the ingredient from the map
             }
         }
     }
