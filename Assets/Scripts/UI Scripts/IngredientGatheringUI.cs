@@ -34,7 +34,15 @@ public class IngredientGatheringUI : MonoBehaviour {
         BuyButton.SetActive(false);
     }
 
+    public void SetBuyButtonInteractable(bool state) {
+        BuyButton.GetComponent<Button>().interactable = state;
+    }
+
     public void DisplayIngredientInfo(Ingredient ingredient) {
         TxtBox.text = ingredient.Name + "\n" + "Cost: " + ingredient.Cost;
+    }
+
+    public void DisplayText(string txt) {
+        TxtBox.text = txt;
     }
 }

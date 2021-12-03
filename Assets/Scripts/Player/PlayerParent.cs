@@ -18,7 +18,7 @@ public class PlayerParent : MonoBehaviour {
     private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4 }
 
     //Handler
-    private MainGame MainGameHandler;
+    private MainGame GameHandler;
     private IngredientGatheringUI UIHandler;
     //Player parent handles all animators since only one hat can be moving at a time
     private Animator[] mAnimator;
@@ -50,7 +50,7 @@ public class PlayerParent : MonoBehaviour {
         CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
 
         //handlers
-        MainGameHandler = Camera.main.GetComponent<MainGame>();
+        GameHandler = Camera.main.GetComponent<MainGame>();
         UIHandler = IngredientGatheringUI.GetComponent<IngredientGatheringUI>();
         //setup animators
         mAnimator = GetComponentsInChildren<Animator>();
@@ -78,10 +78,12 @@ public class PlayerParent : MonoBehaviour {
         int x = (int)Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position.x;
         int y = (int)Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position.y;
         //Get the ingredient
-        Ingredient ingredientToAdd = MainGameHandler.GetTileIngredient(x, y);
+        Ingredient ingredientToAdd = GameHandler.GetTileIngredient(x, y);
         //add it to player hand
         Players[PlayerTurnOrder[ActivePlayerIndex]].AddCardToIngredientHand(ingredientToAdd);
-        MainGameHandler.RemoveIngredient(x, y); //remove ingredient from map
+        //deduct balance from player
+        Players[PlayerTurnOrder[ActivePlayerIndex]].DeductBalance(ingredientToAdd.Cost);
+        GameHandler.RemoveIngredient(x, y); //remove ingredient from map
         EndTurn();
     }
 
@@ -99,8 +101,31 @@ public class PlayerParent : MonoBehaviour {
         CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
         //reset cursor position to center
         Cursor.transform.localPosition = new Vector3(0, 0, 0);
-        //reset ui
-        UIHandler.HideAllButtons();
+        //reset ui, default to available buy if possible. if no buy available, hide all buttons
+        int x = (int)Cursor.transform.position.x;
+        int y = (int)Cursor.transform.position.y;
+        if (GameHandler.ValidCoords(x, y)) {
+            UIHandler.ShowBuyButton();
+            UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient(x, y));    //get the ingredient from the map
+        }
+        else {
+            UIHandler.HideAllButtons();
+            UIHandler.DisplayText("");
+        }
+    }
+
+    //Returns true if the selected coordinates is already occupied
+    public bool Overlap(int x, int y) {
+        //check against all other player
+        for(int i = 0; i < Players.Length; i++) {
+            if(PlayerTurnOrder[i] != PlayerTurnOrder[ActivePlayerIndex]) {  //dont cross reference against the own player
+                //if the tile selected is occupied by another player
+                if(x == Players[PlayerTurnOrder[i]].transform.position.x && y == Players[PlayerTurnOrder[i]].transform.position.y) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
