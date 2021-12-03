@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerParent : MonoBehaviour {
@@ -13,8 +14,13 @@ public class PlayerParent : MonoBehaviour {
     [SerializeField] private GameObject CursorContainer;    //moves the whole cursor container which includes the click actions
     [SerializeField] private GameObject Cursor;             //just the visual cursor object
     [SerializeField] private GameObject IngredientGatheringUI;
-    
-    //Enums
+
+    //for turn countdown
+    private bool turndown = false;
+    [SerializeField] int turncount = 10;
+    [SerializeField] TextMeshProUGUI turnText;
+
+    //Enums
     private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4 }
 
     //Handler
@@ -62,7 +68,25 @@ public class PlayerParent : MonoBehaviour {
 
     private void Update() {
         //Set animator for the current player
-        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
+        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
+
+
+        DisplayTurn();
+        if (PlayerTurnOrder[ActivePlayerIndex] == PlayerTurnOrder[0]&& turndown == true)
+        {
+            decreaseTurn();
+            turndown = false;
+        }
+        if (PlayerTurnOrder[ActivePlayerIndex] != PlayerTurnOrder[0])
+        {
+            turndown = true;
+        }
+
+        if (getCurrentTurn() == 0)
+        {
+            //go to phase 2
+            Debug.Log("phase 2");
+        }
     }
 
     //for recipe building and anytime any player needs things
@@ -209,7 +233,26 @@ public class PlayerParent : MonoBehaviour {
     //    }
     //}
 
-    //private void MovePlayer() {
-    //    Players[ActivePlayerIndex].transform.position = Cursor.transform.position;
-    //}
+    private void MovePlayer() {
+        Players[ActivePlayerIndex].transform.position = Cursor.transform.position;
+    }
+
+
+    public int getCurrentTurn()
+    {
+        return turncount;
+    }
+    public void decreaseTurn()
+    {
+        turncount = getCurrentTurn() - 1;
+    }
+    public void setTurn(int value)
+    {
+        turncount = value;
+    }
+    private void DisplayTurn()
+    {
+        int currentTurn = getCurrentTurn();
+        turnText.text = currentTurn.ToString();
+    }
 }
