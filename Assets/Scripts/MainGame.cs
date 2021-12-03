@@ -15,13 +15,18 @@ public class MainGame : MonoBehaviour {
     public const int MapSize = 5;
     private GameObject[,] Tiles;
     private IngredientList IngredientHandler;
+    //UI
+    [SerializeField] private GameObject IngredientUI;
+    private IngredientGatheringUI UIHandler;
 
     void Start() {
         GamePhase = 0;      //0 tile ingredient gathering, 1 recipe building phase
         // Initialize tiles with Ingredient objects
         Tiles = new GameObject[MapSize, MapSize];
 
+        //handlers
         PlayerHandler = Players.GetComponent<PlayerParent>();
+        UIHandler = IngredientUI.GetComponent<IngredientGatheringUI>();
 
         // Get the IngredientList script from the PlayerCamera to access IngredientList methods
         IngredientHandler = GetComponent<IngredientList>();
@@ -48,14 +53,15 @@ public class MainGame : MonoBehaviour {
         switch (GamePhase) {
             case (int)GamePhases.IngredientGathering:
                 // Do ingredient gathering here
-                if (PlayerHandler.NoMovesLeft()) {
+                if (PlayerHandler.NoMovesLeft() || PlayerHandler.GetTurnCount() == 0) {
                     GamePhase = (int)GamePhases.RecipeBuilding;
+                    IngredientUI.SetActive(false);
                     Debug.Log("No valid moves left. Recipe building time.");
                 }
                 break;
             case (int)GamePhases.RecipeBuilding:
                 // Do recipe building here
-                //TODO: if recipe building done. refill market
+                //TODO: if recipe building done. refill market and reenable ingredient UI
                 break;
         }
     }
