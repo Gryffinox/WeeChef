@@ -102,6 +102,7 @@ public class RecipeCard : MonoBehaviour
     public void MoveRecipeCardToHand()
     {
         PlayerParent.BuyRecipe(this);
+        Destroy(gameObject);
     }
 
     public override string ToString()
