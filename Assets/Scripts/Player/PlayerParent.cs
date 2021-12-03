@@ -61,6 +61,8 @@ public class PlayerParent : MonoBehaviour {
         UIHandler = IngredientGatheringUI.GetComponent<IngredientGatheringUI>();
         //setup animators
         mAnimator = GetComponentsInChildren<Animator>();
+        //animate first player
+        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
     }
 
     //for recipe building and anytime any player needs things
