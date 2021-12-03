@@ -1,0 +1,18 @@
+{
+"events":
+[
+{"Id": 1, "Name": "Sommelier", "Count": 1, "PlayOtherTime": 0, "Description": "One less recipe is needed to win for single cuisine restaurants."},
+{"Id": 2, "Name": "Sous-Chef", "Count": 1, "PlayOtherTime": 0, "Description": "One less recipe is needed to win for fusion restaurants."},
+{"Id": 3, "Name": "Coffee", "Count": 5, "PlayOtherTime": 1, "Description": "Gives you double speed for one turn at the market."},
+{"Id": 4, "Name": "Food Truck", "Count": 2, "PlayOtherTime": 0, "Description": "+1 income for 2-3 Base Ingredient Recipes."},
+{"Id": 5, "Name": "Cookbook", "Count": 2, "PlayOtherTime": 0, "Description": "+1 income for 4-5 Base Ingredient Recipes."},
+{"Id": 6, "Name": "Health Inspector", "Count": 5, "PlayOtherTime": 0, "Description": "Discard down to 7 ingredients in hand if you have more."},
+{"Id": 7, "Name": "Power Outage", "Count": 5, "PlayOtherTime": 0, "Description": "Discard perishables (Dairy, Beef, Poultry, Pork)."},
+{"Id": 8, "Name": "*Ingredient* Shortage", "Count": 14, "PlayOtherTime": 1, "Description": "Recipes containing an ingredient of that type don't produce income this round."},
+{"Id": 9, "Name": "*Cuisine* Festival", "Count": 7, "PlayOtherTime": 1, "Description": "Recipes of the corresponding cuisine produce double income this round."},
+{"Id": 10, "Name": "*Ingredient* Craze", "Count": 14, "PlayOtherTime": 1, "Description": "Recipes containing an ingredient of this type produce double income this round."},
+{"Id": 11, "Name": "*Ingredient* Boycott", "Count": 14, "PlayOtherTime": 1, "Description": "Recipes containing an ingredient of this type produce half their income for this round."},
+{"Id": 12, "Name": "Lost License", "Count": 5, "PlayOtherTime": 0, "Description": "Pay 10 coins in license fees from your income this round."},
+{"Id": 13, "Name": "Fire", "Count": 1, "PlayOtherTime": 0, "Description": "Discard all ingredients. Produce no income this round. If you are last in income production, all other players randomly donate half their Ingredient hand (rounded down) to you."}
+]
+}
