@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class PlayerParent : MonoBehaviour {
-    
+
     //Players
     private static Player[] Players;            //list of players by their player script component
     private static int ActivePlayerIndex;       //Current player
@@ -16,11 +15,9 @@ public class PlayerParent : MonoBehaviour {
     [SerializeField] private GameObject IngredientGatheringUI;
 
     //for turn countdown
-    private bool turndown = false;
-    [SerializeField] int turncount = 10;
-    [SerializeField] TextMeshProUGUI turnText;
-
-    //Enums
+    private int TurnCount = 10;
+
+    //Enums
     private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4 }
 
     //Handler
@@ -47,7 +44,7 @@ public class PlayerParent : MonoBehaviour {
         }
         //fisher yates shuffle
         i = PlayerTurnOrder.Count;
-        while(i > 1) {
+        while (i > 1) {
             i--;
             int k = Random.Range(0, i + 1);
             int swap = PlayerTurnOrder[k];
@@ -66,29 +63,6 @@ public class PlayerParent : MonoBehaviour {
         mAnimator = GetComponentsInChildren<Animator>();
     }
 
-    private void Update() {
-        //Set animator for the current player
-        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
-
-
-        DisplayTurn();
-        if (PlayerTurnOrder[ActivePlayerIndex] == PlayerTurnOrder[0]&& turndown == true)
-        {
-            decreaseTurn();
-            turndown = false;
-        }
-        if (PlayerTurnOrder[ActivePlayerIndex] != PlayerTurnOrder[0])
-        {
-            turndown = true;
-        }
-
-        if (getCurrentTurn() == 0)
-        {
-            //go to phase 2
-            Debug.Log("phase 2");
-        }
-    }
-
     //for recipe building and anytime any player needs things
     public static Player GetActivePlayer() {
         return Players[PlayerTurnOrder[ActivePlayerIndex]];
@@ -97,7 +71,7 @@ public class PlayerParent : MonoBehaviour {
     //move player ez pz
     public void MoveAction() {
         Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position = Cursor.transform.position;
-        EndTurn();
+        EndIngredientTurn();
     }
 
     //buy ingredient at player coordinate
@@ -112,20 +86,22 @@ public class PlayerParent : MonoBehaviour {
         //deduct balance from player
         Players[PlayerTurnOrder[ActivePlayerIndex]].DeductBalance(ingredientToAdd.Cost);
         GameHandler.RemoveIngredient(x, y); //remove ingredient from map
-        EndTurn();
+        EndIngredientTurn();
     }
 
-    public void EndTurn() {
+    public void EndIngredientTurn() {
         ActivePlayerIndex++;    //next player
         //if index exceeds our number of players, loop back to player 1 (index 0)
+        //decrease number of turns left
         if (ActivePlayerIndex >= Players.Length) {
             ActivePlayerIndex = 0;
+            TurnCount--;
         }
         //reset animators
-        for (int i = 0; i < Players.Length; i++) {
-            mAnimator[i].ResetTrigger("isMoving");
-        }
-        
+        ResetAnimators();
+        //Set animator for the current player
+        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
+
         //move container to the next player
         CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
         //reset cursor position to center
@@ -143,9 +119,9 @@ public class PlayerParent : MonoBehaviour {
         }
         //check if the new player has any valid moves. if not set a flag for NoMovesLeft
         //validate in all 4 directions
-        HasValidAction = ValidateMove(x, y + 1) || ValidateMove(x, y -1) || ValidateMove(x + 1, y) || ValidateMove(x - 1 , y);
+        HasValidAction = ValidateMove(x, y + 1) || ValidateMove(x, y - 1) || ValidateMove(x + 1, y) || ValidateMove(x - 1, y);
         //validate if theres an ingredient under the player currently
-        if(GameHandler.ValidIngredientInMap(x, y)) {
+        if (GameHandler.ValidIngredientInMap(x, y)) {
             //if there is, can the player afford it
             if (GameHandler.GetTileIngredient(x, y).Cost > Players[PlayerTurnOrder[ActivePlayerIndex]].GetFunds()) {
                 HasValidAction = false;
@@ -159,10 +135,10 @@ public class PlayerParent : MonoBehaviour {
     //Returns true if the selected coordinates is already occupied
     public bool Overlap(int x, int y) {
         //check against all other player
-        for(int i = 0; i < Players.Length; i++) {
-            if(PlayerTurnOrder[i] != PlayerTurnOrder[ActivePlayerIndex]) {  //dont cross reference against the own player
+        for (int i = 0; i < Players.Length; i++) {
+            if (PlayerTurnOrder[i] != PlayerTurnOrder[ActivePlayerIndex]) {  //dont cross reference against the own player
                 //if the tile selected is occupied by another player
-                if(x == Players[PlayerTurnOrder[i]].transform.position.x && y == Players[PlayerTurnOrder[i]].transform.position.y) {
+                if (x == Players[PlayerTurnOrder[i]].transform.position.x && y == Players[PlayerTurnOrder[i]].transform.position.y) {
                     return true;
                 }
             }
@@ -186,73 +162,13 @@ public class PlayerParent : MonoBehaviour {
         }
     }
 
-
-    //not used for now
-    //-----------------
-    //KEYBOARD CONTROLS
-    //-----------------
-    //private int GetDirectionInput() {
-    //    if (Input.GetButtonDown("Up")) {
-    //        return (int)Directions.Up;
-    //    }
-    //    else if (Input.GetButtonDown("Right")) {
-    //        return (int)Directions.Right;
-    //    }
-    //    else if (Input.GetButtonDown("Down")) {
-    //        return (int)Directions.Down;
-    //    }
-    //    else if (Input.GetButtonDown("Left")) {
-    //        return (int)Directions.Left;
-    //    }
-    //    return (int)Directions.None;
-    //}
-
-    //private void MoveCursor() {
-    //    switch (GetDirectionInput()) {
-    //        case (int)Directions.Up:
-    //            if (Players[ActivePlayerIndex].transform.position.y < MainGame.MapSize - 1) {
-    //                Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x, Players[ActivePlayerIndex].transform.position.y + 1, Players[ActivePlayerIndex].transform.position.z);
-    //            }
-    //            break;
-    //        case (int)Directions.Right:
-    //            if (Players[ActivePlayerIndex].transform.position.x < MainGame.MapSize - 1) {
-    //                Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x + 1, Players[ActivePlayerIndex].transform.position.y, Players[ActivePlayerIndex].transform.position.z);
-    //            }
-    //            break;
-    //        case (int)Directions.Down:
-    //            if (Players[ActivePlayerIndex].transform.position.y > 0) {
-    //                Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x, Players[ActivePlayerIndex].transform.position.y - 1, Players[ActivePlayerIndex].transform.position.z);
-    //            }
-    //            break;
-    //        case (int)Directions.Left:
-    //            if (Players[ActivePlayerIndex].transform.position.x > 0) {
-    //                Cursor.transform.position = new Vector3(Players[ActivePlayerIndex].transform.position.x - 1, Players[ActivePlayerIndex].transform.position.y, Players[ActivePlayerIndex].transform.position.z);
-    //            }
-    //            break;
-    //        default: break;
-    //    }
-    //}
-
-    private void MovePlayer() {
-        Players[ActivePlayerIndex].transform.position = Cursor.transform.position;
-    }
-
-
-    public int getCurrentTurn()
-    {
-        return turncount;
-    }
-    public void decreaseTurn()
-    {
-        turncount = getCurrentTurn() - 1;
-    }
-    public void setTurn(int value)
-    {
-        turncount = value;
+    public void ResetAnimators() {
+        for (int i = 0; i < Players.Length; i++) {
+            mAnimator[i].ResetTrigger("isMoving");
+        }
     }
-    private void DisplayTurn()
-    {
-        int currentTurn = getCurrentTurn();
-        turnText.text = currentTurn.ToString();
+
+    public int GetTurnCount() {
+        return TurnCount;
     }
 }
