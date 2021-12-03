@@ -105,7 +105,7 @@ public class PlayerParent : MonoBehaviour {
 
     public static void BuyRecipe(RecipeCard recipeCard)
     {
-        Players[ActivePlayerIndex].AddCardToRecipeHand(recipeCard);
+        Players[PlayerTurnOrder[ActivePlayerIndex]].AddCardToRecipeHand(recipeCard);
     }
 
 
