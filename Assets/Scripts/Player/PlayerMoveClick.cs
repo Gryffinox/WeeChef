@@ -6,6 +6,8 @@ public class PlayerMoveClick : MonoBehaviour {
 
     [SerializeField] GameObject UIParent;
     [SerializeField] GameObject Cursor;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip click;
 
     private MainGame GameHandler;               //access the game
     private IngredientGatheringUI UIHandler;    //access UI
@@ -30,6 +32,7 @@ public class PlayerMoveClick : MonoBehaviour {
             //If clicked on an empty tile, just hide the buttons
             if (!GameHandler.ValidCoords((int)transform.position.x, (int)transform.position.y)) {
                 UIHandler.HideAllButtons();
+                audioSource.PlayOneShot(click, 1);
             }
             //if a valid tile clicked
             else {
@@ -37,10 +40,12 @@ public class PlayerMoveClick : MonoBehaviour {
                 if (MovementTile) {
                     //display the confirm movement button
                     UIHandler.ShowConfirmButton();
+                    audioSource.PlayOneShot(click, 1);
                 }
                 else {
                     //display the buy button
                     UIHandler.ShowBuyButton();
+                    audioSource.PlayOneShot(click, 1);
                 }
                 //tell ui we'd like to display the ingredient clicked
                 UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient((int)transform.position.x, (int)transform.position.y));    //get the ingredient from the map

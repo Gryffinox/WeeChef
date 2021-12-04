@@ -37,4 +37,8 @@ public class IngredientCard : MonoBehaviour {
         return Name + "(id: " + Id + ", cost: " + Cost;
     }
 
+    public string returnName()
+    {
+        return Name;
+    }
 }

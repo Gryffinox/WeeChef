@@ -20,6 +20,10 @@ public class Ingredient {
     public override string ToString() {
         return Name + " (id: " + Id + ", cost: " + Cost + ")";
     }
+    public string returnName()
+    {
+        return Name;
+    }
 }
 
 [Serializable]
