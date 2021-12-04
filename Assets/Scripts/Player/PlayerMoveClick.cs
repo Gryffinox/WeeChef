@@ -8,15 +8,18 @@ public class PlayerMoveClick : MonoBehaviour {
     [SerializeField] GameObject Cursor;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip click;
+    [SerializeField] GameObject Players;
 
     private MainGame GameHandler;               //access the game
     private IngredientGatheringUI UIHandler;    //access UI
+    private PlayerParent PlayerHandler;
     private bool MovementTile = true;           //when you click the tile, if its not the center tile, its a movement tile
 
     void Start() {
         //link handlers
         GameHandler = Camera.main.GetComponent<MainGame>();
         UIHandler = UIParent.GetComponent<IngredientGatheringUI>();
+        PlayerHandler = Players.GetComponent<PlayerParent>();
         //if within the parent cursor container, this click object is the center one
         if(transform.localPosition.x == 0 && transform.localPosition.y == 0) {
             MovementTile = false;
@@ -25,12 +28,14 @@ public class PlayerMoveClick : MonoBehaviour {
 
     private void OnMouseDown() {
         //if the clicked box is within the map area
-        if (transform.position.x < MainGame.MapSize && transform.position.x >= 0 &&
-            transform.position.y < MainGame.MapSize && transform.position.y >= 0) {
+        int x = (int)transform.position.x;
+        int y = (int)transform.position.y;
+        if (x < MainGame.MapSize && x >= 0 &&
+            y < MainGame.MapSize && y >= 0) {
             //move cursor to where the player clicked
             Cursor.transform.position = transform.position;
             //If clicked on an empty tile, just hide the buttons
-            if (!GameHandler.ValidCoords((int)transform.position.x, (int)transform.position.y)) {
+            if (!GameHandler.ValidIngredientInMap(x, y) || PlayerHandler.Overlap(x, y)) {
                 UIHandler.HideAllButtons();
                 audioSource.PlayOneShot(click, 1);
             }
@@ -46,9 +51,11 @@ public class PlayerMoveClick : MonoBehaviour {
                     //display the buy button
                     UIHandler.ShowBuyButton();
                     audioSource.PlayOneShot(click, 1);
+                    //if the player has enough funds to buy the ingredient, enable button
+                    UIHandler.SetBuyButtonInteractable(GameHandler.GetTileIngredient(x, y).Cost <= PlayerParent.GetActivePlayer().GetFunds());
                 }
                 //tell ui we'd like to display the ingredient clicked
-                UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient((int)transform.position.x, (int)transform.position.y));    //get the ingredient from the map
+                UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient(x, y));    //get the ingredient from the map
             }
         }
     }

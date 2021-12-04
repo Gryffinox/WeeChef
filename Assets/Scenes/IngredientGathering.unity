@@ -1681,6 +1681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9546358c78931ce468f1848e5600935d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Players: {fileID: 357869240}
+  IngredientUI: {fileID: 1632482013}
 --- !u!1 &537045209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2297,10 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: Players
+      value: 
+      objectReference: {fileID: 357869240}
     - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
       propertyPath: UIParent
       value: 
@@ -4672,6 +4678,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1565038565}
     - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: Players
+      value: 
+      objectReference: {fileID: 357869240}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
       propertyPath: UIParent
       value: 
       objectReference: {fileID: 1632482013}
@@ -4867,6 +4877,10 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: Players
+      value: 
+      objectReference: {fileID: 357869240}
     - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
       propertyPath: UIParent
       value: 
@@ -5251,6 +5265,10 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: Players
+      value: 
+      objectReference: {fileID: 357869240}
     - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
       propertyPath: UIParent
       value: 
@@ -7058,6 +7076,10 @@ PrefabInstance:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1565038565}
+    - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
+      propertyPath: Players
+      value: 
+      objectReference: {fileID: 357869240}
     - target: {fileID: 5942705764290421841, guid: 8e2e9de27ca63644a85e447c5d60c35d, type: 3}
       propertyPath: UIParent
       value: 
