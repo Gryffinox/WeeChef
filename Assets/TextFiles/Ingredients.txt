@@ -3,17 +3,17 @@
 [
 {"Id": 1, "Name": "Allium", "Count": 7, "Cost": 2},
 {"Id": 2, "Name": "Dairy", "Count": 7, "Cost": 3},
-{"Id": 3, "Name": "Beef / Red Meat", "Count": 2, "Cost": 4},
+{"Id": 3, "Name": "Beef", "Count": 2, "Cost": 4},
 {"Id": 4, "Name": "Poultry", "Count": 2, "Cost": 3},
-{"Id": 5, "Name": "Pork / Charcuterie", "Count": 3, "Cost": 3},
-{"Id": 6, "Name": "Root Vegetables / Mushrooms", "Count": 4, "Cost": 2},
+{"Id": 5, "Name": "Pork", "Count": 3, "Cost": 3},
+{"Id": 6, "Name": "Root Vegetables", "Count": 4, "Cost": 2},
 {"Id": 7, "Name": "Dry Goods", "Count": 4, "Cost": 2},
-{"Id": 8, "Name": "Garden Vegetables", "Count": 4, "Cost": 3},
+{"Id": 8, "Name": "Garden Vegetable", "Count": 4, "Cost": 3},
 {"Id": 9, "Name": "Fruits", "Count": 2, "Cost": 3},
-{"Id": 10,"Name": " Herbs / Leafy Greens", "Count": 4, "Cost": 3},
-{"Id": 11,"Name": " Fish / Shellfish", "Count": 3, "Cost": 4},
-{"Id": 12,"Name": " Liquid Goods", "Count": 4, "Cost": 3},
-{"Id": 13,"Name": " Confectionery", "Count": 2, "Cost": 3},
-{"Id": 14,"Name": " Spices", "Count" : 2, "Cost" : 4}
+{"Id": 10,"Name": "Herbs", "Count": 4, "Cost": 3},
+{"Id": 11,"Name": "Fish", "Count": 3, "Cost": 4},
+{"Id": 12,"Name": "Liquid Goods", "Count": 4, "Cost": 3},
+{"Id": 13,"Name": "Confectionery", "Count": 2, "Cost": 3},
+{"Id": 14,"Name": "Spices", "Count" : 2, "Cost" : 4}
 ]
 }
