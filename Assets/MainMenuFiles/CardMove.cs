@@ -14,7 +14,6 @@ public class CardMove : MonoBehaviour
 
     [SerializeField] GameObject hand;
     private bool shuffle = false;
-    
 
     void Start()
     {
@@ -34,7 +33,7 @@ public class CardMove : MonoBehaviour
         if (other.gameObject.tag == "hand")
         {
             shuffle = false;
-        }
+        }       
     }
             void OnMouseDown()
     {
