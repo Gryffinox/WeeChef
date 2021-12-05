@@ -6,12 +6,11 @@ public class Player : MonoBehaviour {
 
     private List<Ingredient> ingredientHand; // changed it from GameObject to list of Ingredient
     private List<RecipeCard> recipeHand;
-    private int funds;
+    [SerializeField] int funds= 100;
 
     private void Start() {
         ingredientHand = new List<Ingredient>();    //changed it from GameObject to list of Ingredient
         recipeHand = new List<RecipeCard>();
-        funds = 10;                                 //player starts with 10
     }
 
     // parameter changed from GameObject to Ingredient
@@ -52,5 +51,14 @@ public class Player : MonoBehaviour {
     public int GetFunds()
     {
         return funds;
+    }
+
+    public void decreaseFunds(int cost)
+    {
+        funds -= cost;
+    }
+    public void increaseFunds(int cost)
+    {
+        funds += cost;
     }
 }

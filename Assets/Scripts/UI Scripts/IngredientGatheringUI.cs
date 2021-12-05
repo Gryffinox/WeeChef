@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class IngredientGatheringUI : MonoBehaviour {
 
     //UI elements
-    [SerializeField] private Text TxtBox;
+    [SerializeField] private TextMeshProUGUI TxtBox;
     [SerializeField] private GameObject ConfirmButton;
     [SerializeField] private GameObject BuyButton;
     //Needed for the buttons. Buttons are used by players

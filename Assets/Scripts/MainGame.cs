@@ -14,9 +14,13 @@ public class MainGame : MonoBehaviour {
 
     //Players
     [SerializeField] private GameObject Players;
+    [SerializeField] private PlayerParent pParent;
     private PlayerParent PlayerHandler;
     //UI
     [SerializeField] private GameObject IngredientUI;
+    [SerializeField] private GameObject phase1Text;
+    [SerializeField] private GameObject phase2Text;
+    [SerializeField] private GameObject phase1Stuck;
     private IngredientGatheringUI UIHandler;
 
     void Start() {
@@ -52,17 +56,41 @@ public class MainGame : MonoBehaviour {
     void Update() {
         switch (GamePhase) {
             case (int)GamePhases.IngredientGathering:
+                //Debug.Log("currently phase 1");
                 // Do ingredient gathering here
-                if (PlayerHandler.NoMovesLeft()) {
-                    GamePhase = (int)GamePhases.RecipeBuilding;
+                if (PlayerHandler.allSkip()) {
+                    GamePhase = 1;
                     IngredientUI.SetActive(false);
-                    Debug.Log("No valid moves left. Recipe building time.");
+                    phase1Text.SetActive(false);
+                    phase2Text.SetActive(true);                    
+                }
+                else
+                {
+                    if (PlayerHandler.NoMovesLeft())
+                    {
+                        IngredientUI.SetActive(false);
+                        phase1Text.SetActive(false);
+                        phase2Text.SetActive(true);
+                        phase1Stuck.SetActive(true);
+                    }
                 }
                 break;
             case (int)GamePhases.RecipeBuilding:
                 // Do recipe building here
+                if (PlayerHandler.allSkip())
+                {
+                    GamePhase = 0;
+                    IngredientUI.SetActive(true);
+                    phase1Text.SetActive(true);
+                    phase2Text.SetActive(false);
+                }
                 break;
         }
+    }
+
+    public void hideStuck()
+    {
+        phase1Stuck.SetActive(false);
     }
 
     //Getting and removing ingredients
@@ -101,6 +129,16 @@ public class MainGame : MonoBehaviour {
             return false;
         }
         return true;
+    }
+
+    public void goPhase1()
+    {
+        GamePhase = 0;
+    }
+
+    public void goPhase2()
+    {
+        GamePhase = 1;
     }
     private void RefillMarket() {
 
