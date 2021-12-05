@@ -140,7 +140,25 @@ public class MainGame : MonoBehaviour {
     {
         GamePhase = 1;
     }
-    private void RefillMarket() {
-
+    public void RefillMarket()
+    {
+        // for each tile in map, check if it's empty
+        for (int column = 0; column < MapSize; column++)
+        {
+            for (int row = 0; row < MapSize; row++)
+            {
+                if (Tiles[column, row] == null)
+                {
+                    //Draw ingredient card from the deck
+                    Ingredient newIng = IngredientHandler.DrawCard();
+                    IngredientHandler.assignSprite(newIng.Id);
+                    //Create it's instance and spawn it
+                    Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -1), Quaternion.identity);
+                    Tiles[column, row].GetComponent<IngredientCard>().SetIngredient(newIng.Id, newIng.Name, newIng.Cost);
+                    Tiles[column, row].transform.localScale = new Vector3(0.8f, 0.8f, 1);
+                    Tiles[column, row].name = newIng.Name;
+                }
+            }
+        }
     }
 }
