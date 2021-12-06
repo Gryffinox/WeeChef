@@ -1,21 +1,47 @@
 using System.Collections;using System.Collections.Generic;using TMPro;
-using UnityEngine;public class PlayerParent : MonoBehaviour {        //Players    private static Player[] Players;            //list of players by their player script component    private static int ActivePlayerIndex;       //Current player    private static List<int> PlayerTurnOrder;   //the order in which the players play which goes back and forth        List<GameObject> cards = new List<GameObject>();
+using UnityEngine;public class PlayerParent : MonoBehaviour {
+
+    //Players
+    private static Player[] Players;            //list of players by their player script component
+    private static int ActivePlayerIndex;       //Current player
+    private static List<int> PlayerTurnOrder;   //the order in which the players play which goes back and forth
+
+    List<GameObject> cards = new List<GameObject>();
 
     //Gameobject
-    [SerializeField] IngredientList ingredientList;    [SerializeField] private GameObject CursorContainer;    //moves the whole cursor container which includes the click actions    [SerializeField] private GameObject Cursor;             //just the visual cursor object    [SerializeField] private GameObject IngredientGatheringUI;    [SerializeField] GameObject onionCard;    [SerializeField] GameObject porkCard;    [SerializeField] GameObject cheeseCard;    [SerializeField] GameObject ribsCard;    [SerializeField] GameObject chickenCard;    [SerializeField] GameObject potatoCard;    [SerializeField] GameObject breadCard;    [SerializeField] GameObject tomatoCard;    [SerializeField] GameObject appleCard;    [SerializeField] GameObject oliveCard;    [SerializeField] GameObject fishCard;    [SerializeField] GameObject wineCard;    [SerializeField] GameObject brownieCard;    [SerializeField] GameObject pepperCard;    [SerializeField] AudioSource audioSource;    [SerializeField] AudioClip click;    [SerializeField] AudioClip money;    [SerializeField] GameObject hand;    [SerializeField] GameObject turn1;    [SerializeField] GameObject turn2;    [SerializeField] GameObject turn3;    [SerializeField] GameObject turn4;    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] IngredientList ingredientList;    [SerializeField] private GameObject CursorContainer;    //moves the whole cursor container which includes the click actions
+    [SerializeField] private GameObject Cursor;             //just the visual cursor object
+    [SerializeField] private GameObject IngredientGatheringUI;    [SerializeField] GameObject onionCard;    [SerializeField] GameObject porkCard;    [SerializeField] GameObject cheeseCard;    [SerializeField] GameObject ribsCard;    [SerializeField] GameObject chickenCard;    [SerializeField] GameObject potatoCard;    [SerializeField] GameObject breadCard;    [SerializeField] GameObject tomatoCard;    [SerializeField] GameObject appleCard;    [SerializeField] GameObject oliveCard;    [SerializeField] GameObject fishCard;    [SerializeField] GameObject wineCard;    [SerializeField] GameObject brownieCard;    [SerializeField] GameObject pepperCard;    [SerializeField] AudioSource audioSource;    [SerializeField] AudioClip click;    [SerializeField] AudioClip money;    [SerializeField] GameObject hand;    [SerializeField] GameObject turn1;    [SerializeField] GameObject turn2;    [SerializeField] GameObject turn3;    [SerializeField] GameObject turn4;    [SerializeField] TextMeshProUGUI scoreText;
 
 
     //Enums
-    private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4 }    //Handler    private MainGame GameHandler;    private IngredientGatheringUI UIHandler;    //Player parent handles all animators since only one hat can be moving at a time    private Animator[] mAnimator;    private bool HasValidAction = true;    private bool skip1 = false;    private bool skip2 = false;    private bool skip3 = false;    private bool skip4 = false;
+    private enum Directions { None = 0, Up = 1, Right = 2, Down = 3, Left = 4 }
+
+    //Handler
+    private MainGame GameHandler;    private IngredientGatheringUI UIHandler;
+    //Player parent handles all animators since only one hat can be moving at a time
+    private Animator[] mAnimator;    private bool HasValidAction = true;    private bool skip1 = false;    private bool skip2 = false;    private bool skip3 = false;    private bool skip4 = false;
     private bool allskip = false;
-    [SerializeField] GameObject Uiskip1;    [SerializeField] GameObject Uiskip2;    [SerializeField] GameObject Uiskip3;    [SerializeField] GameObject Uiskip4;    void Start() {        Players = GetComponentsInChildren<Player>();        PlayerTurnOrder = new List<int>();        //determine random play order        int i = 0;  //index counter        for (i = 0; i < Players.Length; i++) {            PlayerTurnOrder.Add(i);        }        ActivePlayerIndex = 0;  //first player        //cursor to first player        CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;        //handlers        GameHandler = Camera.main.GetComponent<MainGame>();        UIHandler = IngredientGatheringUI.GetComponent<IngredientGatheringUI>();        //setup animators        mAnimator = GetComponentsInChildren<Animator>();
+    [SerializeField] GameObject Uiskip1;    [SerializeField] GameObject Uiskip2;    [SerializeField] GameObject Uiskip3;    [SerializeField] GameObject Uiskip4;    void Start() {        Players = GetComponentsInChildren<Player>();        PlayerTurnOrder = new List<int>();
+        //determine random play order
+        int i = 0;  //index counter
+        for (i = 0; i < Players.Length; i++) {            PlayerTurnOrder.Add(i);        }        ActivePlayerIndex = 0;  //first player
+                                //cursor to first player
+        CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
+
+        //handlers
+        GameHandler = Camera.main.GetComponent<MainGame>();        UIHandler = IngredientGatheringUI.GetComponent<IngredientGatheringUI>();
+        //setup animators
+        mAnimator = GetComponentsInChildren<Animator>();
         //show buy button for valid ingredient
         int x = (int)Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position.x;
         int y = (int)Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position.y;
         if (GameHandler.ValidIngredientInMap(x, y)) {            UIHandler.ShowBuyButton();            UIHandler.DisplayIngredientInfo(GameHandler.GetTileIngredient(x, y));    //get the ingredient from the map
             //enable buy button only if they can afford it
             UIHandler.SetBuyButtonInteractable(GameHandler.GetTileIngredient(x, y).Cost <= PlayerParent.GetActivePlayer().GetFunds());
-        }    }    private void Update() {        //Set animator for the current player        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");        showCards();        DisplayCoin();        DisplaySkip();        if (skip1 == true && skip2 == true && skip3 == true && skip4 == true)
+        }    }    private void Update() {
+        //Set animator for the current player
+        mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");        showCards();        DisplayCoin();        DisplaySkip();        if (skip1 == true && skip2 == true && skip3 == true && skip4 == true)
         {
             allskip = true;
             skip1 = false;
@@ -30,7 +56,7 @@ using UnityEngine;public class PlayerParent : MonoBehaviour {        //Playe
 
     private void DisplaySkip()
     {
-        if(skip1 == true)
+        if (skip1 == true)
         {
             Uiskip1.SetActive(true);
         }
@@ -71,7 +97,28 @@ using UnityEngine;public class PlayerParent : MonoBehaviour {        //Playe
     public int getCurrentCoin()
     {
         return Players[PlayerTurnOrder[ActivePlayerIndex]].GetFunds(); ;
-    }    public void ResetPosition()    {        GameObject[] temp;        temp = GameObject.FindGameObjectsWithTag("p1");        foreach (GameObject go in temp)        {            go.GetComponent<CardMove>().goShuffle();        }        temp = GameObject.FindGameObjectsWithTag("p2");        foreach (GameObject go in temp)        {            go.GetComponent<CardMove>().goShuffle();        }        temp = GameObject.FindGameObjectsWithTag("p3");        foreach (GameObject go in temp)        {            go.GetComponent<CardMove>().goShuffle();        }        temp = GameObject.FindGameObjectsWithTag("p4");        foreach (GameObject go in temp)        {            go.GetComponent<CardMove>().goShuffle();        }    }    private void showCards()    {        int i = returnPlayer();        GameObject[] temp;        if (i == 0)        {            turn1.SetActive(true);            turn2.SetActive(false);            turn3.SetActive(false);            turn4.SetActive(false);            temp = GameObject.FindGameObjectsWithTag("p2");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p3");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p4");            foreach (GameObject go in temp)            {                go.SetActive(false);            }        }                if (i == 1)        {            turn1.SetActive(false);            turn2.SetActive(true);            turn3.SetActive(false);            turn4.SetActive(false);            temp = GameObject.FindGameObjectsWithTag("p1");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p3");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p4");            foreach (GameObject go in temp)            {                go.SetActive(false);            }        }                if (i == 2)        {            turn1.SetActive(false);            turn2.SetActive(false);            turn3.SetActive(true);            turn4.SetActive(false);            temp = GameObject.FindGameObjectsWithTag("p2");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p1");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p4");            foreach (GameObject go in temp)            {                go.SetActive(false);            }        }                if (i == 3)        {            turn1.SetActive(false);            turn2.SetActive(false);            turn3.SetActive(false);            turn4.SetActive(true);            temp = GameObject.FindGameObjectsWithTag("p2");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p3");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p1");            foreach (GameObject go in temp)            {                go.SetActive(false);            }        }    }    //for recipe building and anytime any player needs things    public static Player GetActivePlayer() {        return Players[PlayerTurnOrder[ActivePlayerIndex]];    }    //move player ez pz    public void MoveAction() {        Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position = Cursor.transform.position;        audioSource.PlayOneShot(click, 1);        EndTurn();    }    public void playClick()
+    }    public void ResetPosition()    {        GameObject[] temp;        temp = GameObject.FindGameObjectsWithTag("p1");        foreach (GameObject go in temp)        {            if (go.GetComponent<CardMove>() != null)            {
+                go.GetComponent<CardMove>().goShuffle();
+            }            if (go.GetComponent<RecipeMove>() != null)
+            {
+                go.GetComponent<RecipeMove>().goShuffle();
+            }
+        }        temp = GameObject.FindGameObjectsWithTag("p2");        foreach (GameObject go in temp)        {            if (go.GetComponent<CardMove>() != null)            {
+                go.GetComponent<CardMove>().goShuffle();
+            }            if (go.GetComponent<RecipeMove>() != null)
+            {
+                go.GetComponent<RecipeMove>().goShuffle();
+            }
+        }        temp = GameObject.FindGameObjectsWithTag("p3");        foreach (GameObject go in temp)        {            if (go.GetComponent<CardMove>() != null)            {
+                go.GetComponent<CardMove>().goShuffle();
+            }            if (go.GetComponent<RecipeMove>() != null)
+            {
+                go.GetComponent<RecipeMove>().goShuffle();
+            }
+        }        temp = GameObject.FindGameObjectsWithTag("p4");        foreach (GameObject go in temp)        {            if (go.GetComponent<CardMove>()!= null)            {                 go.GetComponent<CardMove>().goShuffle();             }            if (go.GetComponent<RecipeMove>() != null)
+            {
+                go.GetComponent<RecipeMove>().goShuffle();
+            }        }    }    private void showCards()    {        int i = returnPlayer();        GameObject[] temp;        if (i == 0)        {            turn1.SetActive(true);            turn2.SetActive(false);            turn3.SetActive(false);            turn4.SetActive(false);            temp = GameObject.FindGameObjectsWithTag("p2");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p3");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p4");            foreach (GameObject go in temp)            {                go.SetActive(false);            }        }                if (i == 1)        {            turn1.SetActive(false);            turn2.SetActive(true);            turn3.SetActive(false);            turn4.SetActive(false);            temp = GameObject.FindGameObjectsWithTag("p1");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p3");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p4");            foreach (GameObject go in temp)            {                go.SetActive(false);            }        }                if (i == 2)        {            turn1.SetActive(false);            turn2.SetActive(false);            turn3.SetActive(true);            turn4.SetActive(false);            temp = GameObject.FindGameObjectsWithTag("p2");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p1");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p4");            foreach (GameObject go in temp)            {                go.SetActive(false);            }        }                if (i == 3)        {            turn1.SetActive(false);            turn2.SetActive(false);            turn3.SetActive(false);            turn4.SetActive(true);            temp = GameObject.FindGameObjectsWithTag("p2");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p3");            foreach (GameObject go in temp)            {                go.SetActive(false);            }            temp = GameObject.FindGameObjectsWithTag("p1");            foreach (GameObject go in temp)            {                go.SetActive(false);            }        }    }    //for recipe building and anytime any player needs things    public static Player GetActivePlayer() {        return Players[PlayerTurnOrder[ActivePlayerIndex]];    }    //move player ez pz    public void MoveAction() {        Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position = Cursor.transform.position;        audioSource.PlayOneShot(click, 1);        EndTurn();    }    public void playClick()
     {
         int i = returnPlayer();
         if (i == 0)
