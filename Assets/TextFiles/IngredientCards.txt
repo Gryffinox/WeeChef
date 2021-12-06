@@ -1,0 +1,14 @@
+Allium x7
+Dairy x7
+Beef/Veal x2
+Poultry x2
+Pork/Charcuterie x3
+Root Vegetables/Mushrooms x3
+Dry Goods x4
+Garden Vegetables x4
+Fruits x2
+Herbs/Leafy Greens x4
+Fish/Shellfish x3
+Liquid Goods x4
+Confectionery x3
+Spices x4
