@@ -12,6 +12,12 @@ public class MainGame : MonoBehaviour {
     private GameObject[,] Tiles;
     private IngredientList IngredientHandler;
 
+    //Recipes
+    private Recipe[] RecipesListed;
+    private RecipeList RecipeHandler;
+    [SerializeField] private const float RecipeX = 9;
+    [SerializeField] private const float RecipeDistance = 2.25f;
+
     //Players
     [SerializeField] private GameObject Players;
     [SerializeField] private PlayerParent pParent;
@@ -51,6 +57,12 @@ public class MainGame : MonoBehaviour {
                 Tiles[column, row].name = newIng.Name;
             }
         }
+
+        //Recipe
+        RecipeHandler = GetComponent<RecipeList>();
+        RecipesListed = new Recipe[MapSize];
+        RefillRecipeMenu();
+
     }
 
     void Update() {
@@ -62,7 +74,8 @@ public class MainGame : MonoBehaviour {
                     GamePhase = 1;
                     IngredientUI.SetActive(false);
                     phase1Text.SetActive(false);
-                    phase2Text.SetActive(true);                    
+                    phase2Text.SetActive(true);
+                    RefillRecipeMenu();
                 }
                 else
                 {
@@ -72,6 +85,7 @@ public class MainGame : MonoBehaviour {
                         phase1Text.SetActive(false);
                         phase2Text.SetActive(true);
                         phase1Stuck.SetActive(true);
+                        RefillRecipeMenu();
                     }
                 }
                 break;
@@ -158,6 +172,17 @@ public class MainGame : MonoBehaviour {
                     Tiles[column, row].transform.localScale = new Vector3(0.8f, 0.8f, 1);
                     Tiles[column, row].name = newIng.Name;
                 }
+            }
+        }
+    }
+
+    public void RefillRecipeMenu() {
+        //refill recipe list
+        for(int i = 0; i < MapSize; i++) {
+            //if theres a blank in the list
+            if (RecipesListed[i] == null) {
+                RecipesListed[i]  = RecipeHandler.DrawRecipeCard();
+                RecipeHandler.ToggleRecipeCard(RecipesListed[i].RecipeName, true, (i - 2) * RecipeDistance);
             }
         }
     }
