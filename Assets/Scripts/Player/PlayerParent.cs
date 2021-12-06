@@ -54,6 +54,14 @@ using UnityEngine;public class PlayerParent : MonoBehaviour {
             allskip = false;
         }    }
 
+    public void skipReset()
+    {
+        skip1 = false;
+        skip2 = false;
+        skip3 = false;
+        skip4 = false;
+
+    }
     private void DisplaySkip()
     {
         if (skip1 == true)

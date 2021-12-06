@@ -88,6 +88,7 @@ public class MainGame : MonoBehaviour {
                         phase1Text.SetActive(false);
                         phase2Text.SetActive(true);
                         phase1Stuck.SetActive(true);
+                        pParent.skipReset();
                         recipeParent.triggerOn();
                     }
                 }
