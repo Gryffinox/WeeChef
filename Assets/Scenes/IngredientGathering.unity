@@ -594,7 +594,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 18656021}
   - component: {fileID: 18656020}
   m_Layer: 0
-  m_Name: 'SatayCard '
+  m_Name: Satay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,12 +915,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
+  - {fileID: 1538148064}
   - {fileID: 655790052}
-  noCheck:
-  - {fileID: 1981162135}
-  - {fileID: 11973654}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &18656022
@@ -1118,7 +1117,7 @@ GameObject:
   - component: {fileID: 21437627}
   - component: {fileID: 21437626}
   m_Layer: 0
-  m_Name: 'SpringRollCard '
+  m_Name: Spring Roll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1173,16 +1172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 1065777850}
+  - {fileID: 349071220}
+  - {fileID: 345136035}
   - {fileID: 15893350}
-  - {fileID: 15893350}
-  - {fileID: 15893350}
-  noCheck:
-  - {fileID: 763056497}
-  - {fileID: 734210092}
-  - {fileID: 912131394}
-  - {fileID: 483795033}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &21437628
@@ -1294,7 +1290,7 @@ GameObject:
   - component: {fileID: 22940060}
   - component: {fileID: 22940061}
   m_Layer: 0
-  m_Name: 'GardenCard  '
+  m_Name: GardenCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1954,7 +1950,7 @@ GameObject:
   - component: {fileID: 58833981}
   - component: {fileID: 58833980}
   m_Layer: 0
-  m_Name: 'JerkChickenCard '
+  m_Name: Jerk Chicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2007,14 +2003,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 938431576}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 482345599}
-  - {fileID: 1981162135}
-  - {fileID: 1139223613}
+  - {fileID: 1158235137}
+  - {fileID: 1095942292}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &58833982
@@ -2124,6 +2118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 60101094}
+  - component: {fileID: 60101095}
   m_Layer: 0
   m_Name: RecipeCards
   m_TagString: Untagged
@@ -2194,6 +2189,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &60101095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60101093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09c82e12be563c4b81d04a3cdee66e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &61191870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,7 +2298,7 @@ GameObject:
   - component: {fileID: 64663118}
   - component: {fileID: 64663117}
   m_Layer: 0
-  m_Name: 'RatatouilleCard '
+  m_Name: Ratatouille
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2344,14 +2351,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
+  - {fileID: 497496892}
   - {fileID: 656902978}
-  - {fileID: 656902978}
-  noCheck:
-  - {fileID: 741659779}
-  - {fileID: 483795033}
-  - {fileID: 763056497}
+  - {fileID: 616423792}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &64663119
@@ -3560,7 +3565,7 @@ GameObject:
   - component: {fileID: 129147440}
   - component: {fileID: 129147441}
   m_Layer: 0
-  m_Name: 'HerbCard  '
+  m_Name: HerbCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4305,7 +4310,7 @@ GameObject:
   - component: {fileID: 145356180}
   - component: {fileID: 145356179}
   m_Layer: 0
-  m_Name: 'PadThaiCard '
+  m_Name: Pad Thai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4362,18 +4367,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 162948369}
+  - {fileID: 2000037260}
+  - {fileID: 1447399841}
   - {fileID: 1059027145}
-  - {fileID: 1059027145}
-  - {fileID: 1059027145}
-  - {fileID: 1059027145}
-  noCheck:
-  - {fileID: 1981162135}
-  - {fileID: 1979398242}
-  - {fileID: 200124894}
-  - {fileID: 734210092}
-  - {fileID: 912131394}
+  - {fileID: 1195922436}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &145356181
@@ -4901,7 +4902,7 @@ GameObject:
   - component: {fileID: 150388042}
   - component: {fileID: 150388043}
   m_Layer: 0
-  m_Name: 'LiquidCard '
+  m_Name: LiquidCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5272,7 +5273,7 @@ GameObject:
   - component: {fileID: 164332396}
   - component: {fileID: 164332395}
   m_Layer: 0
-  m_Name: GyozaCard
+  m_Name: Gyoza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5327,16 +5328,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1568065837}
-  - {fileID: 1352447838}
+  - {fileID: 705979257}
+  - {fileID: 147486424}
   - {fileID: 185882453}
-  - {fileID: 11973654}
+  - {fileID: 471131031}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &164332397
@@ -5612,7 +5610,7 @@ GameObject:
   - component: {fileID: 179055131}
   - component: {fileID: 179055132}
   m_Layer: 0
-  m_Name: 'SpiceCard  '
+  m_Name: SpiceCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6108,7 +6106,7 @@ GameObject:
   - component: {fileID: 194801339}
   - component: {fileID: 194801338}
   m_Layer: 0
-  m_Name: PizzaMargheritaCard
+  m_Name: Pizza Margherita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6163,16 +6161,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1035442632}
-  - {fileID: 567697001}
-  - {fileID: 483795033}
-  - {fileID: 763056497}
+  - {fileID: 1836279403}
+  - {fileID: 1960443312}
+  - {fileID: 1080740247}
+  - {fileID: 2086897397}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &194801340
@@ -6366,7 +6361,7 @@ GameObject:
   - component: {fileID: 198841500}
   - component: {fileID: 198841501}
   m_Layer: 0
-  m_Name: 'GardenCard  '
+  m_Name: GardenCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7581,7 +7576,7 @@ GameObject:
   - component: {fileID: 240998302}
   - component: {fileID: 240998301}
   m_Layer: 0
-  m_Name: HummusCard
+  m_Name: Hummus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7632,12 +7627,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 734210092}
-  - {fileID: 11973654}
+  - {fileID: 1550935448}
+  - {fileID: 510645570}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &240998303
@@ -8503,7 +8497,7 @@ GameObject:
   - component: {fileID: 280940944}
   - component: {fileID: 280940943}
   m_Layer: 0
-  m_Name: TikkaMasalaCard
+  m_Name: Tikka Masala
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8560,18 +8554,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1981162135}
-  - {fileID: 483795033}
-  - {fileID: 482345599}
-  - {fileID: 741659779}
-  - {fileID: 734210092}
+  - {fileID: 706555921}
+  - {fileID: 1386370684}
+  - {fileID: 205390826}
+  - {fileID: 1859493305}
+  - {fileID: 1077564817}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &280940945
@@ -8765,7 +8755,7 @@ GameObject:
   - component: {fileID: 293134601}
   - component: {fileID: 293134602}
   m_Layer: 0
-  m_Name: 'HerbCard  '
+  m_Name: HerbCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8847,7 +8837,7 @@ GameObject:
   - component: {fileID: 294783607}
   - component: {fileID: 294783608}
   m_Layer: 0
-  m_Name: 'DairyCard '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9093,7 +9083,7 @@ GameObject:
   - component: {fileID: 329942763}
   - component: {fileID: 329942764}
   m_Layer: 0
-  m_Name: 'DairyCard '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9261,7 +9251,7 @@ GameObject:
   - component: {fileID: 336281103}
   - component: {fileID: 336281102}
   m_Layer: 0
-  m_Name: PhoCard
+  m_Name: Pho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9316,16 +9306,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 618525682}
+  - {fileID: 989634519}
+  - {fileID: 2126885395}
   - {fileID: 500153780}
-  - {fileID: 500153780}
-  - {fileID: 500153780}
-  noCheck:
-  - {fileID: 1097565636}
-  - {fileID: 482345599}
-  - {fileID: 734210092}
-  - {fileID: 763056497}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &336281104
@@ -9711,7 +9698,7 @@ GameObject:
   - component: {fileID: 349071221}
   - component: {fileID: 349071222}
   m_Layer: 0
-  m_Name: 'HerbCard '
+  m_Name: HerbCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10579,7 +10566,7 @@ GameObject:
   - component: {fileID: 374494411}
   - component: {fileID: 374494410}
   m_Layer: 5
-  m_Name: MarketReset
+  m_Name: TestButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10649,9 +10636,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1556337912}
-        m_TargetAssemblyTypeName: RecipeCard, Assembly-CSharp
-        m_MethodName: cancelRecipe
+      - m_Target: {fileID: 60101095}
+        m_TargetAssemblyTypeName: RecipeParent, Assembly-CSharp
+        m_MethodName: triggerOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11372,7 +11359,7 @@ GameObject:
   - component: {fileID: 398660547}
   - component: {fileID: 398660548}
   m_Layer: 0
-  m_Name: HerbCard
+  m_Name: FishCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11792,7 +11779,7 @@ GameObject:
   - component: {fileID: 406167984}
   - component: {fileID: 406167983}
   m_Layer: 0
-  m_Name: Coq-au-vinCard
+  m_Name: Coq-au-vin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11847,16 +11834,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
+  - {fileID: 1505556579}
   - {fileID: 1723299600}
   - {fileID: 1718273441}
-  - {fileID: 1718273441}
-  - {fileID: 1718273441}
-  noCheck:
-  - {fileID: 1981162135}
-  - {fileID: 1352447838}
-  - {fileID: 1296740593}
-  - {fileID: 1645868327}
+  - {fileID: 1115905124}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &406167985
@@ -12750,7 +12734,7 @@ GameObject:
   - component: {fileID: 442905685}
   - component: {fileID: 442905686}
   m_Layer: 0
-  m_Name: 'RootCard '
+  m_Name: RootCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13710,7 +13694,7 @@ GameObject:
   - component: {fileID: 471131032}
   - component: {fileID: 471131033}
   m_Layer: 0
-  m_Name: 'LiquidCard '
+  m_Name: LiquidCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13874,7 +13858,7 @@ GameObject:
   - component: {fileID: 480982729}
   - component: {fileID: 480982730}
   m_Layer: 0
-  m_Name: 'DairyCard '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14082,7 +14066,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -14228,7 +14212,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -14842,7 +14826,7 @@ GameObject:
   - component: {fileID: 510645571}
   - component: {fileID: 510645572}
   m_Layer: 0
-  m_Name: 'LiquidCard  '
+  m_Name: LiquidCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14928,7 +14912,7 @@ GameObject:
   - component: {fileID: 510843551}
   - component: {fileID: 510843550}
   m_Layer: 0
-  m_Name: PaellaCard
+  m_Name: Paella
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14985,18 +14969,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 1615738676}
+  - {fileID: 1258146784}
+  - {fileID: 988156687}
   - {fileID: 1035442632}
-  - {fileID: 1035442632}
-  - {fileID: 1035442632}
-  - {fileID: 1035442632}
-  noCheck:
-  - {fileID: 673987554}
-  - {fileID: 912131394}
-  - {fileID: 483795033}
-  - {fileID: 482345599}
-  - {fileID: 1139223613}
+  - {fileID: 576000378}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &510843552
@@ -15367,6 +15347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9546358c78931ce468f1848e5600935d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipeParent: {fileID: 60101095}
   Players: {fileID: 357869240}
   pParent: {fileID: 357869241}
   IngredientUI: {fileID: 1736753039}
@@ -16215,7 +16196,7 @@ GameObject:
   - component: {fileID: 577324509}
   - component: {fileID: 577324508}
   m_Layer: 0
-  m_Name: DuckRiceCard
+  m_Name: Duck Rice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16270,16 +16251,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 1355673648}
+  - {fileID: 1578087520}
+  - {fileID: 356796960}
   - {fileID: 2013227416}
-  - {fileID: 2013227416}
-  - {fileID: 2013227416}
-  noCheck:
-  - {fileID: 1675733374}
-  - {fileID: 1296740593}
-  - {fileID: 1981162135}
-  - {fileID: 1035442632}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &577324510
@@ -16488,7 +16466,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579661155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.0001236}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children: []
   m_Father: {fileID: 850063094}
@@ -18312,7 +18290,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -19589,7 +19567,7 @@ GameObject:
   - component: {fileID: 660281889}
   - component: {fileID: 660281890}
   m_Layer: 0
-  m_Name: 'DairyCard '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19757,7 +19735,7 @@ GameObject:
   - component: {fileID: 672335874}
   - component: {fileID: 672335873}
   m_Layer: 0
-  m_Name: WagyuTatakiCard
+  m_Name: Wagyu Tataki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19810,14 +19788,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1352447838}
-  - {fileID: 11973654}
-  - {fileID: 1820038400}
+  - {fileID: 369743012}
+  - {fileID: 1365043238}
+  - {fileID: 1645868327}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &672335875
@@ -20261,7 +20237,7 @@ GameObject:
   - component: {fileID: 682292539}
   - component: {fileID: 682292538}
   m_Layer: 0
-  m_Name: FriedPlantainsCard
+  m_Name: Fried Plantains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20312,12 +20288,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 11973654}
-  - {fileID: 622587832}
+  - {fileID: 1296740593}
+  - {fileID: 381469074}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &682292540
@@ -20597,7 +20572,7 @@ GameObject:
   - component: {fileID: 692391648}
   - component: {fileID: 692391647}
   m_Layer: 0
-  m_Name: GriotCard
+  m_Name: Griot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20652,16 +20627,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 935585844}
   - {fileID: 1979398242}
-  - {fileID: 1979398242}
-  - {fileID: 1979398242}
-  noCheck:
-  - {fileID: 200124894}
-  - {fileID: 138138149}
-  - {fileID: 1439511186}
-  - {fileID: 763056497}
+  - {fileID: 445257685}
+  - {fileID: 231537134}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &692391649
@@ -21019,7 +20991,7 @@ GameObject:
   - component: {fileID: 697574670}
   - component: {fileID: 697574671}
   m_Layer: 0
-  m_Name: 'DairyCard '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21187,7 +21159,7 @@ GameObject:
   - component: {fileID: 705789274}
   - component: {fileID: 705789273}
   m_Layer: 0
-  m_Name: BouillabaisseCard
+  m_Name: Bouillabaisse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21244,18 +21216,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 124676211}
+  - {fileID: 126824586}
+  - {fileID: 369633265}
   - {fileID: 1783276781}
-  - {fileID: 1783276781}
-  - {fileID: 1783276781}
-  - {fileID: 1783276781}
-  noCheck:
-  - {fileID: 912131394}
-  - {fileID: 483795033}
-  - {fileID: 497496892}
-  - {fileID: 2068710162}
-  - {fileID: 1645868327}
+  - {fileID: 554193654}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &705789275
@@ -21449,7 +21417,7 @@ GameObject:
   - component: {fileID: 706555922}
   - component: {fileID: 706555923}
   m_Layer: 0
-  m_Name: 'PoultryCard '
+  m_Name: PoultryCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21781,7 +21749,7 @@ GameObject:
   - component: {fileID: 716167827}
   - component: {fileID: 716167826}
   m_Layer: 0
-  m_Name: KormaCard
+  m_Name: Korma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21834,14 +21802,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1097565636}
-  - {fileID: 567697001}
-  - {fileID: 482345599}
+  - {fileID: 1417410990}
+  - {fileID: 329942762}
+  - {fileID: 1365730921}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &716167828
@@ -21957,7 +21923,7 @@ GameObject:
   - component: {fileID: 716430761}
   - component: {fileID: 716430760}
   m_Layer: 0
-  m_Name: GelatoCard
+  m_Name: Gelato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22008,12 +21974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1193263378}
-  - {fileID: 567697001}
+  - {fileID: 484573225}
+  - {fileID: 294783606}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &716430762
@@ -22661,7 +22626,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -23344,6 +23309,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 60101095}
+        m_TargetAssemblyTypeName: RecipeParent, Assembly-CSharp
+        m_MethodName: returnIngredient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &758412331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23591,7 +23568,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -24354,7 +24331,7 @@ GameObject:
   - component: {fileID: 792816636}
   - component: {fileID: 792816635}
   m_Layer: 0
-  m_Name: SaltimboccaCard
+  m_Name: Saltimbocca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24407,14 +24384,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1097565636}
-  - {fileID: 1352447838}
-  - {fileID: 763056497}
+  - {fileID: 2121110954}
+  - {fileID: 88244259}
+  - {fileID: 1735408784}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &792816637
@@ -24607,7 +24582,7 @@ GameObject:
   - component: {fileID: 804736595}
   - component: {fileID: 804736594}
   m_Layer: 0
-  m_Name: GoatRotiCard
+  m_Name: Goat Roti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24662,16 +24637,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 1343196511}
   - {fileID: 1699802353}
-  - {fileID: 1699802353}
-  - {fileID: 1699802353}
-  noCheck:
-  - {fileID: 618525682}
-  - {fileID: 1035442632}
-  - {fileID: 1820038400}
   - {fileID: 1690466413}
+  - {fileID: 1829338364}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &804736596
@@ -26112,7 +26084,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876168447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.0001236}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children: []
   m_Father: {fileID: 1454725938}
@@ -27359,7 +27331,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -28045,7 +28017,7 @@ GameObject:
   - component: {fileID: 940673762}
   - component: {fileID: 940673761}
   m_Layer: 0
-  m_Name: DolmaCard
+  m_Name: Dolma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28098,14 +28070,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
   - {fileID: 80458530}
-  - {fileID: 80458530}
-  noCheck:
-  - {fileID: 1352447838}
-  - {fileID: 734210092}
-  - {fileID: 231537134}
+  - {fileID: 1578495432}
+  - {fileID: 293134600}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &940673763
@@ -28387,7 +28357,7 @@ GameObject:
   - component: {fileID: 946729638}
   - component: {fileID: 946729639}
   m_Layer: 0
-  m_Name: 'ConfectioneryCard  '
+  m_Name: ConfectioneryCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29049,7 +29019,7 @@ GameObject:
   - component: {fileID: 987931838}
   - component: {fileID: 987931839}
   m_Layer: 0
-  m_Name: 'AlliumCard '
+  m_Name: AlliumCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29131,7 +29101,7 @@ GameObject:
   - component: {fileID: 988156688}
   - component: {fileID: 988156689}
   m_Layer: 0
-  m_Name: 'GardenCard  '
+  m_Name: GardenCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29459,7 +29429,7 @@ GameObject:
   - component: {fileID: 1002859831}
   - component: {fileID: 1002859832}
   m_Layer: 0
-  m_Name: 'LiquidCard '
+  m_Name: LiquidCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29545,7 +29515,7 @@ GameObject:
   - component: {fileID: 1008335037}
   - component: {fileID: 1008335036}
   m_Layer: 0
-  m_Name: "Souff\xE9Card"
+  m_Name: "Souffl\xE9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29598,14 +29568,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 1047114268}
   - {fileID: 854731390}
-  - {fileID: 854731390}
-  noCheck:
-  - {fileID: 673987554}
-  - {fileID: 327724327}
-  - {fileID: 162948369}
+  - {fileID: 13797009}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1008335038
@@ -30049,7 +30017,7 @@ GameObject:
   - component: {fileID: 1025360989}
   - component: {fileID: 1025360988}
   m_Layer: 0
-  m_Name: CassouletCard
+  m_Name: Cassoulet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30102,14 +30070,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
+  - {fileID: 426984846}
   - {fileID: 673514521}
-  - {fileID: 426984846}
-  - {fileID: 426984846}
-  noCheck:
-  - {fileID: 673987554}
-  - {fileID: 1352447838}
-  - {fileID: 162948369}
+  - {fileID: 1920479348}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1025360990
@@ -30307,7 +30273,7 @@ GameObject:
   - component: {fileID: 1042919554}
   - component: {fileID: 1042919553}
   m_Layer: 0
-  m_Name: LinguineAlioEOlioCard
+  m_Name: Linguine Alio e Olio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30362,16 +30328,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1035442632}
-  - {fileID: 741659779}
-  - {fileID: 11973654}
-  - {fileID: 763056497}
+  - {fileID: 1379865118}
+  - {fileID: 460186312}
+  - {fileID: 150388041}
+  - {fileID: 114135596}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1042919555
@@ -30647,7 +30610,7 @@ GameObject:
   - component: {fileID: 1047713996}
   - component: {fileID: 1047713997}
   m_Layer: 0
-  m_Name: 'RootCard '
+  m_Name: RootCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30733,7 +30696,7 @@ GameObject:
   - component: {fileID: 1053193520}
   - component: {fileID: 1053193519}
   m_Layer: 0
-  m_Name: BeefSukiyakiCard
+  m_Name: Beef Sukiyaki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30790,18 +30753,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1097565636}
-  - {fileID: 763056497}
-  - {fileID: 11973654}
-  - {fileID: 1820038400}
-  - {fileID: 632633682}
+  - {fileID: 1836218127}
+  - {fileID: 490289177}
+  - {fileID: 1573593036}
+  - {fileID: 1093873969}
+  - {fileID: 957629507}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1053193521
@@ -31646,7 +31605,7 @@ GameObject:
   - component: {fileID: 1080740248}
   - component: {fileID: 1080740249}
   m_Layer: 0
-  m_Name: 'GardenCard '
+  m_Name: GardenCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31732,7 +31691,7 @@ GameObject:
   - component: {fileID: 1090287333}
   - component: {fileID: 1090287332}
   m_Layer: 0
-  m_Name: 'AranciniCard '
+  m_Name: Arancini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31785,14 +31744,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1035442632}
-  - {fileID: 567697001}
-  - {fileID: 483795033}
+  - {fileID: 1679231840}
+  - {fileID: 327724327}
+  - {fileID: 1090573721}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1090287334
@@ -32150,7 +32107,7 @@ GameObject:
   - component: {fileID: 1093873970}
   - component: {fileID: 1093873971}
   m_Layer: 0
-  m_Name: 'RootCard '
+  m_Name: RootCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32604,7 +32561,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -33186,7 +33143,7 @@ GameObject:
   - component: {fileID: 1123842419}
   - component: {fileID: 1123842418}
   m_Layer: 0
-  m_Name: MisoSoupCard
+  m_Name: Miso Soup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33243,18 +33200,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 912131394}
-  - {fileID: 381584950}
-  - {fileID: 693552084}
-  - {fileID: 1615738676}
-  - {fileID: 1820038400}
+  - {fileID: 1820683022}
+  - {fileID: 632633682}
+  - {fileID: 1867747400}
+  - {fileID: 1473916328}
+  - {fileID: 1047713995}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1123842420
@@ -35456,7 +35409,7 @@ GameObject:
   - component: {fileID: 1201942033}
   - component: {fileID: 1201942032}
   m_Layer: 0
-  m_Name: BaklavaCard
+  m_Name: Baklava
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35509,14 +35462,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
+  - {fileID: 1852884865}
+  - {fileID: 1528014512}
   - {fileID: 1193263378}
-  - {fileID: 1193263378}
-  noCheck:
-  - {fileID: 734210092}
-  - {fileID: 567697001}
-  - {fileID: 1193263378}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1201942034
@@ -35796,7 +35747,7 @@ GameObject:
   - component: {fileID: 1216979613}
   - component: {fileID: 1216979612}
   m_Layer: 0
-  m_Name: PalakPaneerCard
+  m_Name: Palak Paneer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35849,14 +35800,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 763056497}
-  - {fileID: 567697001}
-  - {fileID: 482345599}
+  - {fileID: 397580375}
+  - {fileID: 660281888}
+  - {fileID: 1187698250}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1216979614
@@ -36465,7 +36414,7 @@ GameObject:
   - component: {fileID: 1230204829}
   - component: {fileID: 1230204828}
   m_Layer: 0
-  m_Name: FurutsuSandoCard
+  m_Name: Furutsu Sando
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36518,14 +36467,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1568065837}
-  - {fileID: 567697001}
-  - {fileID: 622587832}
+  - {fileID: 1752833462}
+  - {fileID: 2111435518}
+  - {fileID: 633530001}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1230204830
@@ -36826,7 +36773,7 @@ GameObject:
   - component: {fileID: 1238570933}
   - component: {fileID: 1238570934}
   m_Layer: 0
-  m_Name: 'RootCard '
+  m_Name: RootCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37242,7 +37189,7 @@ GameObject:
   - component: {fileID: 1258146785}
   - component: {fileID: 1258146786}
   m_Layer: 0
-  m_Name: 'FishCard '
+  m_Name: FishCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37891,7 +37838,7 @@ GameObject:
   - component: {fileID: 1303155379}
   - component: {fileID: 1303155380}
   m_Layer: 0
-  m_Name: 'DairyCard '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38305,7 +38252,7 @@ GameObject:
   - component: {fileID: 1324671847}
   - component: {fileID: 1324671846}
   m_Layer: 0
-  m_Name: 'TonkotsuRamenCard '
+  m_Name: Tonkotsu Ramen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38358,14 +38305,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1352447838}
-  - {fileID: 1035442632}
-  - {fileID: 1981162135}
+  - {fileID: 1442364907}
+  - {fileID: 1324910523}
+  - {fileID: 413376004}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1324671848
@@ -38477,7 +38422,7 @@ GameObject:
   - component: {fileID: 1324910524}
   - component: {fileID: 1324910525}
   m_Layer: 0
-  m_Name: 'DryCard '
+  m_Name: DryCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39146,7 +39091,7 @@ GameObject:
   - component: {fileID: 1347103727}
   - component: {fileID: 1347103726}
   m_Layer: 0
-  m_Name: CharSiuBaoCard
+  m_Name: Char Siu Bao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39199,14 +39144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 1439511186}
+  - {fileID: 1896971069}
   - {fileID: 381584950}
-  - {fileID: 381584950}
-  noCheck:
-  - {fileID: 1352447838}
-  - {fileID: 482345599}
-  - {fileID: 734210092}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1347103728
@@ -39444,7 +39387,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -39798,7 +39741,7 @@ GameObject:
   - component: {fileID: 1365043239}
   - component: {fileID: 1365043240}
   m_Layer: 0
-  m_Name: 'LiquidCard '
+  m_Name: LiquidCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40130,7 +40073,7 @@ GameObject:
   - component: {fileID: 1369055601}
   - component: {fileID: 1369055600}
   m_Layer: 0
-  m_Name: RisottoAiFunghiCard
+  m_Name: Risotto ai Funghi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40185,16 +40128,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1035442632}
-  - {fileID: 1820038400}
-  - {fileID: 11973654}
-  - {fileID: 1867747400}
+  - {fileID: 571920012}
+  - {fileID: 433093767}
+  - {fileID: 1002859830}
+  - {fileID: 694093508}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1369055602
@@ -40716,7 +40656,7 @@ GameObject:
   - component: {fileID: 1386370685}
   - component: {fileID: 1386370686}
   m_Layer: 0
-  m_Name: 'DairyCard  '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40900,7 +40840,7 @@ GameObject:
   - component: {fileID: 1390549497}
   - component: {fileID: 1390549498}
   m_Layer: 0
-  m_Name: 'RootCard '
+  m_Name: RootCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41780,7 +41720,7 @@ GameObject:
   - component: {fileID: 1447399842}
   - component: {fileID: 1447399843}
   m_Layer: 0
-  m_Name: 'AlliumCard  '
+  m_Name: AlliumCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42132,7 +42072,7 @@ GameObject:
   - component: {fileID: 1465899561}
   - component: {fileID: 1465899560}
   m_Layer: 0
-  m_Name: LasagnaAiFornoCard
+  m_Name: Lasagne al Forno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42189,18 +42129,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1035442632}
-  - {fileID: 1867747400}
-  - {fileID: 483795033}
-  - {fileID: 1097565636}
-  - {fileID: 741659779}
+  - {fileID: 1510126768}
+  - {fileID: 1886802582}
+  - {fileID: 1817832656}
+  - {fileID: 1467423536}
+  - {fileID: 32918233}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1465899562
@@ -42312,7 +42248,7 @@ GameObject:
   - component: {fileID: 1467423537}
   - component: {fileID: 1467423538}
   m_Layer: 0
-  m_Name: 'BeefCard '
+  m_Name: BeefCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42398,7 +42334,7 @@ GameObject:
   - component: {fileID: 1471103326}
   - component: {fileID: 1471103325}
   m_Layer: 0
-  m_Name: 'GulabJamunCard '
+  m_Name: Gulab Jamun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42453,16 +42389,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 567697001}
-  - {fileID: 1035442632}
-  - {fileID: 1193263378}
-  - {fileID: 482345599}
+  - {fileID: 480982728}
+  - {fileID: 147480033}
+  - {fileID: 946729637}
+  - {fileID: 365447917}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1471103327
@@ -43512,7 +43445,7 @@ GameObject:
   - component: {fileID: 1528014513}
   - component: {fileID: 1528014514}
   m_Layer: 0
-  m_Name: 'DairyCard  '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43922,7 +43855,7 @@ GameObject:
   - component: {fileID: 1550935449}
   - component: {fileID: 1550935450}
   m_Layer: 0
-  m_Name: 'DryCard '
+  m_Name: DryCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44008,7 +43941,7 @@ GameObject:
   - component: {fileID: 1554422781}
   - component: {fileID: 1554422780}
   m_Layer: 0
-  m_Name: 'NaanCard '
+  m_Name: Naan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44059,12 +43992,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1568065837}
-  - {fileID: 567697001}
+  - {fileID: 1072353702}
+  - {fileID: 1303155378}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1554422782
@@ -44180,7 +44112,7 @@ GameObject:
   - component: {fileID: 1556337912}
   - component: {fileID: 1556337909}
   m_Layer: 0
-  m_Name: CroissantCard
+  m_Name: Croissant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44329,12 +44261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 693552084}
   - {fileID: 1521047910}
-  noCheck:
-  - {fileID: 673987554}
-  - {fileID: 327724327}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!1 &1559523303
@@ -44352,7 +44283,7 @@ GameObject:
   - component: {fileID: 1559523306}
   - component: {fileID: 1559523305}
   m_Layer: 0
-  m_Name: ShawarmaCard
+  m_Name: Shawarma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44407,16 +44338,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 675844616}
+  - {fileID: 987931837}
+  - {fileID: 129147439}
   - {fileID: 1310438984}
-  - {fileID: 1310438984}
-  - {fileID: 1310438984}
-  noCheck:
-  - {fileID: 1097565636}
-  - {fileID: 741659779}
-  - {fileID: 763056497}
-  - {fileID: 482345599}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1559523307
@@ -45184,7 +45112,7 @@ GameObject:
   - component: {fileID: 1578087521}
   - component: {fileID: 1578087522}
   m_Layer: 0
-  m_Name: 'LiquidCard '
+  m_Name: LiquidCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45266,7 +45194,7 @@ GameObject:
   - component: {fileID: 1578495433}
   - component: {fileID: 1578495434}
   m_Layer: 0
-  m_Name: 'DryCard '
+  m_Name: DryCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45758,7 +45686,7 @@ GameObject:
   - component: {fileID: 1616272347}
   - component: {fileID: 1616272348}
   m_Layer: 0
-  m_Name: 'SpiceCard '
+  m_Name: SpiceCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45844,7 +45772,7 @@ GameObject:
   - component: {fileID: 1618256912}
   - component: {fileID: 1618256911}
   m_Layer: 0
-  m_Name: MoussakaCard
+  m_Name: Moussaka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45899,16 +45827,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 2106608803}
+  - {fileID: 1616272346}
+  - {fileID: 198841499}
   - {fileID: 2040155075}
-  - {fileID: 2040155075}
-  - {fileID: 2040155075}
-  noCheck:
-  - {fileID: 1097565636}
-  - {fileID: 482345599}
-  - {fileID: 567697001}
-  - {fileID: 483795033}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1618256913
@@ -46024,7 +45949,7 @@ GameObject:
   - component: {fileID: 1620496136}
   - component: {fileID: 1620496135}
   m_Layer: 0
-  m_Name: TartifletteCard
+  m_Name: Tartiflette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46081,18 +46006,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
+  - {fileID: 1761482082}
   - {fileID: 2074297922}
+  - {fileID: 935942563}
+  - {fileID: 687456120}
   - {fileID: 1480645374}
-  - {fileID: 1480645374}
-  - {fileID: 1480645374}
-  - {fileID: 1480645374}
-  noCheck:
-  - {fileID: 1820038400}
-  - {fileID: 741659779}
-  - {fileID: 1352447838}
-  - {fileID: 1867747400}
-  - {fileID: 11973654}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1620496137
@@ -46368,7 +46289,7 @@ GameObject:
   - component: {fileID: 1630712003}
   - component: {fileID: 1630712004}
   m_Layer: 0
-  m_Name: 'PoultryCard '
+  m_Name: PoultryCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47097,7 +47018,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -48359,7 +48280,7 @@ GameObject:
   - component: {fileID: 1735408785}
   - component: {fileID: 1735408786}
   m_Layer: 0
-  m_Name: 'HerbCard '
+  m_Name: HerbCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48853,7 +48774,7 @@ GameObject:
   - component: {fileID: 1758492075}
   - component: {fileID: 1758492074}
   m_Layer: 0
-  m_Name: VindalooCard
+  m_Name: Vindaloo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48908,16 +48829,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 741659779}
-  - {fileID: 11973654}
-  - {fileID: 482345599}
-  - {fileID: 1820038400}
+  - {fileID: 730803146}
+  - {fileID: 1390549496}
+  - {fileID: 2128438648}
+  - {fileID: 2068710162}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1758492076
@@ -49680,7 +49598,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788174729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.0001236}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children: []
   m_Father: {fileID: 2058515168}
@@ -49803,7 +49721,7 @@ GameObject:
   - component: {fileID: 1789791962}
   - component: {fileID: 1789791961}
   m_Layer: 0
-  m_Name: 'AccraCard '
+  m_Name: Accra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49858,16 +49776,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 1139223613}
   - {fileID: 2030679211}
-  - {fileID: 2030679211}
-  - {fileID: 2030679211}
-  noCheck:
-  - {fileID: 200124894}
-  - {fileID: 356796960}
-  - {fileID: 1615738676}
-  - {fileID: 482345599}
+  - {fileID: 138138149}
+  - {fileID: 1630712002}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1789791963
@@ -50229,7 +50144,7 @@ GameObject:
   - component: {fileID: 1819521582}
   - component: {fileID: 1819521581}
   m_Layer: 0
-  m_Name: CallalooCard
+  m_Name: Callaloo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50282,14 +50197,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 200124894}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 763056497}
-  - {fileID: 483795033}
-  - {fileID: 622587832}
+  - {fileID: 381054075}
+  - {fileID: 526143374}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1819521583
@@ -50527,7 +50440,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -51538,7 +51451,7 @@ GameObject:
   - component: {fileID: 1852884866}
   - component: {fileID: 1852884867}
   m_Layer: 0
-  m_Name: 'DryCard '
+  m_Name: DryCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52677,7 +52590,7 @@ GameObject:
   - component: {fileID: 1910117820}
   - component: {fileID: 1910117819}
   m_Layer: 0
-  m_Name: TuronCard
+  m_Name: Turon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52730,14 +52643,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 823912226}
+  - {fileID: 1226763727}
   - {fileID: 673987554}
-  - {fileID: 673987554}
-  noCheck:
-  - {fileID: 1675733374}
-  - {fileID: 622587832}
-  - {fileID: 734210092}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1910117821
@@ -52853,7 +52764,7 @@ GameObject:
   - component: {fileID: 1910270042}
   - component: {fileID: 1910270041}
   m_Layer: 0
-  m_Name: JambalayaCard
+  m_Name: Jambalaya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52910,18 +52821,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 1911409371}
+  - {fileID: 1479336004}
   - {fileID: 10598700}
-  - {fileID: 10598700}
-  - {fileID: 10598700}
-  - {fileID: 10598700}
-  noCheck:
-  - {fileID: 0}
-  - {fileID: 1352447838}
-  - {fileID: 483795033}
-  - {fileID: 912131394}
-  - {fileID: 1521047910}
+  - {fileID: 441830726}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &1910270043
@@ -54647,7 +54553,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -54965,7 +54871,7 @@ GameObject:
   - component: {fileID: 2000037261}
   - component: {fileID: 2000037262}
   m_Layer: 0
-  m_Name: 'DairyCard '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55515,7 +55421,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007460531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.0001236}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children: []
   m_Father: {fileID: 783658404}
@@ -56287,7 +56193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45.8, y: -35.7}
+  m_AnchoredPosition: {x: 11.900005, y: -8.400002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2038587173
@@ -57709,7 +57615,7 @@ GameObject:
   - component: {fileID: 2101136962}
   - component: {fileID: 2101136961}
   m_Layer: 0
-  m_Name: SamosasCard
+  m_Name: Samosas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57764,16 +57670,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 734210092}
-  - {fileID: 1820038400}
-  - {fileID: 483795033}
-  - {fileID: 482345599}
+  - {fileID: 1009065663}
+  - {fileID: 1238570932}
+  - {fileID: 22940059}
+  - {fileID: 1830101848}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &2101136963
@@ -57971,7 +57874,7 @@ GameObject:
   - component: {fileID: 2105035229}
   - component: {fileID: 2105035228}
   m_Layer: 0
-  m_Name: SalmonNigiriCard
+  m_Name: Salmon Nigiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58022,12 +57925,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
-  - {fileID: 0}
-  - {fileID: 0}
-  noCheck:
-  - {fileID: 1568065837}
-  - {fileID: 567697001}
+  - {fileID: 398660546}
+  - {fileID: 697574669}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &2105035230
@@ -58473,7 +58375,7 @@ GameObject:
   - component: {fileID: 2111435519}
   - component: {fileID: 2111435520}
   m_Layer: 0
-  m_Name: 'DairyCard '
+  m_Name: DairyCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58883,7 +58785,7 @@ GameObject:
   - component: {fileID: 2128438649}
   - component: {fileID: 2128438650}
   m_Layer: 0
-  m_Name: 'LiquidCard  '
+  m_Name: LiquidCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59133,7 +59035,7 @@ GameObject:
   - component: {fileID: 2141248896}
   - component: {fileID: 2141248895}
   m_Layer: 0
-  m_Name: CouscousCard
+  m_Name: Couscous
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59188,16 +59090,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac3a82ab877770469f3a37c958e78ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 519420035}
   ingredientCost:
   - {fileID: 950245994}
+  - {fileID: 442905684}
+  - {fileID: 179055130}
   - {fileID: 1568065837}
-  - {fileID: 1568065837}
-  - {fileID: 1568065837}
-  noCheck:
-  - {fileID: 1820038400}
-  - {fileID: 482345599}
-  - {fileID: 734210092}
-  - {fileID: 1981162135}
+  noCheck: []
   cache: []
   parent: {fileID: 357869241}
 --- !u!50 &2141248897
