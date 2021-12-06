@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RecipeCard : MonoBehaviour
 {
+    [SerializeField] MainGame main;
     [SerializeField] List<GameObject> ingredientCost;
     [SerializeField] List<GameObject> noCheck;
     [SerializeField] List<GameObject> cache;
@@ -19,8 +20,10 @@ public class RecipeCard : MonoBehaviour
             {
                 parent.removeCard(go);
             }
-            Debug.Log("all ingredient here");
+            //Debug.Log("all ingredient here");
+            main.removeRecipe(gameObject.name);
             GetComponent<BoxCollider2D>().isTrigger = false;
+            GetComponent<Rigidbody2D>().mass = 0.0001f;
             gameObject.GetComponent<RecipeMove>().yesMove();
             parent.setTag(gameObject);
             parent.addCard(gameObject);
@@ -49,6 +52,7 @@ public class RecipeCard : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(gameObject.name);
         foreach(GameObject ingredient in ingredientCost)
         {            
             if (!noCheck.Contains(ingredient)) 
@@ -56,7 +60,6 @@ public class RecipeCard : MonoBehaviour
                 if (other.name.Contains(ingredient.name))
                 {
                     other.gameObject.transform.position = new Vector2(0, 0);
-                    Debug.Log("name match");
                     cache.Add(other.gameObject);
                     other.gameObject.SetActive(false);
                     noCheck.Add(ingredient);

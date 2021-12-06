@@ -14,6 +14,8 @@ public class MainGame : MonoBehaviour {
 
     //Recipes
     private Recipe[] RecipesListed;
+    [SerializeField] RecipeParent recipeParent;
+    //private List <Recipe> RecipesListed = new List<Recipe>();
     private RecipeList RecipeHandler;
     [SerializeField] private const float RecipeX = 9;
     [SerializeField] private const float RecipeDistance = 2.25f;
@@ -62,6 +64,7 @@ public class MainGame : MonoBehaviour {
         RecipeHandler = GetComponent<RecipeList>();
         RecipesListed = new Recipe[MapSize];
         RefillRecipeMenu();
+        recipeParent.triggerOff();
 
     }
 
@@ -75,7 +78,7 @@ public class MainGame : MonoBehaviour {
                     IngredientUI.SetActive(false);
                     phase1Text.SetActive(false);
                     phase2Text.SetActive(true);
-                    RefillRecipeMenu();
+                    recipeParent.triggerOn();
                 }
                 else
                 {
@@ -85,7 +88,7 @@ public class MainGame : MonoBehaviour {
                         phase1Text.SetActive(false);
                         phase2Text.SetActive(true);
                         phase1Stuck.SetActive(true);
-                        RefillRecipeMenu();
+                        recipeParent.triggerOn();
                     }
                 }
                 break;
@@ -97,6 +100,9 @@ public class MainGame : MonoBehaviour {
                     IngredientUI.SetActive(true);
                     phase1Text.SetActive(true);
                     phase2Text.SetActive(false);
+                    RefillMarket();
+                    RefillRecipeMenu();
+                    recipeParent.triggerOff();
                 }
                 break;
         }
@@ -178,11 +184,23 @@ public class MainGame : MonoBehaviour {
 
     public void RefillRecipeMenu() {
         //refill recipe list
-        for(int i = 0; i < MapSize; i++) {
+        for(int i = 0; i < 5; i++) {
             //if theres a blank in the list
             if (RecipesListed[i] == null) {
-                RecipesListed[i]  = RecipeHandler.DrawRecipeCard();
+                RecipesListed[i] = RecipeHandler.DrawRecipeCard();
                 RecipeHandler.ToggleRecipeCard(RecipesListed[i].RecipeName, true, (i - 2) * RecipeDistance);
+                //Debug.Log("just added" + RecipesListed[i].RecipeName);
+            }
+        }
+    }
+
+    public void removeRecipe(string recipename)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (recipename == RecipesListed[i].RecipeName)
+            {
+                RecipesListed[i] = null;
             }
         }
     }
