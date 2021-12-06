@@ -43,7 +43,7 @@ public class MainGame : MonoBehaviour {
                 //Set sprite for gameobject
                 IngredientHandler.assignSprite(newIng.Id);
                 //Create it's instance and spawn it
-                Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -1), Quaternion.identity);
+                Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -2), Quaternion.identity);
                 //scale it down
                 Tiles[column, row].GetComponent<IngredientCard>().SetIngredient(newIng.Id, newIng.Name, newIng.Cost);
                 Tiles[column, row].transform.localScale = new Vector3(0.8f, 0.8f, 1);
@@ -153,7 +153,7 @@ public class MainGame : MonoBehaviour {
                     Ingredient newIng = IngredientHandler.DrawCard();
                     IngredientHandler.assignSprite(newIng.Id);
                     //Create it's instance and spawn it
-                    Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -1), Quaternion.identity);
+                    Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -2), Quaternion.identity);
                     Tiles[column, row].GetComponent<IngredientCard>().SetIngredient(newIng.Id, newIng.Name, newIng.Cost);
                     Tiles[column, row].transform.localScale = new Vector3(0.8f, 0.8f, 1);
                     Tiles[column, row].name = newIng.Name;
