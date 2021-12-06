@@ -9,6 +9,8 @@ public class RecipeCard : MonoBehaviour
     [SerializeField] List<GameObject> noCheck;
     [SerializeField] List<GameObject> cache;
     [SerializeField] PlayerParent parent;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip crunch;
     private bool canBuy = true;
 
     // Update is called once per frame
@@ -59,6 +61,7 @@ public class RecipeCard : MonoBehaviour
             {
                 if (other.name.Contains(ingredient.name))
                 {
+                    audioSource.PlayOneShot(crunch, 1);
                     other.gameObject.transform.position = new Vector2(0, 0);
                     cache.Add(other.gameObject);
                     other.gameObject.SetActive(false);

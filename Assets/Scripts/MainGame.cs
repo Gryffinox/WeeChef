@@ -31,6 +31,9 @@ public class MainGame : MonoBehaviour {
     [SerializeField] private GameObject phase1Stuck;
     private IngredientGatheringUI UIHandler;
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip cash;
+
     void Start() {
         //handlers
         PlayerHandler = Players.GetComponent<PlayerParent>();
@@ -103,6 +106,7 @@ public class MainGame : MonoBehaviour {
                     phase2Text.SetActive(false);
                     RefillMarket();
                     RefillRecipeMenu();
+                    audioSource.PlayOneShot(cash, 1);
                     recipeParent.triggerOff();
                 }
                 break;

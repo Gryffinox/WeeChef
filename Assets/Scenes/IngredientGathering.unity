@@ -922,6 +922,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &18656022
 Rigidbody2D:
   serializedVersion: 4
@@ -1181,6 +1183,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &21437628
 Rigidbody2D:
   serializedVersion: 4
@@ -2011,6 +2015,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &58833982
 Rigidbody2D:
   serializedVersion: 4
@@ -2359,6 +2365,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &64663119
 Rigidbody2D:
   serializedVersion: 4
@@ -4377,6 +4385,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &145356181
 Rigidbody2D:
   serializedVersion: 4
@@ -5337,6 +5347,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &164332397
 Rigidbody2D:
   serializedVersion: 4
@@ -6170,6 +6182,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &194801340
 Rigidbody2D:
   serializedVersion: 4
@@ -7634,6 +7648,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &240998303
 Rigidbody2D:
   serializedVersion: 4
@@ -8564,6 +8580,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &280940945
 Rigidbody2D:
   serializedVersion: 4
@@ -9315,6 +9333,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &336281104
 Rigidbody2D:
   serializedVersion: 4
@@ -10571,7 +10591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &374494409
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11843,6 +11863,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &406167985
 Rigidbody2D:
   serializedVersion: 4
@@ -14979,6 +15001,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &510843552
 Rigidbody2D:
   serializedVersion: 4
@@ -16260,6 +16284,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &577324510
 Rigidbody2D:
   serializedVersion: 4
@@ -19796,6 +19822,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &672335875
 Rigidbody2D:
   serializedVersion: 4
@@ -20295,6 +20323,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &682292540
 Rigidbody2D:
   serializedVersion: 4
@@ -20636,6 +20666,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &692391649
 Rigidbody2D:
   serializedVersion: 4
@@ -21226,6 +21258,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &705789275
 Rigidbody2D:
   serializedVersion: 4
@@ -21810,6 +21844,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &716167828
 Rigidbody2D:
   serializedVersion: 4
@@ -21981,6 +22017,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &716430762
 Rigidbody2D:
   serializedVersion: 4
@@ -24392,6 +24430,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &792816637
 Rigidbody2D:
   serializedVersion: 4
@@ -24646,6 +24686,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &804736596
 Rigidbody2D:
   serializedVersion: 4
@@ -28078,6 +28120,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &940673763
 Rigidbody2D:
   serializedVersion: 4
@@ -29703,6 +29747,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1008335038
 Rigidbody2D:
   serializedVersion: 4
@@ -30205,6 +30251,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1025360990
 Rigidbody2D:
   serializedVersion: 4
@@ -30464,6 +30512,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1042919555
 Rigidbody2D:
   serializedVersion: 4
@@ -30890,6 +30940,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1053193521
 Rigidbody2D:
   serializedVersion: 4
@@ -31879,6 +31931,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1090287334
 Rigidbody2D:
   serializedVersion: 4
@@ -33337,6 +33391,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1123842420
 Rigidbody2D:
   serializedVersion: 4
@@ -35597,6 +35653,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1201942034
 Rigidbody2D:
   serializedVersion: 4
@@ -35935,6 +35993,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1216979614
 Rigidbody2D:
   serializedVersion: 4
@@ -36602,6 +36662,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1230204830
 Rigidbody2D:
   serializedVersion: 4
@@ -38440,6 +38502,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1324671848
 Rigidbody2D:
   serializedVersion: 4
@@ -39279,6 +39343,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1347103728
 Rigidbody2D:
   serializedVersion: 4
@@ -40264,6 +40330,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1369055602
 Rigidbody2D:
   serializedVersion: 4
@@ -42266,6 +42334,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1465899562
 Rigidbody2D:
   serializedVersion: 4
@@ -42525,6 +42595,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1471103327
 Rigidbody2D:
   serializedVersion: 4
@@ -44126,6 +44198,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1554422782
 Rigidbody2D:
   serializedVersion: 4
@@ -44395,6 +44469,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!1 &1559523303
 GameObject:
   m_ObjectHideFlags: 0
@@ -44474,6 +44550,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1559523307
 Rigidbody2D:
   serializedVersion: 4
@@ -45963,6 +46041,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1618256913
 Rigidbody2D:
   serializedVersion: 4
@@ -46143,6 +46223,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1620496137
 Rigidbody2D:
   serializedVersion: 4
@@ -48965,6 +49047,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1758492076
 Rigidbody2D:
   serializedVersion: 4
@@ -49912,6 +49996,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1789791963
 Rigidbody2D:
   serializedVersion: 4
@@ -50332,6 +50418,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1819521583
 Rigidbody2D:
   serializedVersion: 4
@@ -52778,6 +52866,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1910117821
 Rigidbody2D:
   serializedVersion: 4
@@ -52957,6 +53047,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &1910270043
 Rigidbody2D:
   serializedVersion: 4
@@ -57806,6 +57898,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &2101136963
 Rigidbody2D:
   serializedVersion: 4
@@ -58059,6 +58153,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &2105035230
 Rigidbody2D:
   serializedVersion: 4
@@ -59226,6 +59322,8 @@ MonoBehaviour:
   noCheck: []
   cache: []
   parent: {fileID: 357869241}
+  audioSource: {fileID: 1747738058}
+  crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
 --- !u!50 &2141248897
 Rigidbody2D:
   serializedVersion: 4
