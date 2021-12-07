@@ -15474,7 +15474,7 @@ MonoBehaviour:
   recipeParent: {fileID: 60101095}
   Players: {fileID: 357869240}
   pParent: {fileID: 357869241}
-  MaxRounds: 16
+  MaxRounds: 2
   IngredientUI: {fileID: 1736753039}
   phase1Text: {fileID: 1861004831}
   phase2Text: {fileID: 1841243542}
@@ -29083,7 +29083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &972665349
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29125,7 +29125,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1a00da43fd1054a4897c08739bd5b6c6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.12842648, g: 0.1478084, b: 0.24528301, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -60319,6 +60319,42 @@ PrefabInstance:
       propertyPath: recipeParent
       value: 
       objectReference: {fileID: 60101095}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.data[0].RecipeName
+      value: bb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.data[0].RecipeType
+      value: French
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.data[1].RecipeName
+      value: bb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.data[1].RecipeType
+      value: French
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.data[2].RecipeName
+      value: bb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.data[2].RecipeType
+      value: French
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.data[3].RecipeName
+      value: bb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeHand.Array.data[3].RecipeType
+      value: French
+      objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709267, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_RootOrder
       value: 0

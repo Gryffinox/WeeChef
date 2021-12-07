@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     private List<Ingredient> ingredientHand; // changed it from GameObject to list of Ingredient
-    private List<Recipe> recipeHand;
+    [SerializeField] private List<Recipe> recipeHand;
     [SerializeField] int funds = 15;
 
     //Player's income per round;

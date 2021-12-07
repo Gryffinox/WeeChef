@@ -125,8 +125,31 @@ public class MainGame : MonoBehaviour {
                     List<Player> winners = PlayerHandler.CheckWinner();
                     if(winners.Count > 0 || RoundsCounter > MaxRounds) {
                         if(winners.Count > 1) {
-                            winners = PlayerHandler.GetPlayerWithHighestIncome();
+                            //same a gethighestincome but on list of winners
+                            //store the indeces of the players with highest income
+                            List<int> WinnerIndeces = new List<int> { 0 };    //automatically add player 1 to the list
+                            //for each player
+                            for (int i = 1; i < winners.Count; i++) {
+                                //if the next player has a higher income, replace the list with a new list of winners
+                                if (winners[i].GetFunds() > winners[WinnerIndeces[0]].GetFunds()) {
+                                    WinnerIndeces.Clear();
+                                    WinnerIndeces.Add(i);
+                                }
+                                //equal to highest income, add this player to the list
+                                else if (winners[i].GetFunds() == winners[WinnerIndeces[0]].GetFunds()) {
+                                    WinnerIndeces.Add(i);
+                                }
+                            }
+                            List<Player> Winners = new List<Player>();
+                            for (int i = 0; i < WinnerIndeces.Count; i++) {
+                                Winners.Add(winners[WinnerIndeces[i]]);
+                            }
+                            winners = Winners;
                         }
+                        EndGame(FormatWinMsg(winners));
+                    }
+                    if(RoundsCounter > MaxRounds) {
+                        winners = PlayerHandler.GetPlayerWithHighestIncome();
                         EndGame(FormatWinMsg(winners));
                     }
                 }
@@ -262,9 +285,9 @@ public class MainGame : MonoBehaviour {
             case 1:
                 return winners[0].GetName() + " wins!";
             case 2:
-                return "Players " + winners[0].GetName() + " and " + winners[1].GetName() + " win!";
+                return winners[0].GetName() + " and " + winners[1].GetName() + " win!";
             case 3:
-                return "Players " + winners[0].GetName() + ", " + winners[1].GetName() + " and " + winners[2].GetName() + " win!";
+                return winners[0].GetName() + ", " + winners[1].GetName() + " and " + winners[2].GetName() + " win!";
             case 4:
                 return "Wow either everyone is really bad or everyone is really good because everyone wins";
             default:
@@ -277,7 +300,8 @@ public class MainGame : MonoBehaviour {
         IngredientUI.SetActive(false);
         phase1Text.SetActive(false);
         phase2Text.SetActive(false);
+        Time.timeScale = 0;
         EndGameMessage.SetActive(true);
-        EndGameMessage.GetComponent<TextMeshProUGUI>().text = winMsg;
+        EndGameMessage.GetComponentInChildren<TextMeshProUGUI>().text = winMsg;
     }
 }

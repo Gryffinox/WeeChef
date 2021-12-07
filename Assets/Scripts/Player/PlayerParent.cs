@@ -460,12 +460,12 @@ public class PlayerParent : MonoBehaviour {
         //for each player
         for (int i = 1; i < Players.Length; i++) {
             //if the next player has a higher income, replace the list with a new list of winners
-            if (Players[PlayerTurnOrder[i]].GetFunds() > Players[0].GetFunds()) {
+            if (Players[PlayerTurnOrder[i]].GetFunds() > Players[WinnerIndeces[0]].GetFunds()) {
                 WinnerIndeces.Clear();
                 WinnerIndeces.Add(PlayerTurnOrder[i]);
             }
             //equal to highest income, add this player to the list
-            else if (Players[PlayerTurnOrder[i]].GetFunds() == Players[0].GetFunds()) {
+            else if (Players[PlayerTurnOrder[i]].GetFunds() == Players[WinnerIndeces[0]].GetFunds()) {
                 WinnerIndeces.Add(PlayerTurnOrder[i]);
             }
         }
@@ -491,7 +491,7 @@ public class PlayerParent : MonoBehaviour {
                         counter[recipe.GetRecipeType()]++;
                     }
                     else {
-                        counter.Add(recipe.GetRecipeType(), 0);
+                        counter.Add(recipe.GetRecipeType(), 1);
                     }
                 }
                 //now check for wincon
