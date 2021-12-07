@@ -95,8 +95,7 @@ public class PlayerParent : MonoBehaviour {
         showCards();
         DisplayCoin();
         DisplaySkip();
-        if (skip1 == true && skip2 == true && skip3 == true && skip4 == true)
-        {
+        if (skip1 == true && skip2 == true && skip3 == true && skip4 == true) {
             allskip = true;
             skip1 = false;
             skip2 = false;
@@ -104,197 +103,156 @@ public class PlayerParent : MonoBehaviour {
             skip4 = false;
 
         }
-        else
-        {
+        else {
             allskip = false;
         }
     }
 
-    private void DisplaySkip()
-    {
-        if (skip1 == true)
-        {
+    private void DisplaySkip() {
+        if (skip1 == true) {
             Uiskip1.SetActive(true);
         }
-        else
-        {
+        else {
             Uiskip1.SetActive(false);
         }
-        if (skip2 == true)
-        {
+        if (skip2 == true) {
             Uiskip2.SetActive(true);
         }
-        else
-        {
+        else {
             Uiskip2.SetActive(false);
         }
-        if (skip3 == true)
-        {
+        if (skip3 == true) {
             Uiskip3.SetActive(true);
         }
-        else
-        {
+        else {
             Uiskip3.SetActive(false);
         }
-        if (skip4 == true)
-        {
+        if (skip4 == true) {
             Uiskip4.SetActive(true);
         }
-        else
-        {
+        else {
             Uiskip4.SetActive(false);
         }
     }
-    private void DisplayCoin()
-    {
+    private void DisplayCoin() {
         scoreText.text = GetActivePlayer().GetFunds().ToString();
     }
-    public void ResetPosition()
-    {
+    public void ResetPosition() {
         GameObject[] temp;
         temp = GameObject.FindGameObjectsWithTag("p1");
-        foreach (GameObject go in temp)
-        {
-            if (go.GetComponent<CardMove>() != null)
-            {
+        foreach (GameObject go in temp) {
+            if (go.GetComponent<CardMove>() != null) {
                 go.GetComponent<CardMove>().goShuffle();
             }
-            if (go.GetComponent<RecipeMove>() != null)
-            {
+            if (go.GetComponent<RecipeMove>() != null) {
                 go.GetComponent<RecipeMove>().goShuffle();
             }
         }
         temp = GameObject.FindGameObjectsWithTag("p2");
-        foreach (GameObject go in temp)
-        {
-            if (go.GetComponent<CardMove>() != null)
-            {
+        foreach (GameObject go in temp) {
+            if (go.GetComponent<CardMove>() != null) {
                 go.GetComponent<CardMove>().goShuffle();
             }
-            if (go.GetComponent<RecipeMove>() != null)
-            {
+            if (go.GetComponent<RecipeMove>() != null) {
                 go.GetComponent<RecipeMove>().goShuffle();
             }
         }
         temp = GameObject.FindGameObjectsWithTag("p3");
-        foreach (GameObject go in temp)
-        {
-            if (go.GetComponent<CardMove>() != null)
-            {
+        foreach (GameObject go in temp) {
+            if (go.GetComponent<CardMove>() != null) {
                 go.GetComponent<CardMove>().goShuffle();
             }
-            if (go.GetComponent<RecipeMove>() != null)
-            {
+            if (go.GetComponent<RecipeMove>() != null) {
                 go.GetComponent<RecipeMove>().goShuffle();
             }
         }
         temp = GameObject.FindGameObjectsWithTag("p4");
-        foreach (GameObject go in temp)
-        {
-            if (go.GetComponent<CardMove>()!= null)
-            { 
-                go.GetComponent<CardMove>().goShuffle(); 
+        foreach (GameObject go in temp) {
+            if (go.GetComponent<CardMove>() != null) {
+                go.GetComponent<CardMove>().goShuffle();
             }
-            if (go.GetComponent<RecipeMove>() != null)
-            {
+            if (go.GetComponent<RecipeMove>() != null) {
                 go.GetComponent<RecipeMove>().goShuffle();
             }
         }
     }
-    private void showCards()
-    {
+    private void showCards() {
         int i = returnPlayer();
         GameObject[] temp;
 
-        if (i == 0)
-        {
+        if (i == 0) {
             turn1.SetActive(true);
             turn2.SetActive(false);
             turn3.SetActive(false);
             turn4.SetActive(false);
             temp = GameObject.FindGameObjectsWithTag("p2");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
             temp = GameObject.FindGameObjectsWithTag("p3");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
             temp = GameObject.FindGameObjectsWithTag("p4");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
         }
-        
 
-        if (i == 1)
-        {
+
+        if (i == 1) {
             turn1.SetActive(false);
             turn2.SetActive(true);
             turn3.SetActive(false);
             turn4.SetActive(false);
             temp = GameObject.FindGameObjectsWithTag("p1");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
             temp = GameObject.FindGameObjectsWithTag("p3");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
             temp = GameObject.FindGameObjectsWithTag("p4");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
         }
-        
-        if (i == 2)
-        {
+
+        if (i == 2) {
             turn1.SetActive(false);
             turn2.SetActive(false);
             turn3.SetActive(true);
             turn4.SetActive(false);
             temp = GameObject.FindGameObjectsWithTag("p2");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
             temp = GameObject.FindGameObjectsWithTag("p1");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
             temp = GameObject.FindGameObjectsWithTag("p4");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
         }
-        
-        if (i == 3)
-        {
+
+        if (i == 3) {
             turn1.SetActive(false);
             turn2.SetActive(false);
             turn3.SetActive(false);
             turn4.SetActive(true);
             temp = GameObject.FindGameObjectsWithTag("p2");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
             temp = GameObject.FindGameObjectsWithTag("p3");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
             temp = GameObject.FindGameObjectsWithTag("p1");
-            foreach (GameObject go in temp)
-            {
+            foreach (GameObject go in temp) {
                 go.SetActive(false);
             }
         }
@@ -313,29 +271,23 @@ public class PlayerParent : MonoBehaviour {
         UpdateValidAction();
     }
 
-    public void playClick()
-    {
+    public void playClick() {
         int i = returnPlayer();
-        if (i == 0)
-        {
+        if (i == 0) {
             skip1 = true;
         }
-        if (i == 1)
-        {
+        if (i == 1) {
             skip2 = true;
         }
-        if (i == 2)
-        {
+        if (i == 2) {
             skip3 = true;
         }
-        if (i == 3)
-        {
+        if (i == 3) {
             skip4 = true;
         }
         audioSource.PlayOneShot(click, 1);
     }
-    public void clickSound()
-    {
+    public void clickSound() {
         audioSource.PlayOneShot(click, 1);
     }
 
@@ -377,36 +329,29 @@ public class PlayerParent : MonoBehaviour {
         UpdateValidAction();
     }
 
-    public void removeCard(GameObject card)
-    {
+    public void removeCard(GameObject card) {
         cards.Remove(card);
         Destroy(card);
     }
 
-    public void addCard(GameObject card)
-    {
+    public void addCard(GameObject card) {
         cards.Add(card);
     }
 
-    public void setTag(GameObject gameobject)
-    {
+    public void setTag(GameObject gameobject) {
         int i = returnPlayer();
-       // Debug.Log(returnPlayer());
+        // Debug.Log(returnPlayer());
 
-        if (i == 0)
-        {
+        if (i == 0) {
             gameobject.tag = "p1";
         }
-        if (i == 1)
-        {
+        if (i == 1) {
             gameobject.tag = "p2";
         }
-        if (i == 2)
-        {
+        if (i == 2) {
             gameobject.tag = "p3";
         }
-        if (i == 3)
-        {
+        if (i == 3) {
             gameobject.tag = "p4";
         }
 
@@ -422,8 +367,8 @@ public class PlayerParent : MonoBehaviour {
         for (int i = 0; i < Players.Length; i++) {
             mAnimator[i].ResetTrigger("isMoving");
         }
-        //Set animator for the current player
         mAnimator[PlayerTurnOrder[ActivePlayerIndex]].SetTrigger("isMoving");
+        //Set animator for the current player
 
         //move container to the next player
         CursorContainer.transform.position = Players[PlayerTurnOrder[ActivePlayerIndex]].transform.position;
@@ -443,8 +388,7 @@ public class PlayerParent : MonoBehaviour {
             UIHandler.HideAllButtons();
             UIHandler.DisplayText("");
         }
-        foreach (GameObject c in cards)
-        {
+        foreach (GameObject c in cards) {
             c.SetActive(true);
         }
     }
@@ -490,8 +434,7 @@ public class PlayerParent : MonoBehaviour {
         return !HasValidAction;
     }
 
-    public bool allSkip()
-    {
+    public bool allSkip() {
         return allskip;
     }
 
@@ -506,8 +449,7 @@ public class PlayerParent : MonoBehaviour {
         }
     }
 
-    private int returnPlayer()
-    {
+    private int returnPlayer() {
         return ActivePlayerIndex;
     }
 
@@ -516,21 +458,68 @@ public class PlayerParent : MonoBehaviour {
         //store the indeces of the players with highest income
         List<int> WinnerIndeces = new List<int> { 0 };    //automatically add player 1 to the list
         //for each player
-        for(int i = 1; i < Players.Length; i++) {
+        for (int i = 1; i < Players.Length; i++) {
             //if the next player has a higher income, replace the list with a new list of winners
-            if(Players[PlayerTurnOrder[i]].GetFunds() > Players[0].GetFunds()) {
+            if (Players[PlayerTurnOrder[i]].GetFunds() > Players[0].GetFunds()) {
                 WinnerIndeces.Clear();
                 WinnerIndeces.Add(PlayerTurnOrder[i]);
             }
             //equal to highest income, add this player to the list
-            else if(Players[PlayerTurnOrder[i]].GetFunds() == Players[0].GetFunds()) {
+            else if (Players[PlayerTurnOrder[i]].GetFunds() == Players[0].GetFunds()) {
                 WinnerIndeces.Add(PlayerTurnOrder[i]);
             }
         }
         List<Player> Winners = new List<Player>();
-        for(int i = 0; i < WinnerIndeces.Count; i++) {
+        for (int i = 0; i < WinnerIndeces.Count; i++) {
             Winners.Add(Players[WinnerIndeces[i]]);
         }
         return Winners;
     }
+
+    //returns list on winners based on playerindex
+    public List<Player> CheckWinner() {
+        //list of winners
+        List<Player> winners = new List<Player>();
+        for (int i = 0; i < Players.Length; i++) {
+            List<Recipe> hand = Players[PlayerTurnOrder[i]].GetRecipeHand();
+            //dictionary
+            Dictionary<string, int> counter = new Dictionary<string, int>();
+            //for each recipe, increment counter
+            foreach (Recipe recipe in hand) {
+                if (counter.ContainsKey(recipe.GetRecipeType())) {
+                    counter[recipe.GetRecipeType()]++;
+                }
+                else {
+                    counter.Add(recipe.GetRecipeType(), 0);
+                }
+            }
+            //now check for wincon
+            foreach (int val in counter.Values) {
+                //if collected more than 4 recipes of a type
+                if (val >= 4) {
+                    winners.Add(Players[PlayerTurnOrder[i]]);
+                }
+            }
+        }
+        return winners;
+    }
+
+    public Player[] GetPlayers() {
+        return Players;
+    }
+    public void AddToPlayerIncome(int recipeWorth) {
+        Players[PlayerTurnOrder[ActivePlayerIndex]].AddToIncome(recipeWorth);
+    }
+
+    public void skipReset() {
+        skip1 = false;
+        skip2 = false;
+        skip3 = false;
+        skip4 = false;
+    }
+
+    public void AddRecipeToPlayer(Recipe aRecipe) {
+        Players[PlayerTurnOrder[ActivePlayerIndex]].AddRecipe(aRecipe);
+    }
+
 }

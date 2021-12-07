@@ -1794,7 +1794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &49485175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1813,7 +1813,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 100}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49485176
 MonoBehaviour:
@@ -14700,8 +14700,6 @@ PrefabInstance:
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber
       value: p4
-      propertyPath: funds
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: recipeParent
@@ -15477,10 +15475,10 @@ MonoBehaviour:
   phase1Text: {fileID: 1861004831}
   phase2Text: {fileID: 1841243542}
   phase1Stuck: {fileID: 1059524448}
-  audioSource: {fileID: 0}
-  cash: {fileID: 0}
   RoundsDisplay: {fileID: 1632005957}
   EndGameMessage: {fileID: 49485174}
+  audioSource: {fileID: 0}
+  cash: {fileID: 0}
 --- !u!1 &526143374
 GameObject:
   m_ObjectHideFlags: 0
@@ -19051,8 +19049,6 @@ PrefabInstance:
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber
       value: p2
-      propertyPath: funds
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: recipeParent
@@ -21757,7 +21753,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 100}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707082142
 MonoBehaviour:
@@ -33651,7 +33647,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123842416
 GameObject:
@@ -41315,8 +41311,6 @@ PrefabInstance:
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber
       value: p3
-      propertyPath: funds
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: recipeParent
@@ -60292,6 +60286,7 @@ PrefabInstance:
     - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: funds
       value: 15

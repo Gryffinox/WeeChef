@@ -14,6 +14,7 @@ public class RecipeCard : MonoBehaviour
     [SerializeField] int CardWorth;
 
     private bool canBuy = true;
+    private string RecipeType;
 
     // Update is called once per frame
     void Update()
@@ -32,6 +33,7 @@ public class RecipeCard : MonoBehaviour
             parent.setTag(gameObject);
             parent.addCard(gameObject);
             parent.AddToPlayerIncome(CardWorth);
+            parent.AddRecipeToPlayer(new Recipe(gameObject.name, RecipeType));
             cache.Clear();
             noCheck.Clear();
         }
@@ -80,5 +82,9 @@ public class RecipeCard : MonoBehaviour
     public int getCardWorth()
     {
         return CardWorth;
+    }
+
+    public void SetRecipeType(string name) {
+        RecipeType = name;
     }
 }

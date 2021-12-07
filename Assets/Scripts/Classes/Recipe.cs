@@ -12,10 +12,20 @@ public class Recipe
     public string RecipeType;
     public List<int> IngredientIds;
 
+    //only needed for checking endgame who has what recipe
+    public Recipe(string name, string type) {
+        RecipeName = name;
+        RecipeType = type;
+    }
+
     public override string ToString()
     {
         return RecipeName + " (Type: " + RecipeType + ")";
 
+    }
+
+    public String GetRecipeType() {
+        return RecipeType;
     }
 }
 

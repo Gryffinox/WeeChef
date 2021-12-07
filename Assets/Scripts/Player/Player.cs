@@ -5,10 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     private List<Ingredient> ingredientHand; // changed it from GameObject to list of Ingredient
-    //private List<RecipeCard> recipeHand;
+    private List<Recipe> recipeHand;
     [SerializeField] int funds = 15;
 
     //Player's income per round;
+    [SerializeField] private string name;
     [SerializeField] private int Income = 5;
 
     private void Start() {
@@ -63,5 +64,17 @@ public class Player : MonoBehaviour {
     public void CalculateFundsAtEndOfRound()
     {
         funds += Income;
+    }
+
+    public void AddRecipe(Recipe aRecipe) {
+        recipeHand.Add(aRecipe);
+    }
+
+    public List<Recipe> GetRecipeHand() {
+        return recipeHand;
+    }
+
+    public string GetName() {
+        return name;
     }
 }
