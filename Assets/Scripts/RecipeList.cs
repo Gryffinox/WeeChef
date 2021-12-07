@@ -115,7 +115,7 @@ public class RecipeList : MonoBehaviour {
             case "Croissant":
                 pointer = Croissant;
                 break;
-            case "Souffl�":
+            case "Souffle":
                 pointer = Souffle;
                 break;
             case "Cassoulet":

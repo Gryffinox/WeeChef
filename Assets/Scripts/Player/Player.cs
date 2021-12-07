@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
 
     private void Start() {
         ingredientHand = new List<Ingredient>();    //changed it from GameObject to list of Ingredient
+        recipeHand = new List<Recipe>();
         //recipeHand = new List<RecipeCard>();
     }
 

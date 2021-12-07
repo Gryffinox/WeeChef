@@ -482,22 +482,24 @@ public class PlayerParent : MonoBehaviour {
         List<Player> winners = new List<Player>();
         for (int i = 0; i < Players.Length; i++) {
             List<Recipe> hand = Players[PlayerTurnOrder[i]].GetRecipeHand();
-            //dictionary
-            Dictionary<string, int> counter = new Dictionary<string, int>();
-            //for each recipe, increment counter
-            foreach (Recipe recipe in hand) {
-                if (counter.ContainsKey(recipe.GetRecipeType())) {
-                    counter[recipe.GetRecipeType()]++;
+            if(hand.Count > 0) {
+                //dictionary
+                Dictionary<string, int> counter = new Dictionary<string, int>();
+                //for each recipe, increment counter
+                foreach (Recipe recipe in hand) {
+                    if (counter.ContainsKey(recipe.GetRecipeType())) {
+                        counter[recipe.GetRecipeType()]++;
+                    }
+                    else {
+                        counter.Add(recipe.GetRecipeType(), 0);
+                    }
                 }
-                else {
-                    counter.Add(recipe.GetRecipeType(), 0);
-                }
-            }
-            //now check for wincon
-            foreach (int val in counter.Values) {
-                //if collected more than 4 recipes of a type
-                if (val >= 4) {
-                    winners.Add(Players[PlayerTurnOrder[i]]);
+                //now check for wincon
+                foreach (int val in counter.Values) {
+                    //if collected more than 4 recipes of a type
+                    if (val >= 4) {
+                        winners.Add(Players[PlayerTurnOrder[i]]);
+                    }
                 }
             }
         }

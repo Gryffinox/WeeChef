@@ -1794,7 +1794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &49485175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14698,6 +14698,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: name
+      value: Player 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber
       value: p4
       objectReference: {fileID: 0}
@@ -15477,8 +15481,8 @@ MonoBehaviour:
   phase1Stuck: {fileID: 1059524448}
   RoundsDisplay: {fileID: 1632005957}
   EndGameMessage: {fileID: 49485174}
-  audioSource: {fileID: 0}
-  cash: {fileID: 0}
+  audioSource: {fileID: 1747738058}
+  cash: {fileID: 8300000, guid: 5e71697b5d5b8304ba9c3980688b5eb1, type: 3}
 --- !u!1 &526143374
 GameObject:
   m_ObjectHideFlags: 0
@@ -19045,6 +19049,10 @@ PrefabInstance:
     - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: name
+      value: Player 2
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber
@@ -41309,6 +41317,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: name
+      value: Player 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber
       value: p3
       objectReference: {fileID: 0}
@@ -60286,6 +60298,10 @@ PrefabInstance:
     - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: name
+      value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: funds
