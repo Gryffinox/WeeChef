@@ -14622,10 +14622,6 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
-      propertyPath: funds
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber
       value: p4
       objectReference: {fileID: 0}
@@ -18970,10 +18966,6 @@ PrefabInstance:
     - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_TagString
       value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
-      propertyPath: funds
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber
@@ -41020,10 +41012,6 @@ PrefabInstance:
     - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_TagString
       value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
-      propertyPath: funds
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: PlayerNumber

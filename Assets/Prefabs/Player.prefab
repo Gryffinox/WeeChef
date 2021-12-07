@@ -159,8 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   funds: 15
   Income: 5
-  recipeParent: {fileID: 0}
-  PlayerNumber: 
 --- !u!222 &8287184749562094433
 CanvasRenderer:
   m_ObjectHideFlags: 0
