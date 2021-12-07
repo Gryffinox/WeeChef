@@ -15474,7 +15474,7 @@ MonoBehaviour:
   recipeParent: {fileID: 60101095}
   Players: {fileID: 357869240}
   pParent: {fileID: 357869241}
-  MaxRounds: 2
+  MaxRounds: 16
   IngredientUI: {fileID: 1736753039}
   phase1Text: {fileID: 1861004831}
   phase2Text: {fileID: 1841243542}
