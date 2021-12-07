@@ -8,8 +8,23 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IngredientGathering.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RecipeBuilding.unity
     guid: 7d1c3441171334d9a88866c83f7711d6
+  - enabled: 1
+    path: Assets/Scenes/Tutorial 1.unity
+    guid: 972a4c57abc8e4a348840a4beff10910
+  - enabled: 1
+    path: Assets/Scenes/Tutorial 2.unity
+    guid: 1fd5ab89e24a04f39be403f27908a3b7
+  - enabled: 1
+    path: Assets/Scenes/Tutorial 3.unity
+    guid: 568485a0b574b44f5b13f9025bfc7dc3
+  - enabled: 1
+    path: Assets/Scenes/Tutorial 4.unity
+    guid: aaa7b72bc4a584b139f015ec8aee1196
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 96e21f38dbb5a0548b3ae8a3866f0c52
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: de440ba7769817142ab5475dae182a1d, type: 2}
