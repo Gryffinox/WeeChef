@@ -108,6 +108,10 @@ public class MainGame : MonoBehaviour {
                     RefillRecipeMenu();
                     audioSource.PlayOneShot(cash, 1);
                     recipeParent.triggerOff();
+                    foreach (Player player in PlayerHandler.GetPlayers())
+                    {
+                        player.CalculateFundsAtEndOfRound();
+                    }
                 }
                 break;
         }

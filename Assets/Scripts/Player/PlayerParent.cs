@@ -208,4 +208,10 @@ using UnityEngine;public class PlayerParent : MonoBehaviour {
 
     //wrapper class that validates whether theres an ingredient and/or player overlap on a given tile
     //returns true if no player and theres and ingredient to be moved on to
-    public bool ValidateMove(int x, int y) {        if (GameHandler.ValidIngredientInMap(x, y) && !Overlap(x, y)) {            return true;        }        else {            return false;        }    }    /*public static void BuyRecipe(RecipeCard recipeCard)    {        Players[PlayerTurnOrder[ActivePlayerIndex]].AddCardToRecipeHand(recipeCard);    }*/    private int returnPlayer()    {        return ActivePlayerIndex;    }}
+    public bool ValidateMove(int x, int y) {        if (GameHandler.ValidIngredientInMap(x, y) && !Overlap(x, y)) {            return true;        }        else {            return false;        }    }    /*public static void BuyRecipe(RecipeCard recipeCard)    {        Players[PlayerTurnOrder[ActivePlayerIndex]].AddCardToRecipeHand(recipeCard);    }*/    private int returnPlayer()    {        return ActivePlayerIndex;    }    public Player[] GetPlayers()
+    {
+        return Players;
+    }    public void AddToPlayerIncome(int recipeWorth)
+    {
+        Players[PlayerTurnOrder[ActivePlayerIndex]].AddToIncome(recipeWorth);
+    }}

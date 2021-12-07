@@ -8,6 +8,9 @@ public class Player : MonoBehaviour {
     //private List<RecipeCard> recipeHand;
     [SerializeField] int funds= 100;
 
+    //Player's income per round;
+    [SerializeField] private int Income = 5;
+
     private void Start() {
         ingredientHand = new List<Ingredient>();    //changed it from GameObject to list of Ingredient
         //recipeHand = new List<RecipeCard>();
@@ -60,5 +63,15 @@ public class Player : MonoBehaviour {
     public void increaseFunds(int cost)
     {
         funds += cost;
+    }
+
+    public void AddToIncome(int recipeWorth)
+    {
+        Income += recipeWorth;
+    }
+
+    public void CalculateFundsAtEndOfRound()
+    {
+        funds += Income;
     }
 }

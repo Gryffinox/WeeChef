@@ -11,6 +11,8 @@ public class RecipeCard : MonoBehaviour
     [SerializeField] PlayerParent parent;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip crunch;
+    [SerializeField] int CardWorth;
+
     private bool canBuy = true;
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class RecipeCard : MonoBehaviour
             gameObject.GetComponent<RecipeMove>().yesMove();
             parent.setTag(gameObject);
             parent.addCard(gameObject);
+            parent.AddToPlayerIncome(CardWorth);
             cache.Clear();
             noCheck.Clear();
         }
@@ -72,5 +75,10 @@ public class RecipeCard : MonoBehaviour
             }
             
         }
+    }
+
+    public int getCardWorth()
+    {
+        return CardWorth;
     }
 }

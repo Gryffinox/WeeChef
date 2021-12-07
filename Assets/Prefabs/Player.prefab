@@ -157,6 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eff66752d20a4859a03b49f92a086ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  funds: 15
+  Income: 5
+  recipeParent: {fileID: 0}
+  PlayerNumber: 
 --- !u!222 &8287184749562094433
 CanvasRenderer:
   m_ObjectHideFlags: 0

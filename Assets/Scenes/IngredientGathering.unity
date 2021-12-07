@@ -924,6 +924,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 2
 --- !u!50 &18656022
 Rigidbody2D:
   serializedVersion: 4
@@ -1185,6 +1186,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &21437628
 Rigidbody2D:
   serializedVersion: 4
@@ -2017,6 +2019,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &58833982
 Rigidbody2D:
   serializedVersion: 4
@@ -2367,6 +2370,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &64663119
 Rigidbody2D:
   serializedVersion: 4
@@ -4387,6 +4391,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &145356181
 Rigidbody2D:
   serializedVersion: 4
@@ -5349,6 +5354,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &164332397
 Rigidbody2D:
   serializedVersion: 4
@@ -6184,6 +6190,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &194801340
 Rigidbody2D:
   serializedVersion: 4
@@ -7650,6 +7657,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 2
 --- !u!50 &240998303
 Rigidbody2D:
   serializedVersion: 4
@@ -8582,6 +8590,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &280940945
 Rigidbody2D:
   serializedVersion: 4
@@ -9335,6 +9344,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &336281104
 Rigidbody2D:
   serializedVersion: 4
@@ -11865,6 +11875,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &406167985
 Rigidbody2D:
   serializedVersion: 4
@@ -14606,10 +14617,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: funds
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: PlayerNumber
+      value: p4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeParent
+      value: 
+      objectReference: {fileID: 60101095}
     - target: {fileID: 4214384046329709267, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -15003,6 +15026,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &510843552
 Rigidbody2D:
   serializedVersion: 4
@@ -15378,6 +15402,8 @@ MonoBehaviour:
   phase1Text: {fileID: 1861004831}
   phase2Text: {fileID: 1841243542}
   phase1Stuck: {fileID: 1059524448}
+  audioSource: {fileID: 0}
+  cash: {fileID: 0}
 --- !u!1 &526143374
 GameObject:
   m_ObjectHideFlags: 0
@@ -16286,6 +16312,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &577324510
 Rigidbody2D:
   serializedVersion: 4
@@ -18940,10 +18967,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: funds
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: PlayerNumber
+      value: p2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeParent
+      value: 
+      objectReference: {fileID: 60101095}
     - target: {fileID: 4214384046329709267, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -19824,6 +19863,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &672335875
 Rigidbody2D:
   serializedVersion: 4
@@ -20325,6 +20365,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 2
 --- !u!50 &682292540
 Rigidbody2D:
   serializedVersion: 4
@@ -20668,6 +20709,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &692391649
 Rigidbody2D:
   serializedVersion: 4
@@ -21260,6 +21302,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &705789275
 Rigidbody2D:
   serializedVersion: 4
@@ -21846,6 +21889,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &716167828
 Rigidbody2D:
   serializedVersion: 4
@@ -22019,6 +22063,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 2
 --- !u!50 &716430762
 Rigidbody2D:
   serializedVersion: 4
@@ -24432,6 +24477,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &792816637
 Rigidbody2D:
   serializedVersion: 4
@@ -24688,6 +24734,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &804736596
 Rigidbody2D:
   serializedVersion: 4
@@ -28122,6 +28169,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &940673763
 Rigidbody2D:
   serializedVersion: 4
@@ -29749,6 +29797,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1008335038
 Rigidbody2D:
   serializedVersion: 4
@@ -30253,6 +30302,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1025360990
 Rigidbody2D:
   serializedVersion: 4
@@ -30514,6 +30564,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &1042919555
 Rigidbody2D:
   serializedVersion: 4
@@ -30942,6 +30993,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &1053193521
 Rigidbody2D:
   serializedVersion: 4
@@ -31933,6 +31985,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1090287334
 Rigidbody2D:
   serializedVersion: 4
@@ -33393,6 +33446,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &1123842420
 Rigidbody2D:
   serializedVersion: 4
@@ -35655,6 +35709,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1201942034
 Rigidbody2D:
   serializedVersion: 4
@@ -35995,6 +36050,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1216979614
 Rigidbody2D:
   serializedVersion: 4
@@ -36664,6 +36720,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1230204830
 Rigidbody2D:
   serializedVersion: 4
@@ -38504,6 +38561,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1324671848
 Rigidbody2D:
   serializedVersion: 4
@@ -39345,6 +39403,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1347103728
 Rigidbody2D:
   serializedVersion: 4
@@ -40332,6 +40391,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &1369055602
 Rigidbody2D:
   serializedVersion: 4
@@ -40957,10 +41017,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: funds
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: PlayerNumber
+      value: p3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeParent
+      value: 
+      objectReference: {fileID: 60101095}
     - target: {fileID: 4214384046329709267, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -42336,6 +42408,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &1465899562
 Rigidbody2D:
   serializedVersion: 4
@@ -42597,6 +42670,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &1471103327
 Rigidbody2D:
   serializedVersion: 4
@@ -44200,6 +44274,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 2
 --- !u!50 &1554422782
 Rigidbody2D:
   serializedVersion: 4
@@ -44471,6 +44546,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 2
 --- !u!1 &1559523303
 GameObject:
   m_ObjectHideFlags: 0
@@ -44552,6 +44628,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &1559523307
 Rigidbody2D:
   serializedVersion: 4
@@ -46043,6 +46120,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &1618256913
 Rigidbody2D:
   serializedVersion: 4
@@ -46225,6 +46303,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &1620496137
 Rigidbody2D:
   serializedVersion: 4
@@ -49049,6 +49128,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &1758492076
 Rigidbody2D:
   serializedVersion: 4
@@ -49998,6 +50078,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &1789791963
 Rigidbody2D:
   serializedVersion: 4
@@ -50420,6 +50501,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1819521583
 Rigidbody2D:
   serializedVersion: 4
@@ -52868,6 +52950,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 3
 --- !u!50 &1910117821
 Rigidbody2D:
   serializedVersion: 4
@@ -53049,6 +53132,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 6
 --- !u!50 &1910270043
 Rigidbody2D:
   serializedVersion: 4
@@ -57900,6 +57984,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &2101136963
 Rigidbody2D:
   serializedVersion: 4
@@ -58155,6 +58240,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 2
 --- !u!50 &2105035230
 Rigidbody2D:
   serializedVersion: 4
@@ -59324,6 +59410,7 @@ MonoBehaviour:
   parent: {fileID: 357869241}
   audioSource: {fileID: 1747738058}
   crunch: {fileID: 8300000, guid: 2b9a3d0c49ebae044a82ad591448505a, type: 3}
+  CardWorth: 4
 --- !u!50 &2141248897
 Rigidbody2D:
   serializedVersion: 4
@@ -59602,14 +59689,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
-      propertyPath: funds
-      value: 100
+    - target: {fileID: 4214384046329709265, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: IsMyTurn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: PlayerNumber
+      value: p1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214384046329709266, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
+      propertyPath: recipeParent
+      value: 
+      objectReference: {fileID: 60101095}
     - target: {fileID: 4214384046329709267, guid: a40843100dde844e6b98c1c1f714d65c, type: 3}
       propertyPath: m_RootOrder
       value: 0
