@@ -2,7 +2,7 @@
 "recipes":
 [
 {"RecipeName": "Croissant", "RecipeType": "French", "IngredientIds": [7,2]},
-{"RecipeName": "Soufflé", "RecipeType": "French", "IngredientIds": [7,2,2]},
+{"RecipeName": "Souffle", "RecipeType": "French", "IngredientIds": [7,2,2]},
 {"RecipeName": "Cassoulet", "RecipeType": "French", "IngredientIds": [7,5,4]},
 {"RecipeName": "Ratatouille", "RecipeType": "French", "IngredientIds": [1,8,8,8]},
 {"RecipeName": "Coq-au-vin", "RecipeType": "French", "IngredientIds": [4,5,12,6]},

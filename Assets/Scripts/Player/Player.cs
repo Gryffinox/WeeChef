@@ -5,14 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     private List<Ingredient> ingredientHand; // changed it from GameObject to list of Ingredient
-    //private List<RecipeCard> recipeHand;
-    [SerializeField] int funds= 100;
+    private List<Recipe> recipeHand;
+    [SerializeField] int funds = 15;
 
     //Player's income per round;
+    [SerializeField] private string name;
     [SerializeField] private int Income = 5;
 
     private void Start() {
         ingredientHand = new List<Ingredient>();    //changed it from GameObject to list of Ingredient
+        recipeHand = new List<Recipe>();
         //recipeHand = new List<RecipeCard>();
     }
 
@@ -41,16 +43,6 @@ public class Player : MonoBehaviour {
         return ingredientHand;
     }
 
-    /*public void AddCardToRecipeHand(RecipeCard recipeCard)
-    {
-        recipeHand.Add(recipeCard);
-    }
-
-    public List<RecipeCard> GetRecipeHand()
-    {
-        return recipeHand;
-    }*/
-
     public int GetFunds()
     {
         return funds;
@@ -73,5 +65,17 @@ public class Player : MonoBehaviour {
     public void CalculateFundsAtEndOfRound()
     {
         funds += Income;
+    }
+
+    public void AddRecipe(Recipe aRecipe) {
+        recipeHand.Add(aRecipe);
+    }
+
+    public List<Recipe> GetRecipeHand() {
+        return recipeHand;
+    }
+
+    public string GetName() {
+        return name;
     }
 }

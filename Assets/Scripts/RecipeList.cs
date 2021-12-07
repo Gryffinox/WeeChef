@@ -107,7 +107,7 @@ public class RecipeList : MonoBehaviour {
     }
 
     //can be used to diable or enable a recipe card object
-    public void ToggleRecipeCard(string RecipeName, bool state, float y) {
+    public void ToggleRecipeCard(string RecipeName, string RecipeType, bool state, float y) {
         GameObject pointer;
         //point to the right object based on recipe name
         switch (RecipeName) {
@@ -115,7 +115,7 @@ public class RecipeList : MonoBehaviour {
             case "Croissant":
                 pointer = Croissant;
                 break;
-            case "Soufflé":
+            case "Souffle":
                 pointer = Souffle;
                 break;
             case "Cassoulet":
@@ -268,6 +268,7 @@ public class RecipeList : MonoBehaviour {
             default:
                 throw new System.Exception("Unknown recipe");
         }
+        pointer.GetComponent<RecipeCard>().SetRecipeType(RecipeType);
         pointer.SetActive(state);   //enable or disable
         pointer.transform.position = new Vector3(pointer.transform.position.x, y, pointer.transform.position.z);    //move y
     }
