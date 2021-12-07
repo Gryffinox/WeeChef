@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
     private List<Ingredient> ingredientHand; // changed it from GameObject to list of Ingredient
     //private List<RecipeCard> recipeHand;
-    [SerializeField] int funds= 100;
+    [SerializeField] int funds = 15;
 
     private void Start() {
         ingredientHand = new List<Ingredient>();    //changed it from GameObject to list of Ingredient
@@ -37,16 +37,6 @@ public class Player : MonoBehaviour {
 
         return ingredientHand;
     }
-
-    /*public void AddCardToRecipeHand(RecipeCard recipeCard)
-    {
-        recipeHand.Add(recipeCard);
-    }
-
-    public List<RecipeCard> GetRecipeHand()
-    {
-        return recipeHand;
-    }*/
 
     public int GetFunds()
     {
