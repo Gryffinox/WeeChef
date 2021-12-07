@@ -131,12 +131,12 @@ public class MainGame : MonoBehaviour {
                             //for each player
                             for (int i = 1; i < winners.Count; i++) {
                                 //if the next player has a higher income, replace the list with a new list of winners
-                                if (winners[i].GetFunds() > winners[WinnerIndeces[0]].GetFunds()) {
+                                if (winners[i].GetFunds() > winners[WinnerIndeces[0]].GetIncome()) {
                                     WinnerIndeces.Clear();
                                     WinnerIndeces.Add(i);
                                 }
                                 //equal to highest income, add this player to the list
-                                else if (winners[i].GetFunds() == winners[WinnerIndeces[0]].GetFunds()) {
+                                else if (winners[i].GetIncome() == winners[WinnerIndeces[0]].GetIncome()) {
                                     WinnerIndeces.Add(i);
                                 }
                             }

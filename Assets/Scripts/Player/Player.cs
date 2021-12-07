@@ -48,6 +48,10 @@ public class Player : MonoBehaviour {
         return funds;
     }
 
+    public int GetIncome() {
+        return Income;
+    }
+
     public void decreaseFunds(int cost)
     {
         funds -= cost;

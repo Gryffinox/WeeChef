@@ -460,12 +460,12 @@ public class PlayerParent : MonoBehaviour {
         //for each player
         for (int i = 1; i < Players.Length; i++) {
             //if the next player has a higher income, replace the list with a new list of winners
-            if (Players[PlayerTurnOrder[i]].GetFunds() > Players[WinnerIndeces[0]].GetFunds()) {
+            if (Players[PlayerTurnOrder[i]].GetFunds() > Players[WinnerIndeces[0]].GetIncome()) {
                 WinnerIndeces.Clear();
                 WinnerIndeces.Add(PlayerTurnOrder[i]);
             }
             //equal to highest income, add this player to the list
-            else if (Players[PlayerTurnOrder[i]].GetFunds() == Players[WinnerIndeces[0]].GetFunds()) {
+            else if (Players[PlayerTurnOrder[i]].GetFunds() == Players[WinnerIndeces[0]].GetIncome()) {
                 WinnerIndeces.Add(PlayerTurnOrder[i]);
             }
         }
