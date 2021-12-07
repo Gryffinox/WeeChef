@@ -5,8 +5,6 @@ using UnityEngine;
 //Handler that takes care of the ingredient deck, as well as creating it and loading the ingredients
 public class IngredientList : MonoBehaviour {
 
-    private int DeckSize = 50;
-
     //The 14 different ingredient types aka cards possible
     private List<Ingredient> IngredientTypes;
 
@@ -86,9 +84,7 @@ public class IngredientList : MonoBehaviour {
 
     //Create the deck of ingredients
     private void PopulateDeck() {
-        DeckSize = 0;
         foreach(Ingredient ingredient in IngredientTypes) {
-            DeckSize += ingredient.Count;
             for(int i = 0; i < ingredient.Count; i++) {
                 IngredientDeck.Add(ingredient);
             }

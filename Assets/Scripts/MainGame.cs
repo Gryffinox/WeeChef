@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MainGame : MonoBehaviour {
     //Overall game variables
@@ -15,29 +16,32 @@ public class MainGame : MonoBehaviour {
     //Recipes
     private Recipe[] RecipesListed;
     [SerializeField] RecipeParent recipeParent;
-    //private List <Recipe> RecipesListed = new List<Recipe>();
     private RecipeList RecipeHandler;
-    [SerializeField] private const float RecipeX = 9;
     [SerializeField] private const float RecipeDistance = 2.25f;
 
     //Players
     [SerializeField] private GameObject Players;
     [SerializeField] private PlayerParent pParent;
     private PlayerParent PlayerHandler;
+
+    //RoundsCounter
+    private float RoundsCounter = 1;
+    [SerializeField] private float MaxRounds = 16;
+
     //UI
     [SerializeField] private GameObject IngredientUI;
     [SerializeField] private GameObject phase1Text;
     [SerializeField] private GameObject phase2Text;
     [SerializeField] private GameObject phase1Stuck;
-    private IngredientGatheringUI UIHandler;
+    [SerializeField] private GameObject RoundsDisplay;
+    [SerializeField] private GameObject EndGameMessage;
 
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip cash;
 
     void Start() {
         //handlers
         PlayerHandler = Players.GetComponent<PlayerParent>();
-        UIHandler = IngredientUI.GetComponent<IngredientGatheringUI>();
 
         GamePhase = 0;      //0 tile ingredient gathering, 1 recipe building phase
         // Initialize tiles with Ingredient objects
@@ -46,22 +50,7 @@ public class MainGame : MonoBehaviour {
         // Get the IngredientList script from the PlayerCamera to access IngredientList methods
         IngredientHandler = GetComponent<IngredientList>();
 
-        // Fill every tile with a random Ingredient object from the list of Ingredient cards
-        for (int column = 0; column < MapSize; column++) {
-            for (int row = 0; row < MapSize; row++) {
-                //Draw ingredient card from the deck
-                Ingredient newIng = IngredientHandler.DrawCard();
-                //Set sprite for gameobject
-                IngredientHandler.assignSprite(newIng.Id);
-                //Create it's instance and spawn it
-                Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -1), Quaternion.identity);
-                //scale it down
-                Tiles[column, row].GetComponent<IngredientCard>().SetIngredient(newIng.Id, newIng.Name, newIng.Cost);
-                Tiles[column, row].transform.localScale = new Vector3(0.8f, 0.8f, 1);
-                //name it
-                Tiles[column, row].name = newIng.Name;
-            }
-        }
+        RefillMarket();
 
         //Recipe
         RecipeHandler = GetComponent<RecipeList>();
@@ -77,49 +66,56 @@ public class MainGame : MonoBehaviour {
                 //Debug.Log("currently phase 1");
                 // Do ingredient gathering here
                 if (PlayerHandler.allSkip()) {
-                    GamePhase = 1;
+                    GamePhase = (int)GamePhases.RecipeBuilding;
                     IngredientUI.SetActive(false);
                     phase1Text.SetActive(false);
                     phase2Text.SetActive(true);
                     recipeParent.triggerOn();
                 }
-                else
-                {
-                    if (PlayerHandler.NoMovesLeft())
-                    {
-                        IngredientUI.SetActive(false);
-                        phase1Text.SetActive(false);
-                        phase2Text.SetActive(true);
-                        phase1Stuck.SetActive(true);
-                        pParent.skipReset();
-                        recipeParent.triggerOn();
-                    }
+                else
+                {
+                    if (PlayerHandler.NoMovesLeft())
+                    {
+                        IngredientUI.SetActive(false);
+                        phase1Text.SetActive(false);
+                        phase2Text.SetActive(true);
+                        phase1Stuck.SetActive(true);
+                        pParent.skipReset();
+                        recipeParent.triggerOn();
+                    }
                 }
                 break;
-            case (int)GamePhases.RecipeBuilding:
-                // Do recipe building here
-                if (PlayerHandler.allSkip())
-                {
-                    GamePhase = 0;
+            case (int)GamePhases.RecipeBuilding:
+                // Do recipe building here
+                if (PlayerHandler.allSkip())
+                {
+                    GamePhase = (int)GamePhases.IngredientGathering;
                     IngredientUI.SetActive(true);
                     phase1Text.SetActive(true);
-                    phase2Text.SetActive(false);
-                    RefillMarket();
-                    RefillRecipeMenu();
-                    audioSource.PlayOneShot(cash, 1);
-                    recipeParent.triggerOff();
+                    phase2Text.SetActive(false);
+                    RefillMarket();
+                    RefillRecipeMenu();
+                    audioSource.PlayOneShot(cash, 1);
+                    //needs to be called after market refilled
+                    PlayerHandler.UpdateValidAction();
+                    recipeParent.triggerOff();
                     foreach (Player player in PlayerHandler.GetPlayers())
                     {
                         player.CalculateFundsAtEndOfRound();
-                    }
-                }
+                    }
+                    RoundsCounter++;
+                    if(RoundsCounter > MaxRounds) {
+                        EndGame();
+                    }
+                }
                 break;
         }
+        RoundsDisplay.GetComponent<TextMeshProUGUI>().text = "Rounds: " + RoundsCounter;
     }
 
-    public void hideStuck()
-    {
-        phase1Stuck.SetActive(false);
+    public void hideStuck()
+    {
+        phase1Stuck.SetActive(false);
     }
 
     //Getting and removing ingredients
@@ -160,57 +156,71 @@ public class MainGame : MonoBehaviour {
         return true;
     }
 
-    public void goPhase1()
-    {
-        GamePhase = 0;
+    public void goPhase1()
+    {
+        GamePhase = 0;
     }
 
-    public void goPhase2()
-    {
-        GamePhase = 1;
+    public void goPhase2()
+    {
+        GamePhase = 1;
     }
-    public void RefillMarket()
-    {
-        // for each tile in map, check if it's empty
-        for (int column = 0; column < MapSize; column++)
-        {
-            for (int row = 0; row < MapSize; row++)
-            {
-                if (Tiles[column, row] == null)
-                {
-                    //Draw ingredient card from the deck
-                    Ingredient newIng = IngredientHandler.DrawCard();
-                    IngredientHandler.assignSprite(newIng.Id);
-                    //Create it's instance and spawn it
-                    Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -1), Quaternion.identity);
-                    Tiles[column, row].GetComponent<IngredientCard>().SetIngredient(newIng.Id, newIng.Name, newIng.Cost);
-                    Tiles[column, row].transform.localScale = new Vector3(0.8f, 0.8f, 1);
-                    Tiles[column, row].name = newIng.Name;
-                }
-            }
-        }
-    }
-
-    public void RefillRecipeMenu() {
-        //refill recipe list
-        for(int i = 0; i < 5; i++) {
-            //if theres a blank in the list
-            if (RecipesListed[i] == null) {
-                RecipesListed[i] = RecipeHandler.DrawRecipeCard();
-                RecipeHandler.ToggleRecipeCard(RecipesListed[i].RecipeName, true, (i - 2) * RecipeDistance);
-                //Debug.Log("just added" + RecipesListed[i].RecipeName);
-            }
-        }
+    public void RefillMarket()
+    {
+        // for each tile in map, check if it's empty
+        for (int column = 0; column < MapSize; column++)
+        {
+            for (int row = 0; row < MapSize; row++)
+            {
+                if (Tiles[column, row] == null)
+                {
+                    //Draw ingredient card from the deck
+                    Ingredient newIng = IngredientHandler.DrawCard();
+                    IngredientHandler.assignSprite(newIng.Id);
+                    //Create it's instance and spawn it
+                    Tiles[column, row] = Instantiate(IngredientHandler.getIngredientPrefab(), new Vector3(column, row, -2), Quaternion.identity);
+                    Tiles[column, row].GetComponent<IngredientCard>().SetIngredient(newIng.Id, newIng.Name, newIng.Cost);
+                    Tiles[column, row].transform.localScale = new Vector3(0.8f, 0.8f, 1);
+                    Tiles[column, row].name = newIng.Name;
+                }
+            }
+        }
     }
 
-    public void removeRecipe(string recipename)
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            if (recipename == RecipesListed[i].RecipeName)
-            {
-                RecipesListed[i] = null;
-            }
-        }
+    public void RefillRecipeMenu() {
+        //refill recipe list
+        for(int i = 0; i < MapSize; i++) {
+            //if theres a blank in the list
+            if (RecipesListed[i] == null) {
+                RecipesListed[i] = RecipeHandler.DrawRecipeCard();
+                RecipeHandler.ToggleRecipeCard(RecipesListed[i].RecipeName, true, (i - 2) * RecipeDistance);
+                //Debug.Log("just added" + RecipesListed[i].RecipeName);
+            }
+        }
+    }
+
+    public void removeRecipe(string recipename)
+    {
+        for (int i = 0; i < MapSize; i++)
+        {
+            if (recipename == RecipesListed[i].RecipeName)
+            {
+                RecipesListed[i] = null;
+            }
+        }
+    }
+
+    private void EndGame() {
+        //display winner
+        
+
+        IngredientUI.SetActive(false);
+        phase1Text.SetActive(false);
+        phase2Text.SetActive(false);
+        EndGameMessage.SetActive(true);
+    }
+
+    private void CheckWinner() {
+
     }
 }
